@@ -1,0 +1,23 @@
+#%Module1.0
+#
+## SNAP module file for production server (NUMMEL)
+##
+## Initializes SNAP on production server
+##
+proc ModulesHelp { } {
+	global sgeversion
+
+	puts stderr "\tInitializes your environment to use production server for SNAP \n"
+	puts stderr "\n\tVersion $snapproductionversion\n"
+}
+
+module-whatis "initializes SNAP for the production server (NUMMEL)"
+
+# for Tcl script use only
+set snapproductionversion production
+set prefix /srv/gsfs0/projects/gbsc/workspace/nathankw/Scoring/
+#setenv SNAP_ENVIRONMENT production
+setenv SNAP_PEAKSEQ_EXECUTABLE $prefix/pipeline2
+setenv jack jill
+system "ls"
+

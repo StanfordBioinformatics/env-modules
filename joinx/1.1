@@ -1,0 +1,23 @@
+#%Module1.0
+#
+## joinx modulefile
+##
+## Initializes joinx
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use joinx\n"
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes joinx program"
+
+# for Tcl script use only
+set version 1.1
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+module add python/2.7
+
+prepend-path PATH $::env(MODULESAPPSDIR)/joinx/bin

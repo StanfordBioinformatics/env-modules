@@ -1,0 +1,22 @@
+#%Module1.0
+#
+## bam-readcount modulefile
+##
+## Initializes bam-readcount
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the bam-readcount package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes bam-readcount package"
+
+# for Tcl script use only
+set version 0.7.4
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/bam-readcount/$version/usr/bin

@@ -1,0 +1,22 @@
+#%Module1.0
+#
+## JELLYFISH modulefile
+##
+## Initializes JELLYFISH for efficient counting of kmers
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use JELLYFISH for efficient counting of kmers\n"
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes PHYMMBL metagenomics classification tool"
+
+# for Tcl script use only
+set version 1.1.11
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/jellyfish/$version/bin

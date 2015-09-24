@@ -1,0 +1,23 @@
+#%Module1.0
+#
+## dindel modulefile
+##
+## Initializes dindel aligner
+##
+proc ModulesHelp { } {
+	global dindelversion
+
+	puts stderr "\tInitializes your environment to use the dindel sequence alignment program"
+	puts stderr "\n\tVersion $dindelversion\n"
+}
+
+#module-whatis "initializes dindel sequence alignment program"
+
+# for Tcl script use only
+set dindelversion 1.01
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+setenv DINDELROOT $::env(MODULESAPPSDIR)/dindel/dindel-$dindelversion
+prepend-path PATH $::env(MODULESAPPSDIR)/dindel/dindel-$dindelversion

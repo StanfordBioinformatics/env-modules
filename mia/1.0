@@ -1,0 +1,22 @@
+#%Module1.0
+#
+## mia modulefile
+##
+## Initializes mia
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the mia package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes mia package"
+
+# for Tcl script use only
+set version 1.0
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/mia/$version/bin

@@ -1,0 +1,22 @@
+#%Module1.0
+#
+## seqtk modulefile
+##
+## Initializes seqtk
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the seqtk package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes seqtk package"
+
+# for Tcl script use only
+set version 1.0-r82
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/seqtk/$version/seqtk

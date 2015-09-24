@@ -1,0 +1,22 @@
+#%Module1.0
+#
+## MEME modulefile
+##
+## Initializes MEME Motif-based sequence analysis tools
+##
+proc ModulesHelp { } {
+	global memeversion
+
+	puts stderr "\tInitializes your environment to use MEME Motif-based sequence analysis tools\n"
+	puts stderr "\n\tVersion $memeversion\n"
+}
+
+module-whatis "initializes MEME Motif-based sequence analysis tools"
+
+# for Tcl script use only
+set memeversion 4.8.1
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/MEME/$memeversion/bin

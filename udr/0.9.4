@@ -1,0 +1,26 @@
+#%Module1.0
+#
+## udr modulefile
+##
+## Initializes udr, a UDP wrapper to rsync.
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the udr package,\n"
+	puts stderr "\ta UDT wrapper to rsync for high throughput.\n" 
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes udr package"
+
+# for Tcl script use only
+set version 0.9.4
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/udr/$version/bin
+prepend-path PATH $::env(MODULESAPPSDIR)/udr/$version/server
+prepend-path PATH $::env(MODULESAPPSDIR)/udr/$version/app
+prepend-path LD_LIBRARY_PATH $::env(MODULESAPPSDIR)/udr/$version/lib

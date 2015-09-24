@@ -1,0 +1,23 @@
+#%Module1.0
+#
+## bcl2fastq modulefile
+##
+## Initializes bcl2fastq utilities
+##
+proc ModulesHelp { } {
+	global bcl2fastqversion
+
+	puts stderr "\tDemultiplex data and convert BCL files from Illumina sequencing systems running RTA version 1.8.54 and later to standard FASTQ file formats for downstream analysis. This version replaces v2.16."
+	puts stderr "\n\tVersion $bcl2fastqversion\n"
+}
+
+module-whatis "Illumina's BCL to FASTQ converter and demultiplexer for NextSeq 500 and HiSeq X Systems"
+
+# for Tcl script use only
+set version 2.16.0.10
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+module add gcc/4.7.0
+
+prepend-path PATH $::env(MODULESAPPSDIR)/bcl2fastq2/$version/bin

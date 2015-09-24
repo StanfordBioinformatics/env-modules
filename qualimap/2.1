@@ -1,0 +1,22 @@
+#%Module1.0
+#
+## qualimap modulefile
+##
+## Initializes qualimap
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the qualimap package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes qualimap package"
+
+# for Tcl script use only
+set version 2.1
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/qualimap/$version

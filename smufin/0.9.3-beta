@@ -1,0 +1,19 @@
+#%Module1.0
+#
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the smufin"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes smufin package"
+
+# for Tcl script use only
+set version 0.9.3
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/smufin
+prepend-path LD_LIBRARY_PATH "/usr/lib64/openmpi/lib/"

@@ -1,0 +1,22 @@
+#%Module1.0
+#
+## weblogo modulefile
+##
+## Initializes weblogo
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the weblogo package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes weblogo package"
+
+# for Tcl script use only
+set version 2.8.2
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/weblogo/$version

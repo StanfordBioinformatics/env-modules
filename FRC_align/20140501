@@ -1,0 +1,22 @@
+#%Module1.0
+#
+## FRC_align modulefile
+##
+## Initializes FRC_align
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use FRC_align\n"
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes FRC_align program"
+
+# for Tcl script use only
+set version dd7b05d829
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/FRC_align/$version/bin

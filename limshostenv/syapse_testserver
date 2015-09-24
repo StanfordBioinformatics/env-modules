@@ -1,0 +1,11 @@
+#%Module1.0
+#########################################################################
+##
+## limshostenv modulefile
+##
+setenv SYAPSE_LIMS true
+setenv SYAPSE_PROJECT 29792
+setenv SYAPSE_HOST scgpmqc.syapse.com
+set credentials [open /srv/gsfs0/projects/gbsc/share/security/syapse_test.txt "r"]
+setenv SYAPSE_USER [gets $credentials]
+setenv SYAPSE_PASSWORD [gets $credentials]

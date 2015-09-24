@@ -1,0 +1,30 @@
+#%Module1.0
+#
+## cadd modulefile
+##
+## Initializes cadd
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the cadd package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes cadd package"
+
+# for Tcl script use only
+set version 1.3
+
+module add python/2.7
+module add samtools/0.1.18
+module add tabix/0.2.5 
+module add pysam/0.7.5
+module add bx-python/0.7.2
+module add perl-scg/1.0
+module add vep/77 
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/cadd/CADD_v$version/bin

@@ -1,0 +1,24 @@
+#%Module1.0
+#
+## tophat modulefile
+##
+## Initializes tophat mapper
+##
+proc ModulesHelp { } {
+	global tophatversion
+
+	puts stderr "\tInitializes your environment to use mapDamage.\n"
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "mapDamage: tracking and quantifying damage patterns in ancient DNA sequences "
+
+
+# for Tcl script use only
+set version "Check git repository mapDamage"
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+module add python/2.7
+prereq r/3.1.0 r/3.1.1
+prepend-path PATH $::env(MODULESAPPSDIR)/mapDamage/bin

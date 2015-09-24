@@ -1,0 +1,15 @@
+#%Module1.0
+
+proc ModulesHelp { } {
+        puts stderr "\t rstudio GUI"
+        puts stderr "\t use rstudio for GUI"
+        puts stderr "\t use library(); to see installed R packages"
+        }
+
+module-whatis   "Latest version of R"
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+module add r/3.1.0-shlib
+
+prepend-path	PATH			$::env(MODULESAPPSDIR)/rstudio/rstudio-0.98.1049/bin

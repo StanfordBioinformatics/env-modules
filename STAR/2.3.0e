@@ -1,0 +1,24 @@
+#%Module1.0
+#
+## STAR modulefile
+##
+## Initializes STAR.
+##
+proc ModulesHelp { } {
+	global STARversion
+
+	puts stderr "\tInitializes your environment to use STAR, a tool"
+	puts stderr "\taligns RNA-seq reads to a reference genome using uncompressed suffix arrays."
+	puts stderr "\thttps://code.google.com/p/rna-star/"
+	puts stderr "\n\tVersion $STARversion\n"
+}
+
+module-whatis "initializes STAR"
+
+# for Tcl script use only
+set STARversion 2.3.0e
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/STAR/STAR-$STARversion

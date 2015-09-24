@@ -1,0 +1,22 @@
+#%Module1.0
+#
+## mono modulefile
+##
+## Initializes mono
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the mono package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes mono package"
+
+# for Tcl script use only
+set version 3.10.0
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/mono/$version/bin

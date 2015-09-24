@@ -1,0 +1,23 @@
+#%Module1.0
+#
+## mrsfast modulefile
+##
+## Initializes mrsfast.
+##
+proc ModulesHelp { } {
+	global mrsfastversion
+
+	puts stderr "\tInitializes your environment to use mrsfast, a tool"
+	puts stderr "\tfor mapping short reads to reference genome."
+	puts stderr "\n\tVersion $mrsfastversion\n"
+}
+
+module-whatis "initializes mrsfast"
+
+# for Tcl script use only
+set mrsfastversion 2.3.0.2
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/mrsfast/$mrsfastversion/bin

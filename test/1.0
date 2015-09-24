@@ -1,0 +1,19 @@
+#%Module1.0
+#
+## python modulefile
+##
+## Initializes python.
+##
+proc ModulesHelp { } {
+	global pythonversion
+
+	puts stderr "\tInitializes your environment to use python,"
+	puts stderr "\ta scripting language."
+	puts stderr "\n\tVersion $pythonversion\n"
+}
+
+module-whatis "initializes python"
+
+# sets the MODULESAPPSDIR env var
+# "prepend-path" used to mask the default python in /usr/bin
+setenv BOB howdythere

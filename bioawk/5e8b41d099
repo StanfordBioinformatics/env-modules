@@ -1,0 +1,22 @@
+#%Module1.0
+#
+## bioawk modulefile
+##
+## Initializes bioawk
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the bioawk package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes bioawk package"
+
+# for Tcl script use only
+set version 5e8b41d099
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/bioawk/$version

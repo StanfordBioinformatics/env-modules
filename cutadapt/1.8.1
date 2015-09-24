@@ -1,0 +1,25 @@
+#%Module1.0
+#
+## cutadapt modulefile
+##
+## Initializes cutadapt adapter trimming program
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the cutadapt adapter trimming program"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes bwa sequence alignment program"
+
+# for Tcl script use only
+set version 1.8.1
+
+prereq python/2.7
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/cutadapt/$version/bin
+prepend-path PYTHONPATH $::env(MODULESAPPSDIR)/cutadapt/$version/

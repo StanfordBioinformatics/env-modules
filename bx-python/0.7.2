@@ -1,0 +1,26 @@
+#%Module1.0
+#
+## bx-python modulefile
+##
+## Initializes bx-python
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the bx-python package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes bx-python package"
+
+# for Tcl script use only
+set version 0.7.2
+
+module add python/2.7
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/bx-python/$version/bin
+prepend-path PYTHONPATH $::env(MODULESAPPSDIR)/bx-python/$version
+prepend-path PYTHONPATH $::env(MODULESAPPSDIR)/bx-python/$version/lib/python

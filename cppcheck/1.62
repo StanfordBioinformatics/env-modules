@@ -1,0 +1,24 @@
+#%Module1.0
+#
+## cppcheck modulefile
+##
+## Initializes  cppcheck
+##
+proc ModulesHelp { } {
+	global cppcheckversion
+
+	puts stderr "\tInitializes your environment to use cppcgeck"
+	puts stderr "\n\tVersion $cppcheckversion\n"
+}
+
+module-whatis "initializes cppcheck"
+
+# for Tcl script use only
+set cppcheckversion 1.62
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+setenv PINDEL $:::env(MODULESAPPSDIR)/cppcheck/cppcheck-$cppcheckversion/
+setenv PINDELROOT $:::env(MODULESAPPSDIR)/cppcheck/cppcheck-$cppcheckversion/
+prepend-path PATH $:::env(MODULESAPPSDIR)/cppcheck/cppcheck-$cppcheckversion/

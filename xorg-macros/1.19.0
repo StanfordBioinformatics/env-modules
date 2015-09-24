@@ -1,0 +1,23 @@
+#%Module1.0
+#
+## xorg-macros modulefile
+##
+## Initializes xorg-macros
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the xorg-macros package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes xorg-macros package"
+
+# for Tcl script use only
+set version 1.19.0
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PKG_CONFIG_PATH $::env(MODULESAPPSDIR)/xorg-macros/$version/share/pkgconfig
+prepend-path PKG_CONFIG_PATH $::env(MODULESAPPSDIR)/xorg-macros/$version/share/aclocal

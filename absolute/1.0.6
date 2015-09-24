@@ -1,0 +1,28 @@
+#%Module1.0
+#
+## ABSOLUTE modulefile
+##
+## Initializes ABSOLUTE.
+##
+proc ModulesHelp { } {
+	global absoluteversion
+
+	puts stderr "\tInitializes your environment to use ABSOLUTE, a tool"
+	puts stderr "\tfor detecting ploidy and cellularity of cancer samples."
+	puts stderr "\thttp://www.broadinstitute.org/cancer/cga/absolute"
+	puts stderr "\n\tVersion $absoluteversion\n"
+}
+
+module-whatis "initializes ABSOLUTE"
+
+#needs java
+module add java
+module add r
+
+# for Tcl script use only
+set absoluteversion 1.0.6
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/absolute/absolute-$absoluteversion

@@ -1,0 +1,25 @@
+#%Module1.0
+#
+## useq modulefile
+##
+## Initializes useq package
+##
+proc ModulesHelp { } {
+	global useqversion
+
+	puts stderr "\tInitializes your environment to use the useq package,\n"
+	puts stderr "\ta set of tools to analyze .vcf files.\n" 
+	puts stderr "\n\tVersion $useqversion\n"
+}
+
+module-whatis "initializes useq package"
+
+# for Tcl script use only
+set useqversion 8.7.4
+module add java/latest
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+setenv USEQROOT $::env(MODULESAPPSDIR)/useq/useq-$useqversion/Apps
+prepend-path PATH $::env(MODULESAPPSDIR)/useq/useq-$useqversion/Apps

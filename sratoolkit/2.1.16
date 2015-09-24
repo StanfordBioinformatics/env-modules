@@ -1,0 +1,22 @@
+#%Module1.0
+#
+## ncbi_sra_sdk modulefile
+##
+## Initializes NCBI Sequence Read Archive toolkit
+##
+proc ModulesHelp { } {
+	global sdkversion
+
+	puts stderr "\tInitializes your environment to use the NCBI Sequence Read Archive toolkit"
+	puts stderr "\n\tVersion $sdkversion\n"
+}
+
+module-whatis "initializes NCBI SRA toolkit"
+
+# for Tcl script use only
+set sdkversion 2.1.16
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/sratoolkit/$sdkversion/bin64

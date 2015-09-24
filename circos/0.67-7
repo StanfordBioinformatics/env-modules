@@ -1,0 +1,25 @@
+#%Module1.0
+#
+## circos modulefile
+##
+## Initializes circos
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the circos package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes circos package"
+
+# for Tcl script use only
+set version 0.67-7
+
+module add perl-scg/1.0
+module add libgd-gd/2.0.33
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/circos/circos-$version/bin

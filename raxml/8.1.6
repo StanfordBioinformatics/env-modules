@@ -1,0 +1,22 @@
+#%Module1.0
+#
+## raxml modulefile
+##
+## Initializes raxml
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the raxml package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes raxml package"
+
+# for Tcl script use only
+set version 8.1.6
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/raxml/$version/standard-RAxML

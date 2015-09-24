@@ -1,0 +1,24 @@
+#%Module1.0
+#
+## miso modulefile
+##
+## Initializes bibase
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use miso"
+}
+
+module-whatis "initializes miso RNA-seq isoform analyzer"
+
+# for Tcl script use only
+set version 0.5.3
+
+prereq python/2.7
+prereq samtools
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/miso/$version/

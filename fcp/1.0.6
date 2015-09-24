@@ -1,0 +1,23 @@
+#%Module1.0
+#
+## fcp modulefile
+##
+## Initializes fcp
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the fcp package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes fcp package"
+
+# for Tcl script use only
+set version 1.0.6
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/fcp/$version
+prepend-path PYTHONPATH $::env(MODULESAPPSDIR)/fcp/$version

@@ -1,0 +1,18 @@
+#%Module1.0
+#
+## ogetools modulefile
+##
+## Initializes ogetools.accounting python module for processing OGE accounting data
+##
+proc ModulesHelp { } {
+	puts stderr "\tInitializes ogetools.accounting python module for processing OGE accounting data"
+}
+
+module-whatis "Initializes ogetools.accounting python module for processing OGE accounting data"
+
+# for Tcl script use only
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PYTHONPATH $::env(MODULESAPPSDIR)/gbsc/gbsc_utils/ogetools

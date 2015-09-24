@@ -1,0 +1,22 @@
+#%Module1.0
+#
+## impute modulefile
+##
+## Initializes impute genotype imputation and phasing program
+##
+proc ModulesHelp { } {
+	global imputeversion
+
+	puts stderr "\tInitializes your environment to use the Impute genotype imputation and phasing program"
+	puts stderr "\n\tVersion $imputeversion\n"
+}
+
+module-whatis "initializes Impute genotype imputation and phasing program"
+
+# for Tcl script use only
+set imputeversion 2.3.0
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/impute/impute_v$imputeversion{_x86_64_static}

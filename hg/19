@@ -1,0 +1,16 @@
+#%Module1.0
+#
+## HG modulefile
+##
+## Initializes HG reference file.
+##
+proc ModulesHelp { } {
+	global mutectversion
+}
+
+module-whatis "initializes HG"
+
+# for Tcl script use only
+set hgversion 19
+
+setenv HGROOT /srv/gsfs0/shared_data/RefGenomes/H_sapiens/hg19

@@ -1,0 +1,23 @@
+#%Module1.0
+#
+## kallisto modulefile
+##
+## Initializes kallisto
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the kallisto package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes kallisto package"
+
+# for Tcl script use only
+set version 0.42.3
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+module add gcc/5.2.0
+
+prepend-path PATH $::env(MODULESAPPSDIR)/kallisto/$version/bin

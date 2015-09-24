@@ -1,0 +1,23 @@
+#%Module1.0
+#
+## breakseq modulefile
+##
+## Initializes  breakseq
+##
+proc ModulesHelp { } {
+	global breakseqversion
+
+	puts stderr "\tInitializes your environment to use BreakSeq"
+	puts stderr "\n\tVersion $breakseqversion\n"
+}
+
+module-whatis "initializes BreakSeq"
+
+# for Tcl script use only
+set breakseqversion 1.1.2
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+setenv BREAKSEQROOT $:::env(MODULESAPPSDIR)/breakseq/breakseq-$breakseqversion/
+prepend-path PATH BREAKSEQROOT

@@ -1,0 +1,23 @@
+#%Module1.0
+#
+## famseq modulefile
+##
+## Initializes famseq aligner
+##
+proc ModulesHelp { } {
+	global famseqversion
+
+	puts stderr "\tInitializes your environment to use the famseq sequence alignment program"
+	puts stderr "\n\tVersion $famseqversion\n"
+}
+
+#module-whatis "initializes famseq sequence alignment program"
+
+# for Tcl script use only
+set famseqversion 1.0.1
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+setenv FAMSEQROOT $::env(MODULESAPPSDIR)/famseq/famseq-$famseqversion
+prepend-path PATH $::env(MODULESAPPSDIR)/famseq/famseq-$famseqversion

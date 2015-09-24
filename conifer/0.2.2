@@ -1,0 +1,25 @@
+#%Module1.0
+#
+## conifer modulefile
+##
+## Initializes conifer
+##
+proc ModulesHelp { } {
+	global coniferversion
+
+	puts stderr "\tInitializes your environment to use conifer"
+	puts stderr "\n\tVersion $coniferversion\n"
+}
+
+#module-whatis "initializes conifer program"
+
+# for Tcl script use only
+set coniferversion 0.2.2
+module load python/2.7
+module load hdf5
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+setenv CONIFERROOT $::env(MODULESAPPSDIR)/conifer/conifer-$coniferversion
+prepend-path PATH $::env(MODULESAPPSDIR)/conifer/conifer-$coniferversion

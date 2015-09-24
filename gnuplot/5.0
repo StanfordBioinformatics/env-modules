@@ -1,0 +1,20 @@
+#%Module1.0
+#
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tGNUplot compiled with pdfcairo support"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes bwa sequence alignment program"
+
+# for Tcl script use only
+set version 5.0
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/gnuplot/bin
+prepend-path MANPATH $::env(MODULESAPPSDIR)/gnuplot/share/man

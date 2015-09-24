@@ -1,0 +1,22 @@
+#%Module1.0
+#
+## bwa modulefile
+##
+## Initializes bwa aligner
+##
+proc ModulesHelp { } {
+	global bwaversion
+
+	puts stderr "\tInitializes your environment to use the bwa sequence alignment program"
+	puts stderr "\n\tVersion $bwaversion\n"
+}
+
+#module-whatis "initializes bwa sequence alignment program"
+
+# for Tcl script use only
+set bwaversion 0.7.10
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/bwa/bwa-$bwaversion/bin

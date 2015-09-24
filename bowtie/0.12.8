@@ -1,0 +1,22 @@
+#%Module1.0
+#
+## bowtie modulefile
+##
+## Initializes bowtie aligner
+##
+proc ModulesHelp { } {
+	global bowtieversion
+
+	puts stderr "\tInitializes your environment to use the bowtie sequence alignment program\n"
+	puts stderr "\n\tVersion $bowtieversion\n"
+}
+
+module-whatis "initializes bowtie sequence alignment program"
+
+# for Tcl script use only
+set bowtieversion 0.12.8
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/bowtie/$bowtieversion/bin

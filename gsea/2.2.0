@@ -1,0 +1,31 @@
+#%Module1.0
+#
+## gsea modulefile
+##
+## Initializes gsea
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the gsea package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes gsea package"
+
+# for Tcl script use only
+set version 2.2.0
+
+module add java/latest
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/gsea/$version
+prepend-path CLASSPATH $::env(MODULESAPPSDIR)/gsea/$version/gsea2-2.2.0.jar
+setenv GSEA $::env(MODULESAPPSDIR)/gsea/$version
+setenv GSEA_TOOL xtools.gsea.Gsea
+setenv LEADINGEDGE_TOOL xtools.gsea.LeadingEdgeTool
+setenv GENESET_PATHWAYS_ALL /srv/gsfs0/projects/gbsc/Resources/GSEA/MSigDB/5.0/c2.cp.v5.0.symbols.gmt
+setenv GENESET_GO_ALL /srv/gsfs0/projects/gbsc/Resources/GSEA/MSigDB/5.0/c5.all.v5.0.symbols.gmt
+setenv CHIP_GENE_SYMBOL /srv/gsfs0/projects/gbsc/Resources/GSEA/Annotations/GENE_SYMBOL.chip

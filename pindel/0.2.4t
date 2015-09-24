@@ -1,0 +1,24 @@
+#%Module1.0
+#
+## pindel modulefile
+##
+## Initializes  pindel
+##
+proc ModulesHelp { } {
+	global pindelversion
+
+	puts stderr "\tInitializes your environment to use Pindel"
+	puts stderr "\n\tVersion $pindelversion\n"
+}
+
+module-whatis "initializes Pindel"
+
+# for Tcl script use only
+set pindelversion 0.2.4t
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+setenv PINDEL $:::env(MODULESAPPSDIR)/pindel/pindel-$pindelversion/
+setenv PINDELROOT $:::env(MODULESAPPSDIR)/pindel/pindel-$pindelversion/
+prepend-path PATH $:::env(MODULESAPPSDIR)/pindel/pindel-$pindelversion/

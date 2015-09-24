@@ -1,0 +1,23 @@
+#%Module1.0
+#
+## arachne modulefile
+##
+## Initializes ARACHNE
+##
+proc ModulesHelp { } {
+	global arachneversion
+
+	puts stderr "\tInitializes your environment to use ARACHNE\n"
+	puts stderr "\n\tVersion $arachneversion\n"
+}
+
+module-whatis "initializes ARACHNE assembly program"
+
+# for Tcl script use only
+set arachneversion 46233
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+module add texlive
+prepend-path PATH $::env(MODULESAPPSDIR)/arachne/$arachneversion/bin/

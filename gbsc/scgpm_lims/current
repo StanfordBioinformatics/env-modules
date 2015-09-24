@@ -1,0 +1,24 @@
+#%Module1.0
+#
+## scgpm_lims modulefile
+##
+## Initializes scgpm_lims module
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the scgpm_lims module"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes scgpm_lims module"
+
+# for Tcl script use only
+set version current
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+module add python/2.7
+
+prepend-path PYTHONPATH $::env(MODULESAPPSDIR)/gbsc/scgpm_lims/current/

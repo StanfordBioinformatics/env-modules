@@ -1,0 +1,24 @@
+#%Module1.0
+#
+## bina modulefile
+##
+## Initializes Bina box API and manager.
+##
+proc ModulesHelp { } {
+	global binaversion
+
+	puts stderr "\tInitializes your environment to use the Bina box API and manager.\n"
+	puts stderr "\n\tVersion $binaversion\n"
+}
+
+module-whatis "initializes bina box"
+
+# for Tcl script use only
+set binaversion 0.4.0
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/BinaTools/$binaversion/bin
+prepend-path PATH $::env(MODULESAPPSDIR)/BinaTools/$binaversion/scripts
+prepend-path PYTHONPATH $::env(MODULESAPPSDIR)/BinaTools/$binaversion/lib/python2.6/site-packages

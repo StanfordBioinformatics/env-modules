@@ -1,0 +1,23 @@
+#%Module1.0
+#
+## splazers modulefile
+##
+## Initializes splazers aligner
+##
+proc ModulesHelp { } {
+	global splazersversion
+
+	puts stderr "\tInitializes your environment to use the splazers sequence alignment program"
+	puts stderr "\n\tVersion $splazersversion\n"
+}
+
+#module-whatis "initializes splazers sequence alignment program"
+
+# for Tcl script use only
+set splazersversion 1.0
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+setenv SPLAZERSROOT $::env(MODULESAPPSDIR)/splazers/splazers-$splazersversion
+prepend-path PATH $::env(MODULESAPPSDIR)/splazers/splazers-$splazersversion

@@ -1,0 +1,26 @@
+#%Module1.0
+#
+## cufflinks modulefile
+##
+## Initializes cufflinks transcript assembly
+##
+proc ModulesHelp { } {
+	global cufflinksversion
+
+	puts stderr "\tInitializes your environment to use the cufflinks transcript assembler for RNA-seq\n"
+	puts stderr "\n\tVersion $cufflinksversion\n"
+}
+
+module-whatis "initializes cufflinks transcript assembler"
+
+# for Tcl script use only
+set cufflinksversion 2.2.1
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+# cufflinks uses boost shared lib
+# and version must be 1.47.0
+module add boost/1.47.0
+
+prepend-path PATH $::env(MODULESAPPSDIR)/cufflinks/$cufflinksversion

@@ -1,0 +1,31 @@
+#%Module1.0
+#
+## mcr modulefile
+##
+## Initializes mcr
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the mcr package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes mcr package"
+
+# for Tcl script use only
+set version 8.1
+
+module add libX11/1.6.3
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/mcr/R2013a-$version/v81/bin
+prepend-path LD_LIBRARY_PATH $::env(MODULESAPPSDIR)/mcr/R2013a-$version/v81/runtime/glnxa64
+prepend-path LD_LIBRARY_PATH $::env(MODULESAPPSDIR)/mcr/R2013a-$version/v81/bin/glnxa64
+prepend-path LD_LIBRARY_PATH $::env(MODULESAPPSDIR)/mcr/R2013a-$version/v81/sys/os/glnxa64
+prepend-path LD_LIBRARY_PATH $::env(MODULESAPPSDIR)/mcr/R2013a-$version/v81/sys/java/jre/glnxa64/jre/lib/amd64/native_threads
+prepend-path LD_LIBRARY_PATH $::env(MODULESAPPSDIR)/mcr/R2013a-$version/v81/sys/java/jre/glnxa64/jre/lib/amd64/server
+prepend-path LD_LIBRARY_PATH $::env(MODULESAPPSDIR)/mcr/R2013a-$version/v81/sys/java/jre/glnxa64/jre/lib/amd64
+setenv XAPPLRESDIR $::env(MODULESAPPSDIR)/mcr/R2013a-$version/v81/X11/app-defaults 

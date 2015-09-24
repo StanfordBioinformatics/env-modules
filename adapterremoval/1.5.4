@@ -1,0 +1,23 @@
+#%Module1.0
+#
+## adapterremoval modulefile
+##
+## Initializes adapterremoval package
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the adapterremoval package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes adapterremoval package"
+
+# for Tcl script use only
+set version 1.5.4
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/adapterremoval/$version/bin
+prepend-path MANPATH $::env(MODULESAPPSDIR)/adapterremoval/$version/share/man

@@ -1,0 +1,18 @@
+#%Module1.0
+#
+##
+##
+proc ModulesHelp { } {
+	puts stderr "\tHDF5 version 1.8.10p1"
+}
+
+module-whatis "hdf5"
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+module add zlib
+
+# "prepend-path" used to mask the default python in /usr/bin
+prepend-path	  PATH	      	  	  $::env(MODULESAPPSDIR)/hdf5/1.8.10p1/bin
+append-path  	  LD_LIBRARY_PATH	  $::env(MODULESAPPSDIR)/hdf5/1.8.10p1/lib
+append-path  	  LD_LIBRARY_PATH	  /opt/openmpi/lib

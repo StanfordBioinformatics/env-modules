@@ -1,0 +1,22 @@
+#%Module1.0
+#
+## weblogo primer3
+##
+## Initializes primer3
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the primer3 package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes primer3 package"
+
+# for Tcl script use only
+set version 2.3.6
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/primer3/$version/src

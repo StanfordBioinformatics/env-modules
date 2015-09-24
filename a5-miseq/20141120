@@ -1,0 +1,26 @@
+#%Module1.0
+#
+## a5-miseq modulefile
+##
+## Initializes a5-miseq
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the a5-miseq package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes a5-miseq package"
+
+#module add java/6u35
+module add perl-scg/1.0
+
+# for Tcl script use only
+set version 20141120
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/a5-miseq/a5_miseq_linux_$version/bin
+#setenv _JAVA_OPTIONS -Xmx256m

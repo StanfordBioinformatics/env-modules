@@ -1,0 +1,23 @@
+#%Module1.0
+#
+## variant_effect_predictor modulefile
+##
+## Initializes VEP
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the variant effect predictor package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes variant effect predictor package"
+
+# for Tcl script use only
+set version 77
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+module add perl-scg
+prepend-path PATH $::env(MODULESAPPSDIR)/vep/$version/scripts/variant_effect_predictor

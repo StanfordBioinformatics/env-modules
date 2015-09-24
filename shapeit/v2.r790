@@ -1,0 +1,23 @@
+#%Module1.0
+#
+## shapeit modulefile
+##
+## Initializes shapeit utilities
+##
+proc ModulesHelp { } {
+	global shapeitversion
+
+	puts stderr "\tInitializes your environment to use shapeit"
+	puts stderr "\n\tVersion $shapeitversion\n"
+}
+
+module-whatis "initializes shapeit"
+
+# for Tcl script use only
+set shapeitversion v2.r790
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+#setenv BEDTOOLSROOT $::env(MODULESAPPSDIR)/bedtools/bedtools-$bedtoolsversion/bin
+prepend-path PATH $::env(MODULESAPPSDIR)/shapeit/$shapeitversion

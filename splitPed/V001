@@ -1,0 +1,22 @@
+#%Module1.0
+#
+## splitped modulefile
+##
+## Initializes splitped mapper
+##
+proc ModulesHelp { } {
+	global splitpedversion
+
+	puts stderr "\tInitializes your environment to use the splitped package\n"
+	puts stderr "\n\tVersion $splitpedversion\n"
+}
+
+module-whatis "initializes splitped package"
+
+# for Tcl script use only
+set splitpedversion V001
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/splitPed/$splitpedversion/

@@ -1,0 +1,23 @@
+#%Module1.0
+#
+## smash modulefile
+##
+## Initializes smash aligner
+##
+proc ModulesHelp { } {
+	global smashversion
+
+	puts stderr "\tInitializes your environment to use the smash sequence alignment program"
+	puts stderr "\n\tVersion $smashversion\n"
+}
+
+module-whatis "initializes smash sequence alignment program"
+
+# for Tcl script use only
+set smashversion 0.9
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+setenv SMASHROOT $::env(MODULESAPPSDIR)/smash/smash-$smashversion
+prepend-path PATH $::env(MODULESAPPSDIR)/smash/smash-$smashversion

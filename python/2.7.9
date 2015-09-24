@@ -1,0 +1,24 @@
+#%Module1.0
+#
+## python modulefile
+##
+## Initializes python.
+##
+proc ModulesHelp { } {
+	global pythonversion
+
+	puts stderr "\tInitializes your environment to use python,"
+	puts stderr "\ta scripting language."
+	puts stderr "\n\tVersion $pythonversion\n"
+}
+
+module-whatis "initializes python"
+set pythonversion 2.7.9
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+# "prepend-path" used to mask the default python in /usr/bin
+setenv PYTHONROOT $::env(MODULESAPPSDIR)/python/$pythonversion/bin
+prepend-path PATH $::env(MODULESAPPSDIR)/python/$pythonversion/bin
+prepend-path LD_LIBRARY_PATH $::env(MODULESAPPSDIR)/python/$pythonversion/lib
+prepend-path PYTHONPATH $::env(MODULESAPPSDIR)/python/$pythonversion/lib/python

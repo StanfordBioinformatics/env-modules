@@ -1,0 +1,40 @@
+#%Module1.0
+#
+## SNAP module file for production server (NUMMEL)
+##
+## Initializes SNAP on production server
+##
+proc ModulesHelp { } {
+	global sgeversion
+
+	puts stderr "\tInitializes your environment to use production server for SNAP \n"
+	puts stderr "\n\tVersion $snapproductionversion\n"
+}
+
+module-whatis "initializes SNAP for the production server (NUMMEL)"
+
+# for Tcl script use only
+set snapproductionversion production
+set prefix /srv/gsfs0/projects/gbsc/workspace/nathankw/Scoring/
+#setenv SNAP_ENVIRONMENT production
+setenv SNAP_PEAKSEQ_EXECUTABLE $prefix/pipeline2
+#setenv SNAP_HOSTNAME scg-snap.stanford.edu
+#setenv SNAP_URL http://scg-snap.stanford.edu
+setenv R_LIBS $prefix/idr/spp_package
+#prefix-path RUBYLIB /srv/gs1/apps/snap_support/production/current
+#prepend-path RUBYLIB /srv/gsfs0/software/gbsc/gbsc_utils/snap
+#prepend-path RUBYLIB /srv/gs1/apps/snap_support/production/current
+#prepend-path PATH /srv/gsfs0/software/gbsc/gbsc_utils/snap
+prepend-path PYTHONPATH $prefix/pipeline2/Utils
+prepend-path PATH $prefix/pipeline2/Utils
+prepend-path PYTHONPATH $prefix/pipeline2
+prepend-path PATH $prefix/pipeline2
+
+module add sjm/1.2/15sec
+module add python/2.7
+
+
+#setenv SNAP_SHOW_PEAKSEQ_REQUEST_URL /api/peakseq_inputs/show?experiment_run_id=
+#setenv SNAP_UNSCORED_PEAKSEQ_REQUESTS_URL /api/peakseq_inputs/show_unscored_peakseq_runs
+#setenv SNAP_PEAKSEQ_REQUEST_RESULTS_URL /api/peakseq_results/update
+#setenv SNAP_UPDATE_SCORING_REQUEST_STATUS_URL /api/peakseq_results/update_scoring_request_status

@@ -1,0 +1,25 @@
+#%Module1.0
+#
+## moabs modulefile
+##
+## Initializes moabs
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the moabs package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes moabs package"
+
+# for Tcl script use only
+set version 1.3.2
+
+module add perl-scg/1.0
+module add r/3.1.1
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/moabs/moabs-v1.3.2.src.x86_64_Linux.data/bin

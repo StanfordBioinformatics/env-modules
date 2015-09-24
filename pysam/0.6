@@ -1,0 +1,25 @@
+#%Module1.0
+#
+## pysam modulefile
+##
+## Initializes pysam.
+##
+proc ModulesHelp { } {
+	global pysamversion
+
+	puts stderr "\tInitializes your environment to use pysam,"
+	puts stderr "\ta SAM/BAM file utility for python."
+	puts stderr "\n\tVersion $pysamversion\n"
+}
+
+module-whatis "initializes pysam"
+
+set pysamversion 0.6
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+set pysampath $::env(MODULESAPPSDIR)/pysam/$pysamversion
+
+# Add the pysam directory to PYTHONPATH.
+append-path PYTHONPATH $pysampath/lib64/python2.6/site-packages

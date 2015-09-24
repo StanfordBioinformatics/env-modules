@@ -1,0 +1,25 @@
+#%Module1.0
+#
+## picard-tools modulefile
+##
+## Initializes picard-tools
+##
+proc ModulesHelp { } {
+	global picardtoolsversion
+
+	puts stderr "\tInitializes your environment to use the picard tools"
+	puts stderr "\t(http://picard.sourceforge.net)"
+	puts stderr "\n\tVersion $picard-toolsversion\n"
+}
+
+module-whatis "initializes picard tools"
+
+# for Tcl script use only
+set picardtoolsversion 1.32
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+setenv PICARD /srv/gsfs0/SCGS/software/picard-tools/picard-tools-$picardtoolsversion
+setenv PICARDROOT /srv/gsfs0/SCGS/software/picard-tools/picard-tools-$picardtoolsversion
+prepend-path PATH /srv/gsfs0/SCGS/software/picard-tools/picard-tools-$picardtoolsversion

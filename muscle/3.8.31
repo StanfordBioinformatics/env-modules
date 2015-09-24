@@ -1,0 +1,22 @@
+#%Module1.0
+#
+## muscle modulefile
+##
+## Initializes muscle
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the muscle package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes muscle package"
+
+# for Tcl script use only
+set version 3.8.31
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/muscle/muscle$version

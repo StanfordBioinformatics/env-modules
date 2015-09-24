@@ -1,0 +1,22 @@
+#%Module1.0
+#
+## MaCH modulefile
+##
+## Initializes MaCH
+##
+proc ModulesHelp { } {
+	global machversion
+
+	puts stderr "\tInitializes your environment to use the MaCH Package\n"
+	puts stderr "\n\tVersion $machversion\n"
+}
+
+module-whatis "initializes mach"
+
+# for Tcl script use only
+set machversion 1.0.16
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/MaCH/$machversion/

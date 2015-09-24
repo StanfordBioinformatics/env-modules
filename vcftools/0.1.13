@@ -1,0 +1,27 @@
+#%Module1.0
+#
+## vcftools modulefile
+##
+## Initializes vcftools package
+##
+proc ModulesHelp { } {
+	global bwaversion
+
+	puts stderr "\tInitializes your environment to use the vcftools package,\n"
+	puts stderr "\ta set of tools to analyze .vcf files.\n" 
+	puts stderr "\n\tVersion $vcftoolsversion\n"
+}
+
+module-whatis "initializes vcftools package"
+
+# for Tcl script use only
+set vcftoolsversion 0.1.13
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+module add zlib
+
+setenv VCFTOOLSROOT $::env(MODULESAPPSDIR)/vcftools/vcftools_$vcftoolsversion
+prepend-path PATH $::env(MODULESAPPSDIR)/vcftools/vcftools_$vcftoolsversion/bin
+prepend-path PERL5LIB $::env(MODULESAPPSDIR)/vcftools/vcftools_$vcftoolsversion/lib/perl5/site_perl/
+prepend-path MANPATH $::env(MODULESAPPSDIR)/vcftools/vcftools_$vcftoolsversion/bin

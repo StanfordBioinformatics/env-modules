@@ -1,0 +1,22 @@
+#%Module1.0
+#
+## rtg modulefile
+##
+## Initializes RTG (Real-Time Genomics) aligner
+##
+proc ModulesHelp { } {
+	global rtgversion
+
+	puts stderr "\tInitializes your environment to use the RTG (Real-Time Genomics) sequence alignment program\n"
+	puts stderr "\n\tVersion $rtgversion\n"
+}
+
+module-whatis "initializes RTG sequence alignment program"
+
+# for Tcl script use only
+set rtgversion 2.7
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/rtg/rtg-$rtgversion

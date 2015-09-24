@@ -1,0 +1,24 @@
+#%Module1.0
+#
+## RSeQC modulefile
+##
+## Initializes RSeQC
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the RSeQC package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes RSeQC package"
+
+# for Tcl script use only
+set version 2.6
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+module add python/2.7
+
+prepend-path PATH $::env(MODULESAPPSDIR)/rseqc/$version/bin
+prepend-path PYTHONPATH $::env(MODULESAPPSDIR)/rseqc/$version/lib/python2.7/site-packages

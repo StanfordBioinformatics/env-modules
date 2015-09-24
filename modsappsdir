@@ -1,0 +1,15 @@
+#%Module1.0
+#
+## modsappsdir modulefile
+##
+## Sets an environment variable pointing to the root
+## of all applications that these modules reference.
+##
+proc ModulesHelp { } {
+	puts stderr "\tSets the MODULESAPPSDIR to point to root of applications directory."
+}
+
+module-whatis "sets MODULESAPPSDIR"
+
+# for Tcl script use only
+#setenv MODULESAPPSDIR /srv/gsfs0/software

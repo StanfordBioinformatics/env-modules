@@ -1,0 +1,27 @@
+#%Module1.0
+#
+## blast modulefile
+##
+## Initializes blast package
+##
+proc ModulesHelp { } {
+	global blastversion
+
+	puts stderr "\tInitializes your environment to use blast\n"
+	puts stderr "\n\tVersion $blastversion\n"
+}
+
+module-whatis "initializes blast"
+
+# for Tcl script use only
+set blastversion 2.2.28+
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+# sets location of BLAST DBs.
+setenv BLASTDB   $::env(MODULESAPPSDIR)/blast/db
+
+# sets location of BLAST executables.
+setenv BLASTROOT $::env(MODULESAPPSDIR)/blast/ncbi-blast-$blastversion/bin/
+prepend-path PATH $::env(MODULESAPPSDIR)/blast/ncbi-blast-$blastversion/bin/

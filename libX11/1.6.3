@@ -1,0 +1,32 @@
+#%Module1.0
+#
+## libX11 modulefile
+##
+## Initializes libX11
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the libX11 package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes libX11 package"
+
+# for Tcl script use only
+set version 1.6.3
+
+module add libICE/1.0.9
+module add libSM/1.2.2
+module add libXt/1.1.5
+module add xorg-macros/1.19.0
+module add xtrans/1.3.5
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PKG_CONFIG_PATH $::env(MODULESAPPSDIR)/libX11/$version/lib/pkgconfig
+prepend-path MANPATH $::env(MODULESAPPSDIR)/libX11/$version/share/man
+prepend-path C_INCLUDE_PATH $::env(MODULESAPPSDIR)/libX11/$version/include
+prepend-path C_INCLUDE_PATH $::env(MODULESAPPSDIR)/libX11/$version/include/X11
+prepend-path LD_LIBRARY_PATH $::env(MODULESAPPSDIR)/libX11/$version/lib

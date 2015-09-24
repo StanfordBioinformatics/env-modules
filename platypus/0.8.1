@@ -1,0 +1,28 @@
+#%Module1.0
+#
+## platypus modulefile
+##
+## Initializes platypus
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the platypus package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes platypus package"
+
+# for Tcl script use only
+set version 0.8.1
+
+module add htslib/1.2.1
+module add python/2.7
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/platypus/Platypus_$version
+prepend-path PYTHONPATH $::env(MODULESAPPSDIR)/platypus/Platypus_$version
+setenv PLATYPUSROOT $::env(MODULESAPPSDIR)/platypus/Platypus_$version
+setenv PLATYPUS $::env(MODULESAPPSDIR)/platypus/Platypus_$version

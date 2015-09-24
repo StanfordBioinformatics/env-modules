@@ -1,0 +1,22 @@
+#%Module1.0
+#
+## bed2sgr modulefile
+##
+## Initializes bowtie aligner
+##
+proc ModulesHelp { } {
+	global bed2sgrversion
+
+	puts stderr "\tInitializes your environment to use the bed2sgr file conversion program\n"
+	puts stderr "\n\tVersion $bed2sgrversion\n"
+}
+
+module-whatis "initializes bed2sgr file conversion program"
+
+# for Tcl script use only
+set bed2sgrversion 1.0
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/gbsc/bed2sgr/$bed2sgrversion

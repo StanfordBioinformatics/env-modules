@@ -1,0 +1,23 @@
+#%Module1.0
+#
+## weblogo modulefile
+##
+## Initializes sailfish
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the sailfish package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes sailfish package"
+
+# for Tcl script use only
+set version 0.3.0
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/salmon/$version/bin
+prepend-path LD_LIBRARY_PATH $::env(MODULESAPPSDIR)/salmon/$version/lib

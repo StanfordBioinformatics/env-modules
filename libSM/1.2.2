@@ -1,0 +1,25 @@
+#%Module1.0
+#
+## libSM modulefile
+##
+## Initializes libSM
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the libSM package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes libSM package"
+
+# for Tcl script use only
+set version 1.2.2
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PKG_CONFIG_PATH $::env(MODULESAPPSDIR)/libSM/$version/lib/pkgconfig
+prepend-path C_INCLUDE_PATH $::env(MODULESAPPSDIR)/libSM/$version/include
+prepend-path C_INCLUDE_PATH $::env(MODULESAPPSDIR)/libSM/$version/include/X11/SM
+prepend-path LD_LIBRARY_PATH $::env(MODULESAPPSDIR)/libSM/$version/lib

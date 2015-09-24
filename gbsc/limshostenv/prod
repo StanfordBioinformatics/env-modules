@@ -1,0 +1,9 @@
+#%Module1.0
+#########################################################################
+##
+## limshostenv modulefile
+##
+
+setenv UHTS_LIMS_URL "https://uhts.stanford.edu"
+setenv UHTS_LIMS_TOKEN "9af4cc6d83fbfd793fe4"
+

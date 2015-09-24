@@ -1,0 +1,26 @@
+#%Module1.0
+#
+## sphinx modulefile
+##
+## Initializes sphinx
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the sphinx package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes sphinx package"
+
+# for Tcl script use only
+set version 1.3.1
+
+module add python/2.7
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/sphinx/$version/bin
+prepend-path PYTHONPATH $::env(MODULESAPPSDIR)/sphinx/$version
+prepend-path PYTHONPATH $::env(MODULESAPPSDIR)/sphinx/$version/lib/python

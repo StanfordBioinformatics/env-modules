@@ -1,0 +1,2 @@
+#%Module1.0
+setenv MODULESAPPSDIR /srv/gsfs0/software

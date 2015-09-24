@@ -1,0 +1,28 @@
+#%Module1.0
+#
+## gatk modulefile
+##
+## Initializes gatk
+##
+proc ModulesHelp { } {
+	global gatkversion
+
+	puts stderr "\tInitializes your environment to use the GATK"
+	puts stderr "\n\tVersion $gatkversion\n"
+}
+
+module-whatis "initializes gatk"
+
+#module add java/6u35
+module add java/latest
+#module load r
+
+# for Tcl script use only
+set gatkversion 3.1.1
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/gatk/gatk-$gatkversion/GenomeAnalysisTK-nightly-2014-04-07-g8f6ff32/
+setenv GATKROOT $::env(MODULESAPPSDIR)/gatk/gatk-$gatkversion/GenomeAnalysisTK-nightly-2014-04-07-g8f6ff32/
+setenv GATK $::env(MODULESAPPSDIR)/gatk/gatk-$gatkversion/GenomeAnalysisTK-nightly-2014-04-07-g8f6ff32/

@@ -1,0 +1,24 @@
+#%Module1.0
+#
+## vcflib modulefile
+##
+## Initializes vcflib package
+##
+proc ModulesHelp { } {
+	global vcflibversion
+
+	puts stderr "\tInitializes your environment to use the vcflib package,\n"
+	puts stderr "\ta set of tools to analyze .vcf files.\n" 
+	puts stderr "\n\tVersion $vcflibversion\n"
+}
+
+module-whatis "initializes vcflib package"
+
+# for Tcl script use only
+set vcflibversion 0.0
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+setenv VCFLIBROOT $::env(MODULESAPPSDIR)/vcflib/vcflib/bin
+prepend-path PATH $::env(MODULESAPPSDIR)/vcflib/vcflib/bin

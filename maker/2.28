@@ -1,0 +1,26 @@
+#%Module1.0
+#
+## maker modulefile
+##
+## Initializes maker package
+##
+proc ModulesHelp { } {
+	global makerversion
+
+	puts stderr "\tInitializes your environment to use maker\n"
+	puts stderr "\n\tVersion $makerversion\n"
+}
+
+module-whatis "initializes maker"
+
+# for Tcl script use only
+set makerversion 2.28
+module add blast
+#module add repeatmasker
+module add snapp
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+setenv MAKERROOT $::env(MODULESAPPSDIR)/maker/maker-$makerversion/
+prepend-path PATH $::env(MODULESAPPSDIR)/maker/maker-$makerversion/

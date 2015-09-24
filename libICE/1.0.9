@@ -1,0 +1,25 @@
+#%Module1.0
+#
+## libICE modulefile
+##
+## Initializes libICE
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the libICE package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes libICE package"
+
+# for Tcl script use only
+set version 1.0.9
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PKG_CONFIG_PATH $::env(MODULESAPPSDIR)/libICE/$version/lib/pkgconfig
+prepend-path C_INCLUDE_PATH $::env(MODULESAPPSDIR)/libICE/$version/include
+prepend-path C_INCLUDE_PATH $::env(MODULESAPPSDIR)/libICE/$version/include/X11/ICE
+prepend-path LD_LIBRARY_PATH $::env(MODULESAPPSDIR)/libICE/$version/lib

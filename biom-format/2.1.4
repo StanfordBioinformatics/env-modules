@@ -1,0 +1,26 @@
+#%Module1.0
+#
+## biom-format modulefile
+##
+## Initializes biom-format
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the biom-format package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes biom-format package"
+
+# for Tcl script use only
+set version 2.1.4
+
+module add python/2.7
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/biom-format/$version/bin
+prepend-path PYTHONPATH $::env(MODULESAPPSDIR)/biom-format/$version
+prepend-path PYTHONPATH $::env(MODULESAPPSDIR)/biom-format/$version/lib/python

@@ -1,0 +1,11 @@
+#%Module1.0
+#
+##
+proc ModulesHelp { } {
+	puts stderr "\tInitializes your environment to use pandaseq"
+}
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/pandaseq/pandaseq/bin

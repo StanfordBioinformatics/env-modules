@@ -1,0 +1,23 @@
+#%Module1.0
+#
+## bwa modulefile
+##
+## Initializes bwa aligner
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use BSMAP."
+	puts stderr "\n\tVersion $version\n"
+	puts stderr "https://code.google.com/p/bsmap/"
+}
+
+module-whatis "Bisulfite reads mapper."
+
+# for Tcl script use only
+set version 2.89
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/bsmap/$version

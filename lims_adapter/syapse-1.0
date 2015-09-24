@@ -1,0 +1,23 @@
+#%Module1.0
+#
+## lims_adapter module file
+##
+## Contains tools for communicating with the sequencing center LIMS
+##
+proc ModulesHelp { } {
+	global limsadapterversion
+
+	puts stderr "\tInitializes your environment to use the lims_adapter"
+	puts stderr "\n\tVersion $limsadapterversion\n"
+}
+
+module-whatis "initializes LIMS adapter"
+
+# for Tcl script use only
+set limsadapterversion syapse-1.0
+
+# sets the MODULESAPPSDIR env var  
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/gbsc/lims_adapter/$limsadapterversion/
+prepend-path PYTHONPATH $::env(MODULESAPPSDIR)/gbsc/lims_adapter/$limsadapterversion/

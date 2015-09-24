@@ -1,0 +1,23 @@
+#%Module1.0
+#
+## bwa_tools modulefile
+##
+## Initializes BWA pipeline scripts.
+##
+proc ModulesHelp { } {
+	global bwatoolsversion
+
+	puts stderr "\tInitializes your environment to use the jsonwf tools,"
+	puts stderr "\ta set of utilities for working with Illumina sequence data"
+}
+
+module-whatis "Initializes jsonwf pipeline scripts"
+
+set version 1.0.4
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+module load sjm
+
+append-path PATH $::env(MODULESAPPSDIR)/gbsc/jsonwf/$version/bin
+append-path PYTHONPATH $::env(MODULESAPPSDIR)/gbsc/jsonwf/$version/lib

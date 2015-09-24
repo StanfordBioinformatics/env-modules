@@ -1,0 +1,24 @@
+#%Module1.0
+#
+## ucsc_tools modulefile
+##
+## Initializes UCSC tools.
+##
+proc ModulesHelp { } {
+	global ucsctoolsversion
+
+	puts stderr "\tInitializes your environment to use the UCSC tools,"
+	puts stderr "\ta set of utilities from UCSC (the jksrc tree)"
+        puts stderr "\tfor working with sequence data"
+	puts stderr "\n\tVersion $ucsctoolsversion\n"
+}
+
+module-whatis "initializes UCSC toolkit"
+
+# for Tcl script use only
+set ucsctoolsversion 2.7.2
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+append-path PATH $::env(MODULESAPPSDIR)/ucsc_tools/$ucsctoolsversion/bin/x86_64

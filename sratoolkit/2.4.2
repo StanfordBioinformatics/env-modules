@@ -1,0 +1,22 @@
+#%Module1.0
+#
+## sratoolkit modulefile
+##
+## Initializes the SRA Toolkit
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the SRA Toolkit\n"
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes SRA Toolkit"
+
+# for Tcl script use only
+set version 2.4.2
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/sratoolkit/sratoolkit.${version}-centos_linux64/bin

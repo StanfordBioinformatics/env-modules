@@ -1,0 +1,17 @@
+#%Module1.0
+#
+## cmake modulefile
+##
+## Initializes CMake
+##
+proc ModulesHelp { } {
+	puts stderr "\tInitializes your environment to use the newer CMake "
+	puts stderr "\n\tVersion 2.8.11.2\n"
+}
+
+module-whatis "initializes newer CMake"
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/cmake/cmake-2.8.11.2/bin

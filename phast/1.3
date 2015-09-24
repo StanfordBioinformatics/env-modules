@@ -1,0 +1,19 @@
+#%Module1.0
+#
+## phast modulefile
+proc ModulesHelp { } {
+	global phastversion
+
+	puts stderr "\tInitializes your environment to use the PHAST package"
+	puts stderr "\n\tVersion $phastversion\n"
+}
+
+module-whatis "initializes phast package"
+
+# for Tcl script use only
+set phastversion 1.3
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/phast/phast-$phastversion/bin

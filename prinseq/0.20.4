@@ -1,0 +1,16 @@
+#%Module1.0
+#
+## prinseq modulefile
+##
+
+module-whatis "adds prinseq to path and loads dependencies"
+
+# for Tcl script use only
+set version 0.0.0
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+module add perl-scg
+
+setenv PRINSEQ $::env(MODULESAPPSDIR)/prinseq/prinseq-lite-0.20.4/
+#prepend-path PATH $::env(MODULESAPPSDIR)/prinseq/prinseq-lite-0.20.4

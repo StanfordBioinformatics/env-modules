@@ -1,0 +1,25 @@
+#%Module1.0
+#
+## metaphlan modulefile
+##
+## Initializes metaphlan
+##
+proc ModulesHelp { } {
+	global metaphlanversion
+
+	puts stderr "\tInitializes your environment to use the MetaPhlan"
+	puts stderr "\n\tVersion $metaphlanversion\n"
+}
+
+module-whatis "initializes metaphlan"
+
+module add python/2.7
+
+# for Tcl script use only
+set metaphlanversion 1.7.7
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/metaphlan/metaphlan-$metaphlanversion/nsegata-metaphlan-2f1b17a1f4e9/
+setenv METAPHLANROOT $::env(MODULESAPPSDIR)/metaphlan/metaphlan-$metaphlanversion/nsegata-metaphlan-2f1b17a1f4e9/

@@ -1,0 +1,22 @@
+#%Module1.0
+#
+## boost modulefile
+##
+## Initializes boost libraries
+##
+proc ModulesHelp { } {
+	global boostversion
+
+	puts stderr "\tInitializes your environment to use the boost libraries\n"
+	puts stderr "\n\tVersion $boostversion\n"
+}
+
+module-whatis "initializes boost libraries"
+
+# for Tcl script use only
+set boostversion 1.55.0
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path LD_LIBRARY_PATH $::env(MODULESAPPSDIR)/boost/$boostversion/lib

@@ -1,0 +1,25 @@
+#%Module1.0
+#
+## ngsplot modulefile
+##
+## Initializes ngsplot
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use ngsplot\n"
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "Initializes ngsplot program"
+
+# for Tcl script use only
+set version 2.47
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+module add r/3.1.0 
+module add python/2.7
+setenv NGSPLOT $::env(MODULESAPPSDIR)/ngsplot/2.47
+
+prepend-path PATH $::env(MODULESAPPSDIR)/ngsplot/$version/bin

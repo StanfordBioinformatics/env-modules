@@ -1,0 +1,26 @@
+#%Module1.0
+#
+## vcmm modulefile
+##
+## Initializes vcmm
+##
+proc ModulesHelp { } {
+	global vcmmversion
+
+	puts stderr "\tInitializes your environment to use the vcmm"
+	puts stderr "\n\tVersion $vcmmversion\n"
+}
+
+module-whatis "initializes vcmm"
+
+module add java/latest
+
+# for Tcl script use only
+set vcmmversion 1.0.1
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/vcmm/vcmm-$vcmmversion
+setenv VCMMROOT $::env(MODULESAPPSDIR)/vcmm/vcmm-$vcmmversion
+setenv VCMM $::env(MODULESAPPSDIR)/vcmm/vcmm-$vcmmversion

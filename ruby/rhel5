@@ -1,0 +1,27 @@
+#%Module1.0
+#
+## ruby modulefile
+##
+## Initializes ruby and rubygems on RHEL5 machines snively and nummel
+##
+proc ModulesHelp { } {
+	global bwaversion
+
+	puts stderr "\tInitializes your environment to use the bwa sequence alig
+nment program"
+	puts stderr "\n\tVersion $rubygemsversion\n"
+}
+
+module-whatis "initializes rubygems on snively and nummel"
+
+# for Tcl script use only
+set rubygemsversion rhel5
+
+set RUBYBIN /opt/scg/apps/ruby/1.8.7/bin
+set RUBYGEMSBIN /opt/scg/apps/rubygems/1.5.2/bin
+set GEMSBIN /opt/scg/apps/rubygems/gems/1.8/bin
+
+prepend-path PATH $RUBYBIN:$RUBYGEMSBIN:$GEMSBIN
+prepend-path GEM_HOME /opt/scg/apps/rubygems/gems/1.8
+prepend-path GEM_PATH /opt/scg/apps/rubygems/gems/1.8
+prepend-path RUBYLIB /opt/scg/apps/rubygems/1.5.2/lib

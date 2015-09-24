@@ -1,0 +1,24 @@
+#%Module1.0
+#
+## pseq modulefile
+##
+## Initializes pseq
+##
+proc ModulesHelp { } {
+global version
+
+puts stderr "\tInitializes your environment to use the pseq package"
+puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes pseq package"
+
+# Add required modules
+
+# for Tcl script use only.
+set version 0.10
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/pseq/0.10

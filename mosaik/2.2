@@ -1,0 +1,22 @@
+#%Module1.0
+#
+## MOSAIK modulefile
+##
+## Initializes MOSAIK
+##
+proc ModulesHelp { } {
+	global mosaikversion
+
+	puts stderr "\tInitializes your environment to use MOSAIK"
+	puts stderr "\n\tVersion $mosaikversion\n"
+}
+
+module-whatis "initializes MOSAIK"
+
+# for Tcl script use only
+set mosaikversion 2.2 
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/mosaik/$mosaikversion/bin

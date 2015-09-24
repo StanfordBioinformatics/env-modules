@@ -1,0 +1,24 @@
+#%Module1.0
+#
+## gvcftools modulefile
+##
+## Initializes gvcftools
+##
+proc ModulesHelp { } {
+global version
+
+puts stderr "\tInitializes your environment to use the gvcftools package"
+puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes gvcftools package"
+
+# Add required modules
+
+# for Tcl script use only.
+set version 0.16
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/gvcftools/0.16/bin

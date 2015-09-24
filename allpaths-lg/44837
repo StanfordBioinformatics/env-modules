@@ -1,0 +1,22 @@
+#%Module1.0
+#
+## allpaths-lg modulefile
+##
+## Initializes allpaths-lg
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the allpaths-lg package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes allpaths-lg package"
+
+# for Tcl script use only
+set version 44837
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/allpaths-lg/allpathslg-$version/bin

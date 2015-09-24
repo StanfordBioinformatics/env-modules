@@ -1,0 +1,23 @@
+#%Module1.0
+#
+## ncftp modulefile
+##
+## Initializes ncftp mapper
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the ncftp FTP client.\n"
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes ncftp FTP client\n"
+
+# for Tcl script use only
+set version 3.2.5
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/ncftp/$version/bin
+prepend-path MANPATH $::env(MODULESAPPSDIR)/ncftp/$version/man

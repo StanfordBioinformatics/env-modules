@@ -1,0 +1,24 @@
+#%Module1.0
+#
+## python modulefile
+##
+## Initializes python.
+##
+proc ModulesHelp { } {
+	global pythonversion
+
+	puts stderr "\tInitializes your environment to use python,"
+	puts stderr "\ta scripting language."
+	puts stderr "\n\tVersion $pythonversion\n"
+}
+
+module-whatis "initializes python"
+
+# Don't want to set this version if user has previously selected 2.7.
+conflict python/2.7
+
+set pythonversion 2.6
+
+# Not needed for scg3 cluster: 2.6 is the default installation.
+# module add modsappsdir
+# prepend-path PATH $::env(MODULESAPPSDIR)/python/$pythonversion/bin

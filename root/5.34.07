@@ -1,0 +1,25 @@
+#%Module1.0
+#
+## roob modulefile
+##
+## Initializes  root
+##
+proc ModulesHelp { } {
+	global rootversion
+
+	puts stderr "\tInitializes your environment to use ROOT"
+	puts stderr "\n\tVersion $rootversion\n"
+}
+
+module-whatis "initializes ROOT"
+
+# for Tcl script use only
+set rootversion 5.34.07
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+setenv ROOTSYS $:::env(MODULESAPPSDIR)/root/root-$rootversion
+setenv ROOTROOT $:::env(MODULESAPPSDIR)/root/root-$rootversion
+prepend-path PATH $:::env(MODULESAPPSDIR)/root/root-$rootversion/bin
+prepend-path LD_LIBRARY_PATH $:::env(MODULESAPPSDIR)/root/root-$rootversion/lib

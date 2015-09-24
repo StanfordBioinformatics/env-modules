@@ -1,0 +1,24 @@
+#%Module1.0
+#
+## mdust modulefile
+##
+## Initializes mdust
+##
+proc ModulesHelp { } {
+	global mdustversion
+
+	puts stderr "\tInitializes your environment to use the MDUST"
+	puts stderr "\n\tVersion $mdustversion\n"
+}
+
+module-whatis "initializes mdust"
+
+# for Tcl script use only
+set mdustversion 1.0
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/mdust/
+setenv MDUSTROOT $::env(MODULESAPPSDIR)/mdust/
+setenv MDUST $::env(MODULESAPPSDIR)/mdust/

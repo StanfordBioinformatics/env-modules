@@ -1,0 +1,30 @@
+#%Module1.0
+#
+## illumina_pipeline modulefile
+##
+## Initializes illumina pipeline modules
+##
+proc ModulesHelp { } {
+	global apfpipelinesversion
+
+	puts stderr "\tInitializes your environment to run the Illumina pipeline.\n"
+	puts stderr "\n\tVersion $pipelineversion\n"
+}
+
+module-whatis "initializes Illumina pipeline"
+
+# for Tcl script use only
+set pipelineversion 3.1.0
+
+module load sjm/1.2/15sec
+module load limshostenv/production
+module load lims_adapter/uhts-1.0
+
+module rm apf
+module add apf/production
+
+module rm apf_pipelines
+module add apf_pipelines/production
+
+
+

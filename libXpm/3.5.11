@@ -1,0 +1,26 @@
+#%Module1.0
+#
+## libXpm modulefile
+##
+## Initializes libXpm package
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the libXpm package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes libXpm package"
+
+# for Tcl script use only
+set version 3.5.11
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/libXpm/$version/bin
+prepend-path LD_LIBRARY_PATH $::env(MODULESAPPSDIR)/libXpm/$version/lib
+prepend-path C_INCLUDE_PATH $::env(MODULESAPPSDIR)/libXpm/$version/include/X11
+prepend-path MANPATH $::env(MODULESAPPSDIR)/libXpm/$version/share/man
+prepend-path PKG_CONFIG_PATH $::env(MODULESAPPSDIR)/libXpm/$version/lib/pkgconfig

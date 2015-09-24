@@ -1,0 +1,28 @@
+#%Module1.0
+#
+## rundir modulefile
+##
+## Initializes run directory management scripts.
+##
+proc ModulesHelp { } {
+	global rundirversion
+
+	puts stderr "\tInitializes your environment to use rundir,"
+	puts stderr "\ta set of utilities for working with Illumina run directories"
+	puts stderr "\n\tVersion $rundirversion\n"
+}
+
+module-whatis "initializes rundir scripts"
+
+# for Tcl script use only
+set rundirversion 3.0
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+module add ruby
+
+# rundir needs at least python 2.6
+#module add python/2.6
+
+prepend-path PATH $::env(MODULESAPPSDIR)/gbsc/rundir/$rundirversion/bin
+prepend-path PYTHONPATH $::env(MODULESAPPSDIR)/gbsc/rundir/$rundirversion/bin

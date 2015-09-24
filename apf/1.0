@@ -1,0 +1,25 @@
+#%Module1.0
+#
+## apf modulefile
+##
+## Initializes analysis pipeline framework.
+##
+proc ModulesHelp { } {
+	global apfversion
+
+	puts stderr "\tInitializes your environment to use apf, the analysis pipeline"
+	puts stderr "\tframework, to run automated analysis jobs on the compute cluster"
+	puts stderr "\n\tVersion $apfversion\n"
+}
+
+module-whatis "initializes apf (analysis pipeline framework)"
+
+# for Tcl script use only
+set apfversion 1.0
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prereq sjm
+append-path RUBYLIB $::env(MODULESAPPSDIR)/gbsc/apf/framework/$apfversion/lib
+append-path PATH $::env(MODULESAPPSDIR)/gbsc/apf/framework/$apfversion/bin

@@ -1,0 +1,23 @@
+#%Module1.0
+#
+## rsync modulefile
+##
+## Initializes rsync
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use a newer version of rsync\n"
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes rsync"
+
+# for Tcl script use only
+set version 3.1.0
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/rsync/$version/bin
+prepend-path MANPATH $::env(MODULESAPPSDIR)/rsync/$version/man

@@ -1,0 +1,24 @@
+#%Module1.0
+#
+## gatk modulefile
+##
+## Initializes gatk
+##
+proc ModulesHelp { } {
+	global gatkversion
+
+	puts stderr "\tInitializes your environment to use the GATK"
+	puts stderr "\n\tVersion $gatkversion\n"
+}
+
+module-whatis "initializes gatk"
+
+module add java
+
+# for Tcl script use only
+set gatkversion 2.2.2
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/gatk/gatk-$gatkversion/

@@ -1,0 +1,22 @@
+#%Module1.0
+#
+## DISCOVAR modulefile
+##
+## Initializes DISCOVAR
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the DISCOVAR package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes DISCOVAR package"
+
+# for Tcl script use only
+set version 51875
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/DISCOVAR/$version/bin

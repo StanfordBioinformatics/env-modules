@@ -1,0 +1,27 @@
+#%Module1.0
+#
+## samtools modulefile
+##
+## Initializes samtools package
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the samtools package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes samtools package"
+
+# for Tcl script use only
+set version 1.2
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/samtools/samtools-$version/bin
+prepend-path MANPATH $::env(MODULESAPPSDIR)/samtools/samtools-$version/share/man
+setenv SAMTOOLS_HOME $::env(MODULESAPPSDIR)/samtools/samtools-$version/bin
+prepend-path LD_LIBRARY_PATH $::env(MODULESAPPSDIR)/samtools/samtools-$version/lib
+prepend-path C_INCLUDE_PATH $::env(MODULESAPPSDIR)/samtools/samtools-$version/include/htslib
+

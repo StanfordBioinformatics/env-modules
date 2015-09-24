@@ -1,0 +1,22 @@
+#%Module1.0
+#
+## angsd modulefile
+##
+## Initializes angsd
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the angsd package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes angsd package"
+
+# for Tcl script use only
+set version f97d1b5e
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/angsd/$version

@@ -1,0 +1,24 @@
+#%Module1.0
+#
+## pyrcca modulefile
+##
+## Initializes pyrcca
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the pyrcca package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes pyrcca package"
+
+# for Tcl script use only
+set version bb40d0157b
+
+module add python/2.7
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PYTHONPATH $::env(MODULESAPPSDIR)/pyrcca/$version

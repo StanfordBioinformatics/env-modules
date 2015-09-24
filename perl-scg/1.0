@@ -1,0 +1,35 @@
+#%Module1.0
+#
+## perl-scg modulefile
+##
+## Initializes Perl path to use scg-cluster perl libraries
+##
+proc ModulesHelp { } {
+	global perlscgversion
+
+	puts stderr "\tInitializes your environment to use the scg-cluster perl libraries"
+	puts stderr "\n\tVersion $perlscgversion\n"
+}
+
+module-whatis "initializes scg perl libraries"
+
+# for Tcl script use only
+set perlscgversion 1.0
+
+# define the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH /opt/perl/bin
+prepend-path PATH $::env(MODULESAPPSDIR)/perl/bin
+
+#prepend-path PERL5LIB /opt/perl/lib/5.14.2/x86_64-linux-thread-multi
+prepend-path PERL5LIB $::env(MODULESAPPSDIR)/perl/lib/perl5
+prepend-path PERL5LIB $::env(MODULESAPPSDIR)/perl/lib/perl5/x86_64-linux-thread-multi
+prepend-path PERL5LIB $::env(MODULESAPPSDIR)/perl/lib/site_perl/5.14.2
+prepend-path PERL5LIB $::env(MODULESAPPSDIR)/perl/lib/site_perl/5.14.2/x86_64-linux-thread-multi
+prepend-path PERL5LIB $::env(MODULESAPPSDIR)/perl/lib/5.14.2
+
+# These are only needed for installing or building the perl-scg lib.
+#setenv PERL_LOCAL_LIB_ROOT "$::env(MODULESAPPSDIR)/perl"
+#setenv PERL_MB_OPT "--install_base $::env(MODULESAPPSDIR)/perl"
+#setenv PERL_MM_OPT "INSTALL_BASE=$::env(MODULESAPPSDIR)/perl"

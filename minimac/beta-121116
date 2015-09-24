@@ -1,0 +1,22 @@
+#%Module1.0
+#
+## minimac modulefile
+##
+## Initializes minimac
+##
+proc ModulesHelp { } {
+	global minimacversion
+
+	puts stderr "\tInitializes your environment to use the minimac Package\n"
+	puts stderr "\n\tVersion $minimacversion\n"
+}
+
+module-whatis "initializes minimac"
+
+# for Tcl script use only
+set machversion beta-121116
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/minimac/$machversion/

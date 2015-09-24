@@ -1,0 +1,22 @@
+#%Module1.0
+#
+## genemarks modulefile
+##
+## Initializes genemarks
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the genemarks package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes genemarks package"
+
+# for Tcl script use only
+set version 4.3
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/genemarks/$version/genemark_suite_linux_64/gmsuite

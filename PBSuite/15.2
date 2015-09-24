@@ -1,0 +1,19 @@
+#%Module1.0
+#
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the PBSuite"
+	puts stderr "\n\tVersion $version\n"
+}
+
+
+# for Tcl script use only
+set version 3.10.0
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/PBSuite/PBSuite_15.2.20/bin
+append-path PYTHONPATH /srv/gsfs0/software/PBSuite/PBSuite_15.2.20

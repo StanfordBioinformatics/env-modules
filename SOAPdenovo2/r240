@@ -1,0 +1,22 @@
+#%Module1.0
+#
+## SOAPdenovo2 modulefile
+##
+## Initializes SOAPdenovo2
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the SOAPdenovo2 package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes SOAPdenovo2 package"
+
+# for Tcl script use only
+set version r240
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/SOAPdenovo2/$version

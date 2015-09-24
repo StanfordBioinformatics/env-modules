@@ -1,0 +1,24 @@
+#%Module1.0
+#
+## bwa_tools modulefile
+##
+## Initializes BWA pipeline scripts.
+##
+proc ModulesHelp { } {
+	global bwatoolsversion
+
+	puts stderr "\tInitializes your environment to use the BWA tools,"
+	puts stderr "\ta set of utilities for working with Illumina sequence data"
+	puts stderr "\n\tVersion $bwatoolsversion\n"
+}
+
+module-whatis "initializes bwa pipeline scripts"
+
+# for Tcl script use only
+set bwatoolsversion 2.0
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+append-path PATH $::env(MODULESAPPSDIR)/gbsc/bwa_tools/$bwatoolsversion/bin
+append-path PYTHONPATH $::env(MODULESAPPSDIR)/gbsc/bwa_tools/$bwatoolsversion/bin

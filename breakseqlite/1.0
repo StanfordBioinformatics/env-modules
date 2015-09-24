@@ -1,0 +1,26 @@
+#%Module1.0
+#
+## breakseqlite modulefile
+##
+## Initializes  breakseqlite
+##
+proc ModulesHelp { } {
+	global breakseqliteversion
+
+	puts stderr "\tInitializes your environment to use BreakSeqLite"
+	puts stderr "\n\tVersion $breakseqliteversion\n"
+}
+
+module-whatis "initializes BreakSeqLite"
+
+# for Tcl script use only
+set breakseqliteversion 1.0
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+setenv BPLIB /srv/gsfs0/projects/gbsc/Resources/GATK/bplib/bplib.alt.fa
+
+setenv BREAKSEQ $:::env(MODULESAPPSDIR)/breakseqlite/breakseqlite-$breakseqliteversion
+setenv BREAKSEQLITEROOT $:::env(MODULESAPPSDIR)/breakseqlite/breakseqlite-$breakseqliteversion
+prepend-path PATH $:::env(MODULESAPPSDIR)/breakseqlite/breakseqlite-$breakseqliteversion

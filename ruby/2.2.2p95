@@ -1,0 +1,20 @@
+#%Module1.0
+#
+## ruby modulefile
+##
+## Initializes ruby scripting language
+##
+proc ModulesHelp { } {
+	global rubyversion
+
+	puts stderr "\tInitializes your environment to use the ruby scripting language"
+	puts stderr "\n\tVersion $rubyversion\n"
+}
+
+module-whatis "initializes ruby scripting language"
+
+# for Tcl script use only
+set version 2.2.2p95
+
+ module add modsappsdir
+prepend-path PATH $::env(MODULESAPPSDIR)/ruby/$version/bin

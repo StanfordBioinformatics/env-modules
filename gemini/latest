@@ -1,0 +1,23 @@
+#%Module1.0
+#
+## gemini modulefile
+##
+## Intiializes  gemini variant explorere
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the gemini variant explorer\n"
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes gemini variant explorer"
+
+# for Tcl script use only
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/gemini/bin
+
+# set env var for bowtie indexes location

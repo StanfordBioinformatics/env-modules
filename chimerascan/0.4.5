@@ -1,0 +1,26 @@
+#%Module1.0
+#
+## chimerascan modulefile
+##
+## Initializes chimerascan
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the chimerascan package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes chimerascan package"
+
+# for Tcl script use only
+set version 0.4.5
+
+module add python/2.7
+module add bowtie/1.1.1
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/chimerascan/$version/bin
+prepend-path PYTHONPATH $::env(MODULESAPPSDIR)/chimerascan/$version/lib/python2.7/site-packages

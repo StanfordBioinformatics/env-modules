@@ -1,0 +1,26 @@
+#%Module1.0
+#
+## rsem modulefile
+##
+## Initializes rsem
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the rsem package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes rsem package"
+
+# for Tcl script use only
+set version 1.2.21
+
+module add r/3.2.0
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/rsem/rsem-$version
+prepend-path PATH $::env(MODULESAPPSDIR)/rsem/rsem-$version/EBSeq
+prepend-path PATH $::env(MODULESAPPSDIR)/rsem/rsem-$version/sam

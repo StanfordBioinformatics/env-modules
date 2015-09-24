@@ -1,0 +1,22 @@
+#%Module1.0
+#
+## intogen mutations analysis modulefile
+##
+## Initializes intogen mutations analysis
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the intogen mutations analysis package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes intogen mutations analysis package"
+
+# for Tcl script use only
+set version intogen-mutations-analysis-7fbd0b4803be
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/intogen-mutations/$version

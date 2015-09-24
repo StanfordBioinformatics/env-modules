@@ -1,0 +1,23 @@
+#%Module1.0
+#
+## sgrep modulefile
+##
+## Initializes sgrep package
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the sgrep package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes sgrep package"
+
+# for Tcl script use only
+set version 1.94
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/sgrep/$version/bin
+prepend-path MANPATH $::env(MODULESAPPSDIR)/sgrep/$version/man

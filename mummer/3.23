@@ -1,0 +1,22 @@
+#%Module1.0
+#
+## mummer modulefile
+##
+## Initializes mummer
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the mummer package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes mummer package"
+
+# for Tcl script use only
+set version 3.23
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/mummer/MUMmer$version

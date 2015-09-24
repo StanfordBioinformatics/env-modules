@@ -1,0 +1,24 @@
+#%Module1.0
+#
+## illumina_tools modulefile
+##
+## Initializes Illumina toolkit package.
+##
+proc ModulesHelp { } {
+	global illuminatoolsversion
+
+	puts stderr "\tInitializes your environment to use the Illumina tools,"
+	puts stderr "\ta set of utilities for working with Illumina sequence data"
+	puts stderr "\n\tVersion $illuminatoolsversion\n"
+}
+
+module-whatis "initializes Illumina toolkit"
+
+# for Tcl script use only
+set illuminatoolsversion current
+
+# sets the MODULESAPPSDIR env var  
+module add modsappsdir
+
+append-path PATH $::env(MODULESAPPSDIR)/gbsc/illumina_tools/$illuminatoolsversion/bin
+prepend-path RUBYLIB $::env(MODULESAPPSDIR)/gbsc/illumina_tools/$illuminatoolsversion/lib

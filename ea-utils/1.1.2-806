@@ -1,0 +1,23 @@
+#%Module1.0
+#
+## ea-utils modulefile
+##
+## Initializes ea-utils
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the ea-utils package"
+	puts stderr "\n\tVersion $version\n"
+	puts stderr "\nCommand-line tools for processing biological sequencing data. Barcode demultiplexing, adapter trimming, etc.\n"
+}
+
+#module-whatis "initializes ea-utils package, command-line tools for processing biological sequencing data. Barcode demultiplexing, adapter trimming, etc."
+
+# for Tcl script use only
+set version 1.1.2-806
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/ea-utils/$version/bin

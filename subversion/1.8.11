@@ -1,0 +1,22 @@
+#%Module1.0
+#
+## subversion modulefile
+##
+## Initializes subversion
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the subversion package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes subversion package"
+
+# for Tcl script use only
+set version 1.8.11
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/subversion/$version/bin

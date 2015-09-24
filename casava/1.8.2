@@ -1,0 +1,23 @@
+#%Module1.0
+#
+## casava modulefile
+##
+## Initializes Illumina CASAVA package
+##
+proc ModulesHelp { } {
+	global casavaversion
+
+	puts stderr "\tInitializes your environment to use the Illumina "
+	puts stderr "\tCASAVA analysis package"
+	puts stderr "\n\tVersion $casavaversion\n"
+}
+
+module-whatis "initializes Illumina CASAVA package"
+
+# for Tcl script use only
+set casavaversion 1.8.2
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/illumina/CASAVA/$casavaversion/bin

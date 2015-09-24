@@ -1,0 +1,22 @@
+#%Module1.0
+#
+## texlive modulefile
+##
+## Initializes LaTex
+##
+proc ModulesHelp { } {
+	global texliveversion
+
+	puts stderr "\tInitializes your environment to use LaTex\n"
+	puts stderr "\n\tVersion $texliveversion\n"
+}
+
+module-whatis "initializes LaTex texlive program"
+
+# for Tcl script use only
+set texliveversion 2013
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/texlive/$texliveversion/bin/x86_64-linux

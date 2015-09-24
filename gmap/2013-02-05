@@ -1,0 +1,22 @@
+#%Module1.0
+#
+## gmap modulefile
+##
+## Initializes gmap aligner
+##
+proc ModulesHelp { } {
+	global gmapversion
+
+	puts stderr "\tInitializes your environment to use the gmap sequence alignment program"
+	puts stderr "\n\tVersion $gmapversion\n"
+}
+
+module-whatis "initializes gmap sequence alignment program"
+
+# for Tcl script use only
+set gmapversion 2013-02-05
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/gmap/gmap-$gmapversion/bin

@@ -1,0 +1,24 @@
+#%Module1.0
+#
+## SOFTWARE modulefile
+##
+## Initializes phrap
+##
+proc ModulesHelp { } {
+global version
+
+puts stderr "\tInitializes your environment to use the phrap package"
+puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes phrap package"
+
+# Add required modules
+
+# for Tcl script use only.
+set version 0.990329
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/phrap/0.990329

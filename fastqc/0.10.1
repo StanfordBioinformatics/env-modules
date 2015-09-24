@@ -1,0 +1,26 @@
+#%Module1.0
+#
+## fastqc modulefile
+##
+## Initializes fastqc.
+##
+proc ModulesHelp { } {
+	global fastqcversion
+
+	puts stderr "\tInitializes your environment to use fastqc, a tool"
+	puts stderr "\tfor evaluating sequence quality in a fastq file"
+	puts stderr "\n\tVersion $fastqcversion\n"
+}
+
+module-whatis "initializes fastqc"
+
+# for Tcl script use only
+set fastqcversion 0.10.1
+
+# fastqc requires java
+module add java
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/fastqc/$fastqcversion/FastQC

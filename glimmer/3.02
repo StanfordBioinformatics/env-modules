@@ -1,0 +1,25 @@
+#%Module1.0
+#
+## glimmer modulefile
+##
+## Initializes glimmer
+##
+proc ModulesHelp { } {
+global version
+
+puts stderr "\tInitializes your environment to use the glimmer package"
+puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes glimmer package"
+
+# Add required modules
+
+# for Tcl script use only.
+set version 3.02
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/glimmer/3.02/bin
+prepend-path PATH $::env(MODULESAPPSDIR)/glimmer/3.02/scripts

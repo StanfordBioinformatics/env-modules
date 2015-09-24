@@ -1,0 +1,23 @@
+#%Module1.0
+#
+## maq modulefile
+##
+## Initializes maq aligner
+##
+proc ModulesHelp { } {
+	global maqversion
+
+	puts stderr "\tInitializes your environment to use the maq sequence alignment program"
+	puts stderr "\n\tVersion $maqversion\n"
+}
+
+#module-whatis "initializes maq sequence alignment program"
+
+# for Tcl script use only
+set maqversion 0.7.1
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+setenv MAQROOT $::env(MODULESAPPSDIR)/maq/maq-$maqversion
+prepend-path PATH $::env(MODULESAPPSDIR)/maq/maq-$maqversion

@@ -1,0 +1,23 @@
+#%Module1.0
+#
+## blat modulefile
+##
+## Initializes blat package
+##
+proc ModulesHelp { } {
+	global blatversion
+
+	puts stderr "\tInitializes your environment to use blat\n"
+	puts stderr "\n\tVersion $blatversion\n"
+}
+
+module-whatis "initializes blat"
+
+# for Tcl script use only
+set blatversion 3.5
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+setenv BLATROOT $::env(MODULESAPPSDIR)/blat/$blatversion/bin/x86_64
+prepend-path PATH $::env(MODULESAPPSDIR)/blat/$blatversion/bin/x86_64

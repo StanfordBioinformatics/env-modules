@@ -1,0 +1,22 @@
+#%Module1.0
+#
+## sickle modulefile
+##
+## Initializes sickle
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the sickle package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes sickle package"
+
+# for Tcl script use only
+set version 1.33
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/sickle/$version

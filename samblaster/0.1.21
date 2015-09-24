@@ -1,0 +1,22 @@
+#%Module1.0
+#
+## samblaster modulefile
+##
+## Initializes samblaster
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the samblaster package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes samblaster package"
+
+# for Tcl script use only
+set version 0.1.21
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/samblaster/$version/samblaster

@@ -1,0 +1,27 @@
+#%Module1.0#####################################################################
+##
+## scg-private modulefile
+##
+proc ModulesHelp { } {
+     global GBSCHOME
+	puts stderr "\tThis module file will add $GBSCHOME/privatemodules to the"
+	puts stderr "\tlist of directories that the module command will search"
+	puts stderr "\tfor modules.  Place your own module files here."
+	puts stderr "\tThis module, when loaded, will create this directory"
+	puts stderr "\tif necessary."
+}
+
+module-whatis	"adds SCG private directory to MODULEPATH"
+
+# for Tcl script use only
+set GBSCHOME /srv/gsfs0/projects/gbsc  
+set gbscmoddir $GBSCHOME/privatemodules
+
+# create directory if necessary
+if [ module-info mode load ] {
+	if { ! [ file exists $gbscmoddir ] } {
+		file mkdir $gbscmoddir
+	}
+}
+
+module use --append $gbscmoddir

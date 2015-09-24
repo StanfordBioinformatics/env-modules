@@ -1,0 +1,23 @@
+#%Module1.0
+#
+## fastx_toolkit modulefile
+##
+## Initializes FASTX toolkit
+##
+proc ModulesHelp { } {
+	global fastxtoolkitversion
+
+	puts stderr "\tInitializes your environment to use the FASTX Toolkit"
+	puts stderr "\t(http://hannonlab.cshl.edu/fastx_toolkit/index.html)"
+	puts stderr "\n\tVersion $fastxtoolkitversion\n"
+}
+
+module-whatis "initializes FASTX toolkit"
+
+# for Tcl script use only
+set fastxtoolkitversion 0.0.14
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/fastx_toolkit/$fastxtoolkitversion/bin

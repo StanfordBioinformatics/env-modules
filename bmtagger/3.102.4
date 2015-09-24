@@ -1,0 +1,25 @@
+#%Module1.0
+#
+## bmtagger modulefile
+##
+## Initializes bmtagger
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the bmtagger package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes bmtagger package"
+
+module add blast/2.2.30+
+
+# for Tcl script use only
+set version 3.102.4
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/bmtagger/$version/bmtools/bmtagger
+prepend-path PATH $::env(MODULESAPPSDIR)/bmtagger/$version/srprism/gnuac/app

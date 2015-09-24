@@ -1,0 +1,22 @@
+#%Module1.0
+#
+## delly modulefile
+##
+## Initializes delly SV caller
+##
+proc ModulesHelp { } {
+	global dellyversion
+
+	puts stderr "\tInitializes your environment to use DELLY ofr SV calling"
+	puts stderr "\n\tVersion $dellyversion\n"
+}
+
+module-whatis "initializes delly SV caller"
+
+# for Tcl script use only
+set dellyversion 0.0.9
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/delly/delly-$dellyversion/

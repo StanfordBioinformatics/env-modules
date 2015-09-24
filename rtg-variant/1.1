@@ -1,0 +1,24 @@
+#%Module1.0
+#
+## rtg variant modulefile
+##
+## Initializes RTG (Real-Time Genomics) Suite
+##
+proc ModulesHelp { } {
+	global rtgversion
+
+	puts stderr "\tInitializes your environment to use the RTG (Real-Time Genomics) suite of software tools\n"
+	puts stderr "\n\tVersion $rtgversion\n"
+}
+
+module-whatis "initializes RTG Variant"
+
+# for Tcl script use only
+set rtgversion 1.1
+module load java
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+setenv RTGROOT $::env(MODULESAPPSDIR)/rtg-variant/rtg-variant-$rtgversion
+prepend-path PATH $::env(MODULESAPPSDIR)/rtg-variant/rtg-variant-$rtgversion

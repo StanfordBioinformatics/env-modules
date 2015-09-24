@@ -1,0 +1,25 @@
+#%Module1.0
+#
+## scg_core modulefile
+##
+## Initializes SCG Core utilities
+##
+proc ModulesHelp { } {
+	global scgcoreversion
+
+	puts stderr "\tInitializes your environment to use the SCG core,"
+	puts stderr "\ta set of utilities supporting other modules."
+	puts stderr "\n\tVersion $scgcoreversion\n"
+}
+
+module-whatis "initializes SCG core utilities"
+
+# for Tcl script use only
+set scgcoreversion 1.0
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/gbsc/scg_core/$scgcoreversion/bin
+prepend-path RUBYLIB $::env(MODULESAPPSDIR)/gbsc/scg_core/$scgcoreversion/lib
+prepend-path PYTHONPATH $::env(MODULESAPPSDIR)/gbsc/scg_core/$scgcoreversion/lib

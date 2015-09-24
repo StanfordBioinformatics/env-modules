@@ -1,0 +1,22 @@
+#%Module1.0
+#
+## chunkchr modulefile
+##
+## Initializes chunkchr mapper
+##
+proc ModulesHelp { } {
+	global chunkchrversion
+
+	puts stderr "\tInitializes your environment to use the chunkChromosome package\n"
+	puts stderr "\n\tVersion $chunkchrversion\n"
+}
+
+module-whatis "initializes chunkChromosome package"
+
+# for Tcl script use only
+set chunkchrversion 120828
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/ChunkChromosome/$chunkchrversion/

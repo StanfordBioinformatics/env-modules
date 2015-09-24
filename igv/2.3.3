@@ -1,0 +1,24 @@
+#%Module1.0
+#
+## igv modulefile
+##
+## Initializes igv
+##
+proc ModulesHelp { } {
+	global igvversion
+
+	puts stderr "\tInitializes your environment to use igv\n"
+	puts stderr "\n\tVersion $igvversion\n"
+}
+
+module-whatis "initializes igv"
+
+module add java
+
+# for Tcl script use only
+set igvversion 2.3.3
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/igv/igv-$igvversion

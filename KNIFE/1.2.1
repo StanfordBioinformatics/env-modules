@@ -1,0 +1,28 @@
+#%Module1.0
+#
+## KNIFE modulefile
+##
+## Initializes KNIFE
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the KNIFE package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes KNIFE package"
+
+# for Tcl script use only
+set version 1.2.1
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+module load bowtie/2.2.4
+module load samtools/1.2
+module load r/3.2.0
+module load python/2.7
+
+prepend-path PATH $::env(MODULESAPPSDIR)/bowtie/1.1.1
+prepend-path PATH $::env(MODULESAPPSDIR)/KNIFE/$version/circularRNApipeline_Cluster/

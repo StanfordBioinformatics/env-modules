@@ -1,0 +1,25 @@
+#%Module1.0
+#
+## stanovar modulefile
+##
+## Initializes stanovar
+##
+proc ModulesHelp { } {
+	global stanovarversion
+
+	puts stderr "\tInitializes your environment to use ANNOVAR"
+	puts stderr "\n\tVersion $stanovarversion\n"
+}
+
+module-whatis "initializes Stanovar"
+
+# for Tcl script use only
+set stanovarversion 0.1
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+module load python/2.7
+
+setenv STANOVARROOT $:::env(MODULESAPPSDIR)/stanovar/stanovar-$stanovarversion/
+setenv STANOVAR $:::env(MODULESAPPSDIR)/stanovar/stanovar-$stanovarversion/
+prepend-path PATH $:::env(MODULESAPPSDIR)/stanovar/stanovar-$stanovarversion/

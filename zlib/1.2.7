@@ -1,0 +1,12 @@
+#%Module1.0
+
+proc ModulesHelp { } {
+        puts stderr "\t zlib 1.2.7"
+        }
+
+module-whatis   "updated zlib"
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path		LD_LIBRARY_PATH		 $::env(MODULESAPPSDIR)/zlib/1.2.7/lib

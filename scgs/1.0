@@ -1,0 +1,15 @@
+#%Module0.1
+# Stanford Clinical Genomics Service Module File
+#
+## Initializes many applications
+##
+
+proc ModulesHelp { } {
+        puts stderr "\tInitializes your environment to use SCGS applications\n"
+}
+
+module-whatis "Initializes SCGS applications"
+
+prepend-path PATH /srv/gsfs0/SCGS/tools/misc/
+module load perl-scg
+module load tabix

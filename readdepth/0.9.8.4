@@ -1,0 +1,25 @@
+#%Module1.0
+#
+## readdepth modulefile
+##
+## Initializes readepth
+##
+proc ModulesHelp { } {
+	global readdepthversion
+
+	puts stderr "\tInitializes your environment to use the ReadDepth"
+	puts stderr "\n\tVersion $readdepthversion\n"
+}
+
+module-whatis "initializes readDepth"
+
+# for Tcl script use only
+set readdepthversion 0.9.8.4
+module load samtools
+module load r
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/readdepth/readdepth-$readdepthversion/
+setenv READDEPTHROOT $::env(MODULESAPPSDIR)/readdepth/readdepth-$readdepthversion/

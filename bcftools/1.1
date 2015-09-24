@@ -1,0 +1,26 @@
+#%Module1.0
+#
+## bcftools modulefile
+##
+## Initializes bcftools package
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the bcftools package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes bcftools package"
+
+# for Tcl script use only
+set version 1.1
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/bcftools/$version/bcftools
+prepend-path MANPATH $::env(MODULESAPPSDIR)/bcftools/$version/bcftools/doc
+setenv BCFTOOLS_HOME $::env(MODULESAPPSDIR)/bcftools/$version/bcftools
+setenv BCFTOOLS_PLUGINS $::env(MODULESAPPSDIR)/bcftools/$version/bcftools/plugins
+setenv LD_LIBRARY_PATH $::env(MODULESAPPSDIR)/bcftools/$version/htslib

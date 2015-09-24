@@ -1,0 +1,24 @@
+#%Module1.0
+#
+## annovar modulefile
+##
+## Initializes annovar
+##
+proc ModulesHelp { } {
+	global annovarversion
+
+	puts stderr "\tInitializes your environment to use ANNOVAR"
+	puts stderr "\n\tVersion $annovarversion\n"
+}
+
+module-whatis "initializes ANNOVAR"
+
+# for Tcl script use only
+set annovarversion 20141112
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+setenv ANNOVAR $:::env(MODULESAPPSDIR)/annovar/annovar-$annovarversion
+setenv ANNOVARROOT $:::env(MODULESAPPSDIR)/annovar/annovar-$annovarversion
+prepend-path PATH $:::env(MODULESAPPSDIR)/annovar/annovar-$annovarversion

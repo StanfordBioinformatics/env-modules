@@ -1,0 +1,81 @@
+#%Module1.0
+# HugeSeq Module File
+#
+## HugeSeq modulefile
+##
+## Initializes HugeSeq
+##
+
+proc ModulesHelp { } {
+	#global hugeseq_version
+        puts stderr "\tInitializes your environment to use the HugeSeq variant detection pipeline\n"
+        puts stderr "\tVersion $hugeseq_version\n"
+}
+
+module-whatis "Initializes the HugeSeq variant detection pipeline"
+
+set hugeseq_root /srv/gs1/projects/snyder/cuiping/app/HugeSeq/1.1
+
+# Setting paths and env for HugeSeq
+set app_dir $hugeseq_root/app
+set dat_dir $hugeseq_root/data
+set hugeseq_version 1.1
+set hugeseq_home $app_dir/HugeSeq_v$hugeseq_version
+setenv HUGESEQ_HOME $hugeseq_home
+prepend-path PATH $hugeseq_home/bin
+
+# Setting paths and env for the Simple Job Manager (SJM)
+prepend-path PATH $app_dir/sjm-1.0/bin
+
+# Setting paths for programming tools
+prepend-path PATH $app_dir/jdk1.6.0_21/bin
+prepend-path PATH $app_dir/python-2.7/bin
+prepend-path LD_LIBRARY_PATH $app_dir/python-2.7/lib
+
+# Setting paths and env for alignment tools
+prepend-path PATH $app_dir/bwa-0.6.1
+
+# Setting paths and env for variant detection annotation tools
+setenv GATK $app_dir/GenomeAnalysisTK-1.6-9
+setenv PINDEL $app_dir/pindel-r19
+setenv BREAKDANCER $app_dir/breakdancer-1.1
+setenv CNVNATOR $app_dir/CNVnator-0.2.2
+setenv BREAKSEQ $app_dir/BreakSeqLite-1.0
+setenv ANNOVAR $app_dir/annovar-v110506
+
+# Setting perl libraries (for BreakDancer)
+prepend-path PERL5LIB $app_dir/perllib/File-Path-2.08/blib/lib
+prepend-path PERL5LIB $app_dir/perllib/Statistics-Descriptive-2.6/blib/lib
+prepend-path PERL5LIB $app_dir/perllib/GD-2.45/blib/lib
+prepend-path PERL5LIB $app_dir/perllib/GDGraph-1.44/blib/lib
+prepend-path PERL5LIB $app_dir/perllib/GDGraph-histogram-1.1/blib/lib
+prepend-path PERL5LIB $app_dir/perllib/GDTextUtil-0.86/blib/lib
+prepend-path PERL5LIB $app_dir/perllib/Math-CDF-0.1/blib/lib
+
+# Setting paths and env for utilities
+setenv PICARD $app_dir/picard-tools-1.32
+prepend-path PATH $app_dir/samtools-0.1.14
+prepend-path PATH $app_dir/samtools-0.1.14/bcftools
+prepend-path PATH $app_dir/BEDTools-Version-2.12.0/bin
+prepend-path PATH $app_dir/tabix-0.2.4
+prepend-path PATH $app_dir/vcftools_0.1.5/bin
+prepend-path PERL5LIB $app_dir/vcftools_0.1.5/perl
+
+# Setting paths and env for ROOT
+set rootsys $app_dir/root-5.26
+setenv ROOTSYS $rootsys
+prepend-path PATH $rootsys/bin
+prepend-path LD_LIBRARY_PATH $rootsys/lib
+
+# Setting env for python and tmp dir
+#setenv TMP $dat_dir/tmp
+setenv TMP /srv/gs1/projects/snyder/cuiping/data/tmp
+
+# Setting env for supporting databases
+#setenv REF $app_dir/referencefiles/majorAllele/CEU/CEUref.fasta
+#setenv SNP $app_dir/referencefiles/dbsnp/dbsnp_135.majorchr.hg19.vcf
+
+setenv REF $app_dir/referencefiles/ucsc-hg19/ucsc.hg19.fasta
+setenv SNP $app_dir/referencefiles/dbsnp/dbsnp_135.hg19.vcf
+setenv BPLIB $app_dir/referencefiles/bplib/bplib.alt.fa
+

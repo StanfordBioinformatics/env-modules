@@ -1,0 +1,26 @@
+#%Module1.0
+#
+## bismark modulefile
+##
+## Initializes Bismark bisulfite mapper
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the Bismark bisulfite mapper\n"
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes the Bismark bisulfite mapper" 
+
+# for Tcl script use only
+set version 0.13.0
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+# Bismark depends on bowtie and samtools.
+prereq bowtie
+prereq samtools
+
+prepend-path PATH $::env(MODULESAPPSDIR)/bismark/$version

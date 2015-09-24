@@ -1,0 +1,24 @@
+#%Module1.0
+#
+## RNASequel modulefile
+##
+## Initializes RNASequel
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the RNASequel package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes RNASequel package"
+
+# for Tcl script use only
+set version 0.9b
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+module add boost/1.58.0
+module add gcc/4.8.1
+
+prepend-path PATH $::env(MODULESAPPSDIR)/RNASequel/$version

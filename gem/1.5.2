@@ -1,0 +1,23 @@
+#%Module1.0
+#
+## gem modulefile
+##
+## Initializes Ruby's gem package manager
+##
+proc ModulesHelp { } {
+	global gemversion
+
+	puts stderr "\tInitializes your environment to use Ruby's gem package manager"
+	puts stderr "\n\tVersion $gemversion\n"
+}
+
+module-whatis "initializes Ruby's gem package manager"
+
+# for Tcl script use only
+set gemversion 1.5.2
+
+module add modsappsdir
+prereq rubygems
+
+prepend-path PATH $::env(MODULESAPPSDIR)/rubygems/$gemversion/bin
+prepend-path RUBYLIB $::env(MODULESAPPSDIR)/rubygems/$gemversion/lib

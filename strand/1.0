@@ -1,0 +1,24 @@
+#%Module1.0
+#
+## strand modulefile
+##
+## Initializes strand package
+##
+proc ModulesHelp { } {
+	global bwaversion
+
+	puts stderr "\tInitializes your environment to use the strand package,\n"
+	puts stderr "\n\tVersion $strandversion\n"
+}
+
+module-whatis "initializes strand package"
+
+# for Tcl script use only
+set strandversion 1.0
+module load java/latest
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+setenv STRANDROOT $::env(MODULESAPPSDIR)/gbsc/strand
+prepend-path PATH $::env(MODULESAPPSDIR)/gbsc/strand

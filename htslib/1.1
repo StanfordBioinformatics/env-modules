@@ -1,0 +1,24 @@
+#%Module1.0
+#
+## htslib modulefile
+##
+## Initializes htslib package
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the htslib package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes htslib package"
+
+# for Tcl script use only
+set version 1.1
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/htslib/htslib-$version/bin
+prepend-path MANPATH $::env(MODULESAPPSDIR)/htslib/htslib-$version/man
+setenv HTSLIB_HOME $::env(MODULESAPPSDIR)/htslib/htslib-$version

@@ -1,0 +1,23 @@
+#%Module1.0
+#
+## illumina_pipeline modulefile
+##
+## Initializes illumina pipeline modules
+##
+proc ModulesHelp { } {
+
+	puts stderr "\tInitializes your environment to run the Illumina pipeline.\n"
+}
+
+module-whatis "initializes Illumina pipeline"
+
+# for Tcl script use only
+
+module load sjm
+module rm apf
+module add apf/dev
+module rm apf_pipelines
+module add apf_pipelines/dev
+module add limshostenv/syapse_testserver
+module add lims_adapter/syapse-1.0
+module add python/2.7

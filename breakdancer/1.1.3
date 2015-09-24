@@ -1,0 +1,33 @@
+#%Module1.0
+#
+## breakdancer modulefile
+##
+## Initializes  breakdancer
+##
+proc ModulesHelp { } {
+	global breakdancerversion
+
+	puts stderr "\tInitializes your environment to use breakdancer"
+	puts stderr "\n\tVersion $breakdancerversion\n"
+}
+
+module-whatis "initializes breakdancer"
+
+# for Tcl script use only
+set breakdancerversion 1.1.3
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+setenv PERLLIB /srv/gsfs0/software/hugeseq/hugeseq-2.0/perllib
+prepend-path PERL5LIB $::env(PERLLIB)/File-Path-2.08/blib/lib
+prepend-path PERL5LIB $::env(PERLLIB)/Statistics-Descriptive-2.6/blib/lib
+prepend-path PERL5LIB $::env(PERLLIB)/GD-2.45/blib/lib
+prepend-path PERL5LIB $::env(PERLLIB)/GDGraph-1.44/blib/lib
+prepend-path PERL5LIB $::env(PERLLIB)/GDGraph-histogram-1.1/blib/lib
+prepend-path PERL5LIB $::env(PERLLIB)/GDTextUtil-0.86/blib/lib
+prepend-path PERL5LIB $::env(PERLLIB)/Math-CDF-0.1/blib/lib
+
+setenv BREAKDANCER $:::env(MODULESAPPSDIR)/breakdancer/breakdancer-$breakdancerversion/
+setenv BREAKDANCERROOT $:::env(MODULESAPPSDIR)/breakdancer/breakdancer-$breakdancerversion/
+prepend-path PATH $:::env(MODULESAPPSDIR)/breakdancer/breakdancer-$breakdancerversion/

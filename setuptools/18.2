@@ -1,0 +1,26 @@
+#%Module1.0
+#
+## setuptools modulefile
+##
+## Initializes setuptools
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the setuptools package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes setuptools package"
+
+# for Tcl script use only
+set version 18.2
+
+module add python/2.7
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/setuptools/$version/bin
+prepend-path PYTHONPATH $::env(MODULESAPPSDIR)/setuptools/$version
+prepend-path PYTHONPATH $::env(MODULESAPPSDIR)/setuptools/$version/lib/python

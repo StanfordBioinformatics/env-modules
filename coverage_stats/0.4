@@ -1,0 +1,23 @@
+#%Module1.0
+#
+## coverage_stats modulefile
+#
+proc ModulesHelp { } {
+global version
+
+puts stderr "\tInitializes your environment to use the coverage_stats package"
+puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes coverage_stats package"
+
+# Add required modules
+#module add pubble/1.0  # Example
+
+# for Tcl script use only.
+set version 0.4 
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH /srv/gsfs0/SCGS/pipeline/coverage_stats/0.4

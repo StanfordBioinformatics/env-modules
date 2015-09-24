@@ -1,0 +1,25 @@
+#%Module1.0
+#
+## mapdamage modulefile
+##
+## Initializes mapdamage
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the mapdamage package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes mapdamage package"
+
+# for Tcl script use only
+set version 2.0.2-14
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+module add r/3.1.1
+module add python/2.7
+
+prepend-path PATH $::env(MODULESAPPSDIR)/mapDamage/$version/bin
+prepend-path PYTHONPATH $::env(MODULESAPPSDIR)/mapDamage/$version/lib/python

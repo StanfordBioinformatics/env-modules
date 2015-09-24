@@ -1,0 +1,22 @@
+#%Module1.0
+#
+## STAR modulefile
+##
+## Initializes STAR.
+##
+proc ModulesHelp { } {
+	global STARversion
+
+	puts stderr "\tInitializes your environment to use MEGAN5 (http://ab.inf.uni-tuebingen.de/software/megan5/)." 
+}
+
+module-whatis "A taxonomic and functional analysis tool for use within metagenomics."
+
+# for Tcl script use only
+set version 5
+
+module add modsappsdir
+module load java/latest 
+
+prepend-path PATH $::env(MODULESAPPSDIR)/megan/megan${version}
+

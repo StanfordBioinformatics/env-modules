@@ -1,0 +1,23 @@
+#%Module1.0
+#
+## GnuPG (GPG) modulefile
+##
+## Initializes GNU Privacy Guard
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the GNU Privacy Guard (GPG) cryptography software\n"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes bwa sequence alignment program"
+
+# for Tcl script use only
+set version 1.4.18
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/gnupg/$version/bin
+prepend-path MANPATH $::env(MODULESAPPSDIR)/gnupg/$version/share/man

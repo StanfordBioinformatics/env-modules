@@ -1,0 +1,23 @@
+#%Module1.0
+#
+## pgp modulefile
+##
+## Initializes Symantec PGP command line decrypter
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the Symantec PGP command line\n"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes bwa sequence alignment program"
+
+# for Tcl script use only
+set version 10.3.2
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path LD_LIBRARY_PATH $::env(MODULESAPPSDIR)/pgp/$version/lib64
+prepend-path PATH $::env(MODULESAPPSDIR)/pgp/$version/bin

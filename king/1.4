@@ -1,0 +1,23 @@
+#%Module1.0
+#
+## king modulefile
+##
+## Initializes king
+##
+proc ModulesHelp { } {
+	global kingversion
+
+	puts stderr "\tInitializes your environment to use the KING"
+	puts stderr "\n\tVersion $kingversion\n"
+}
+
+module-whatis "initializes king"
+
+# for Tcl script use only
+set kingversion 1.4
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/king/king-$kingversion
+setenv KINGROOT $::env(MODULESAPPSDIR)/king/king-$kingversion

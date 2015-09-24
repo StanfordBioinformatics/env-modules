@@ -1,0 +1,22 @@
+#%Module1.0
+#
+##
+proc ModulesHelp { } {
+	puts stderr "\tInitializes your environment to use scripts for working with Syapse for ENCODE"
+}
+
+set version current
+
+# sets the MODULESAPPSDIR env var
+module load modsappsdir
+module load python/2.7
+module load gbsc/scgpm_lims
+module load gbsc/gbsc_utils
+module load gbsc/limshostenv/prod
+module load gbsc/mandrill
+module load sjm/1.2/15sec
+module load gbsc/snap/production
+
+prepend-path PATH $::env(MODULESAPPSDIR)/gbsc/encode/$version/dcc_submit
+prepend-path PYTHONPATH $::env(MODULESAPPSDIR)/gbsc/encode/$version/dcc_submit
+prepend-path PYTHONPATH $::env(MODULESAPPSDIR)

@@ -1,0 +1,21 @@
+#%Module1.0
+#
+## illumina_tools modulefile
+##
+## Initializes Illumina toolkit package.
+##
+proc ModulesHelp { } {
+	global illuminatoolsversion
+	puts stderr "\n\tThe lzip compression utility: http://nongnu.askapache.com//lzip/manual/lzip_manual.html"
+	puts stderr "\n\tVersion $illuminatoolsversion\n"
+}
+
+module-whatis "initializes Illumina toolkit"
+
+# for Tcl script use only
+set version 1.17
+
+# sets the MODULESAPPSDIR env var  
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/lzip/$version/bin

@@ -1,0 +1,24 @@
+#%Module1.0
+#
+## bcl2fastq modulefile
+##
+## Initializes bcl2fastq utilities
+##
+proc ModulesHelp { } {
+	global bcl2fastqversion
+
+	puts stderr "\tIllumina BCL to FASTQ conversion and demultiplexing for HiSeq machines."
+	puts stderr "\n\tVersion $bcl2fastqversion\n"
+}
+
+module-whatis "initializes bcl2fastq utilities"
+
+module add modsappsdir
+# sets the MODULESAPPSDIR env var
+# for Tcl script use only
+
+set bcl2fastqversion 1.8.4
+setenv BCL2FASTQTESTDIR $:::env(MODULESAPPSDIR)/bcl2fastq/1.8.4/share/bcl2fastq-1.8.4/examples/Validation/
+
+
+prepend-path PATH $::env(MODULESAPPSDIR)/bcl2fastq/$bcl2fastqversion/bin

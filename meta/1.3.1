@@ -1,0 +1,22 @@
+#%Module1.0
+#
+## meta modulefile
+##
+## Initializes meta
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the meta package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes meta package"
+
+# for Tcl script use only
+set version 1.3.1
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/meta/$version

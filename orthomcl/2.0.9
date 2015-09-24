@@ -1,0 +1,26 @@
+#%Module1.0
+#
+## orthomcl modulefile
+##
+## Initializes orthomcl
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the orthomcl package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes orthomcl package"
+
+#module add perl-scg/1.0
+module add mcl/14-137
+
+# for Tcl script use only
+set version 2.0.9
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/orthomcl/orthomclSoftware-v$version/bin
+prepend-path PERL5LIB $::env(MODULESAPPSDIR)/orthomcl/orthomclSoftware-v$version/lib/perl

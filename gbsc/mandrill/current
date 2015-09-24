@@ -1,0 +1,25 @@
+#%Module1.0
+#
+## breakdancer modulefile
+##
+## Initializes  breakdancer
+##
+proc ModulesHelp { } {
+	global breakdancerversion
+
+	puts stderr "\tInitializes your environment to use the GBSC sequenicng pipeline on DNAnexus"
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes breakdancer"
+
+# for Tcl script use only
+set version current
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+module load python/2.7
+module load dnanexus_new/1.5.4 
+
+prepend-path PATH /srv/gsfs0/software/gbsc/gbsc_utils/mandrill/
+prepend-path PYTHONPATH /srv/gsfs0/software/gbsc/gbsc_utils/mandrill/

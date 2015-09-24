@@ -1,0 +1,25 @@
+#%Module1.0
+#
+## google-cloud-sdk modulefile
+##
+## Initializes Google Cloud SDK
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the Google Cloud SDK\n"
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes Google Cloud SDK"
+
+# for Tcl script use only
+set version 0.9.44
+
+# Require python/2.7
+prereq python/2.7
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/google-cloud-sdk/$version/google-cloud-sdk/bin

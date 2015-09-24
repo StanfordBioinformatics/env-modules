@@ -1,0 +1,22 @@
+#%Module1.0
+#
+## bfast modulefile
+##
+## Initializes bfast package
+##
+proc ModulesHelp { } {
+	global bfastversion
+
+	puts stderr "\tInitializes your environment to use BFAST: Blat-like Fast Accurate Search Tool"
+	puts stderr "\n\tVersion $bfastversion\n"
+}
+
+module-whatis "initializes bfast program"
+
+# for Tcl script use only
+set bfastversion 0.7.0a
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/bfast/$bfastversion/bin

@@ -1,0 +1,29 @@
+#%Module1.0
+#
+## trim_galore modulefile
+##
+## Initializes trim_galore.
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use trim_galore, a tool to"
+	puts stderr "\tconsistently apply quality and adapter trimming to FastQ files"
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes trim_galore"
+
+# for Tcl script use only
+set version 0.3.3
+
+# trim_galore requires python/2.7 for cutadapt
+module add python/2.7
+
+# trim_galore requires fastqc
+module add fastqc
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/trim_galore/$version/bin

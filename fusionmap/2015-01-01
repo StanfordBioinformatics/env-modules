@@ -1,0 +1,26 @@
+#%Module1.0
+#
+## fusionmap modulefile
+##
+## Initializes fusionmap
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the fusionmap package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes fusionmap package"
+
+# for Tcl script use only
+set version 2015-01-01
+# Version: 8.0.0.55
+
+module add mono/3.10.0
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+setenv FMBIN $::env(MODULESAPPSDIR)/fusionmap/FusionMap_$version/bin
+prepend-path PATH $::env(MODULESAPPSDIR)/fusionmap/FusionMap_$version/bin

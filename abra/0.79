@@ -1,0 +1,27 @@
+#%Module1.0
+#
+## abra modulefile
+##
+## Initializes abra
+##
+proc ModulesHelp { } {
+	global abraversion
+
+	puts stderr "\tInitializes your environment to use the abra"
+	puts stderr "\n\tVersion $abraversion\n"
+}
+
+module-whatis "initializes abra"
+
+module add java/latest
+module load bwa/0.7.4
+
+# for Tcl script use only
+set abraversion 0.79
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/abra/abra-$abraversion
+setenv ABRAROOT $::env(MODULESAPPSDIR)/abra/abra-$abraversion
+setenv ABRA $::env(MODULESAPPSDIR)/abra/abra-$abraversion

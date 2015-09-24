@@ -1,0 +1,24 @@
+#%Module1.0
+#
+## scalpel modulefile
+##
+## Initializes scalpel
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the scalpel package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes scalpel package"
+
+# for Tcl script use only
+set version 0.3.2
+
+#module add perl-scg/1.0 
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/scalpel/scalpel-$version

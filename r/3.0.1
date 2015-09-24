@@ -1,0 +1,16 @@
+#%Module1.0
+
+proc ModulesHelp { } {
+        puts stderr "\t ITS-maintained R v 3.0.1 (in GPFS)"
+        puts stderr "\t use R for CLI"
+        puts stderr "\t use library(); to see installed R packages"
+        puts stderr "\t built on RHEL6.3"
+        }
+
+module-whatis   "Latest version of R"
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path	PATH			$::env(MODULESAPPSDIR)/R/R-3.0.1/bin
+prepend-path	LD_LIBRARY_PATH		$::env(MODULESAPPSDIR)/R/R-3.0.1/lib64/R/lib

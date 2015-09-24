@@ -1,0 +1,23 @@
+#%Module1.0
+#
+## tabix modulefile
+##
+## Initializes  tabix
+##
+proc ModulesHelp { } {
+	global tabixversion
+
+	puts stderr "\tInitializes your environment to use Tabix"
+	puts stderr "\n\tVersion $tabixversion\n"
+}
+
+module-whatis "initializes Tabix"
+
+# for Tcl script use only
+set tabixversion 0.2.6
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+setenv TABIXROOT $:::env(MODULESAPPSDIR)/tabix/tabix-$tabixversion/
+prepend-path PATH $:::env(MODULESAPPSDIR)/tabix/tabix-$tabixversion/

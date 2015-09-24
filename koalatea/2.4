@@ -1,0 +1,25 @@
+#%Module1.0
+#
+## koalatea modulefile
+#
+proc ModulesHelp { } {
+global version
+
+puts stderr "\tInitializes your environment to use the koalatea package"
+puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes pubble package"
+
+# Add required modules
+#module add pubble/1.0  # Example
+
+# for Tcl script use only.
+set version 2.4 
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+module load jsonwf/1.0.4
+module load python/3.4
+
+prepend-path PATH /srv/gsfs0/SCGS/pipeline/koalatea/2.4

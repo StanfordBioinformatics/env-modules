@@ -1,0 +1,31 @@
+#%Module1.0
+#
+## mutsigcv modulefile
+##
+## Initializes mutsigcv
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the mutsigcv package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes mutsigcv package"
+
+# for Tcl script use only
+set version 1.4
+
+module add mcr/8.1
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/mutsigcv/MutSigCV_$version
+setenv MCRROOT $::env(MODULESAPPSDIR)/mcr/R2013a-8.1/v81
+setenv COVERAGE /srv/gsfs0/shared_data/RefGenomes/H_sapiens/hg19/indexes/mutsigcv/$version/exome_full192.coverage.txt
+setenv COVARIATES /srv/gsfs0/shared_data/RefGenomes/H_sapiens/hg19/indexes/mutsigcv/$version/gene.covariates.txt
+setenv DICTIONARY /srv/gsfs0/shared_data/RefGenomes/H_sapiens/hg19/indexes/mutsigcv/$version/mutation_type_dictionary_file.txt
+setenv CHR19 /srv/gsfs0/shared_data/RefGenomes/H_sapiens/hg19/indexes/mutsigcv/$version/chr_files_hg19
+#echo 'Run as follows after substituting maf input file and results output directory:'
+#echo 'run_MutSigCV.sh $MCRROOT my_mutations.maf $COVERAGE $COVARIATES my_results_dir $DICTIONARY $CHR19'

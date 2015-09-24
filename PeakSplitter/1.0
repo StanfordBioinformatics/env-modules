@@ -1,0 +1,22 @@
+#%Module1.0
+#
+## PeakSplitter modulefile
+##
+## Initializes PeakSplitter
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use PeakSplitter"
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes PeakSplitter"
+
+# for Tcl script use only
+set version 1.0
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $:::env(MODULESAPPSDIR)/PeakSplitter/$version

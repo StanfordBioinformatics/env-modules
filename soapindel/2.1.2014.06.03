@@ -1,0 +1,25 @@
+#%Module1.0
+#
+## soapindel modulefile
+##
+## Initializes soapindel
+##
+proc ModulesHelp { } {
+	global soapindelversion
+
+	puts stderr "\tInitializes your environment to use the SOAPINDEL"
+	puts stderr "\n\tVersion $soapindelversion\n"
+}
+
+module-whatis "initializes soapindel"
+
+# for Tcl script use only
+set soapindelversion 2.1.2014.06.03
+module load samtools
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/soapindel/soapindel-$soapindelversion
+setenv SOAPINDELROOT $::env(MODULESAPPSDIR)/soapindel/soapindel-$soapindelversion
+setenv SOAPINDEL $::env(MODULESAPPSDIR)/soapindel/soapindel-$soapindelversion

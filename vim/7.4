@@ -1,0 +1,25 @@
+#%Module1.0
+#
+## vim modulefile
+##
+## Initializes vim
+##
+proc ModulesHelp { } {
+global version
+
+puts stderr "\tInitializes your environment to use the vim package"
+puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes vim package"
+
+# Add required modules
+#module add python/2.7  # Example
+
+# for Tcl script use only.
+set version 7.4
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/vim/7.4/bin

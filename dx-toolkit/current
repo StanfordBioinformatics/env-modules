@@ -1,0 +1,22 @@
+#%Module1.0
+#
+## dna_nexus modulefile
+##
+## Initializes dna_nexus package.
+##
+proc ModulesHelp { } {
+	global dnanexusversion
+
+	puts stderr "\tInitializes your environment to use dna_nexus,"
+	puts stderr "\tutilities to upload data to DNAnexus"
+	puts stderr "\n\tVersion $dnanexusversion\n"
+}
+
+module-whatis "initializes dna_nexus"
+
+# for Tcl script use only
+set version 0.131.0
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+setenv DXTOOLKIT $::env(MODULESAPPSDIR)/dx-toolkit/$version/environment

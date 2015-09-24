@@ -1,0 +1,26 @@
+#%Module1.0
+#
+## chqpoint modulefile
+##
+## Initializes chqpoint pipeline development platform
+##
+proc ModulesHelp { } {
+	global chqpointversion
+
+	puts stderr "\tInitializes your environment to use the chqpoint pipeline development platform"
+	puts stderr "\n\tVersion $chqpointversion\n"
+}
+
+module-whatis "initializes chqpoint pipeline development platform"
+
+# for Tcl script use only
+set chqpointversion 0.1
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+module add python/2.7
+
+prepend-path PYTHONPATH $::env(MODULESAPPSDIR)/gbsc/chqpoint/$chqpointversion/
+prepend-path PATH $::env(MODULESAPPSDIR)/gbsc/chqpoint/$chqpointversion/bin/
+setenv CHQPOINTCONFIG $::env(MODULESAPPSDIR)/gbsc/chqpoint/$chqpointversion/config/

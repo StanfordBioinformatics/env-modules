@@ -1,0 +1,22 @@
+#%Module1.0
+#
+## rubygems modulefile
+##
+## Initializes rubygems location
+##
+proc ModulesHelp { } {
+	global rubygemsversion
+
+	puts stderr "\tInitializes your environment to use a specific collection of ruby gems"
+	puts stderr "\n\tVersion $rubygemsversion\n"
+}
+
+module-whatis "initializes ruby gems collection"
+
+# for Tcl script use only
+set rubygemsversion 1.8.7
+
+module add modsappsdir
+setenv GEM_HOME $::env(MODULESAPPSDIR)/rubygems/gems/1.8
+setenv GEM_PATH $::env(MODULESAPPSDIR)/rubygems/gems/1.8
+prepend-path PATH $::env(MODULESAPPSDIR)/rubygems/gems/1.8/bin

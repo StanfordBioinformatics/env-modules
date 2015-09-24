@@ -1,0 +1,23 @@
+#%Module1.0
+#
+## snap modulefile
+##
+## Initializes snap package
+##
+proc ModulesHelp { } {
+	global snapversion
+
+	puts stderr "\tInitializes your environment to use snap\n"
+	puts stderr "\n\tVersion $snapversion\n"
+}
+
+module-whatis "initializes snap"
+
+# for Tcl script use only
+set snapversion 02162013
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+setenv SNAPROOT $::env(MODULESAPPSDIR)/snap/snap-$snapversion/
+prepend-path PATH $::env(MODULESAPPSDIR)/snap/snap-$snapversion/

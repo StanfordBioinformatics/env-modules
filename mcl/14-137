@@ -1,0 +1,22 @@
+#%Module1.0
+#
+## mcl modulefile
+##
+## Initializes mcl
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the mcl package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes mcl package"
+
+# for Tcl script use only
+set version 14-137
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/mcl/mcl-$version/bin

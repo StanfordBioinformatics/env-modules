@@ -1,0 +1,23 @@
+#%Module1.0
+#
+## rdp_classifier modulefile
+##
+## Initializes rdp_classifier
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the rdp_classifier package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes rdp_classifier package"
+
+# for Tcl script use only
+set version 2.4
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+setenv RDPPATH $::env(MODULESAPPSDIR)/rdp_classifier/rdp_classifier_$version
+prepend-path PATH $::env(MODULESAPPSDIR)/rdp_classifier/rdp_classifier_$version

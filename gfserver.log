@@ -1,0 +1,35 @@
+2015/02/25 10:28:14: info: gfServer version 35 on host greenie, port 1074  (2015-02-25 10:28)
+2015/02/25 10:28:14: info: setting up untranslated index
+2015/02/25 10:28:55: info: indexing complete
+2015/02/25 10:28:55: info: Server ready for queries!
+2015/02/25 10:31:59: info: gfServer version 35 on host scg3-ln02, port 1074  (2015-02-25 10:31)
+2015/02/25 10:31:59: info: setting up untranslated index
+2015/02/25 10:32:37: info: indexing complete
+2015/02/25 10:32:37: warn: Couldn't bind socket to 1074: Address already in use
+2015/02/25 10:32:37: error: Fatal Error: Unable to open listening socket on port 1074.
+2015/02/25 10:32:37: error: gfServer aborted
+2015/03/05 01:51:11: warn: Zero sized query
+2015/03/05 01:51:24: warn: Zero sized query
+2015/03/05 01:51:27: warn: Zero sized query
+2015/03/05 01:51:39: warn: Zero sized query
+2015/03/05 01:51:53: warn: Zero sized query
+2015/03/17 04:47:01: warn: Zero sized query
+2015/03/17 04:47:16: warn: Zero sized query
+2015/03/17 04:47:18: warn: Zero sized query
+2015/03/17 04:47:30: warn: Zero sized query
+2015/03/17 04:47:45: warn: Zero sized query
+2015/04/02 13:18:09: warn: Zero sized query
+2015/04/02 13:18:24: warn: Zero sized query
+2015/04/02 13:18:26: warn: Zero sized query
+2015/04/02 13:18:38: warn: Zero sized query
+2015/04/02 13:18:53: warn: Zero sized query
+2015/04/15 23:33:28: warn: Zero sized query
+2015/04/15 23:33:42: warn: Zero sized query
+2015/04/15 23:33:45: warn: Zero sized query
+2015/04/15 23:33:57: warn: Zero sized query
+2015/04/15 23:34:12: warn: Zero sized query
+2015/05/02 09:30:34: warn: Zero sized query
+2015/05/02 09:30:49: warn: Zero sized query
+2015/05/02 09:30:51: warn: Zero sized query
+2015/05/02 09:31:03: warn: Zero sized query
+2015/05/02 09:31:18: warn: Zero sized query

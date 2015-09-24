@@ -1,0 +1,24 @@
+#%Module1.0
+#
+## pcre modulefile
+##
+## Initializes pcre
+##
+proc ModulesHelp { } {
+global version
+
+puts stderr "\tInitializes your environment to use the pcre package"
+puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes pcre package"
+
+# Add required modules
+
+# for Tcl script use only.
+set version 8.36
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/pcre/8.36/bin

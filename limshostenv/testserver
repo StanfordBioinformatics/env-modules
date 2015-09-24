@@ -1,0 +1,9 @@
+#%Module1.0
+#########################################################################
+##
+## limshostenv modulefile
+##
+setenv SYAPSE_LIMS false
+setenv LIMS_HOST "snively.stanford.edu"
+setenv LIMS_RAKEFILE "/opt/scg/uhts-archive/current/Rakefile"
+setenv LIMS_RAKE_CMD "/opt/scg/uhts-archive/bin/uhts_rake"

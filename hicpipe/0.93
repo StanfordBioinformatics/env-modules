@@ -1,0 +1,25 @@
+#%Module1.0
+#
+## tophat modulefile
+##
+## Initializes tophat mapper
+##
+proc ModulesHelp { } {
+	global tophatversion
+
+	puts stderr "\tInitializes your environment to use the hicpipe. See the README in the software folder for deatails on running it. This module exports the HICPIPE env. variable that points to the software's path, and also adds that to the system PATH env. variable."
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "Hicpipe is a set of scripts and programs that correct Hi-C contact maps, given a list restriction enzyme sites and mapped paired reads (http://compgenomics.weizmann.ac.il/tanay/?page_id=283)."
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+module load r/3.2.0
+module load perl-scg
+
+set version 0.93
+set HICPIPE $::env(MODULESAPPSDIR)/hicpipe/$version
+setenv HICPIPE $HICPIPE 
+
+prepend-path PATH $HICPIPE

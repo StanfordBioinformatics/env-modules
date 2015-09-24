@@ -1,0 +1,25 @@
+#%Module1.0
+#
+## libgd-gd modulefile
+##
+## Initializes libgd-gd package
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the libgd-gd package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes libgd-gd package"
+
+# for Tcl script use only
+set version 2.0.33
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/libgd-gd/$version/bin
+prepend-path LD_LIBRARY_PATH $::env(MODULESAPPSDIR)/libgd-gd/$version/lib
+prepend-path C_INCLUDE_PATH $::env(MODULESAPPSDIR)/libgd-gd/$version/include
+

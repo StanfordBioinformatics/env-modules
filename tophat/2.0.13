@@ -1,0 +1,31 @@
+#%Module1.0
+#
+## tophat modulefile
+##
+## Initializes tophat mapper
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the tophat splice junction mapper for RNA-seq reads\n"
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes tophat splice junction mapper"
+
+#needs boost libs
+module add boost/1.51.0
+
+# For optional bowtie option
+module add bowtie/1.1.1
+
+# For default bowtie2
+module add bowtie/2.2.4
+
+# for Tcl script use only
+set version 2.0.13
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/tophat/$version

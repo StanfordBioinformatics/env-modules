@@ -1,0 +1,22 @@
+#%Module1.0
+#
+## yaha modulefile
+##
+## Initializes yaha
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the yaha package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes yaha package"
+
+# for Tcl script use only
+set version 0.1.82
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/yaha/$version/yaha

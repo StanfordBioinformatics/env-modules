@@ -1,0 +1,18 @@
+#%Module1.0
+#
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the hub (https://github.com/github/hub)"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes hub for working with github and git (https://github.com/github/hub)"
+
+# for Tcl script use only
+set version 2.2.0
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/hub/$version/

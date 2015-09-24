@@ -1,0 +1,15 @@
+#%Module1.0
+#
+## preseq modulefile
+##
+
+module-whatis "adds preseq to path and loads dependencies"
+
+# for Tcl script use only
+set version 1.0.2
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+module add bamtools
+
+prepend-path PATH $::env(MODULESAPPSDIR)/preseq/$version/

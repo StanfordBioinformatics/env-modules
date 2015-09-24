@@ -1,0 +1,22 @@
+#%Module1.0
+#
+## bmi_stressor modulefile
+##
+##
+proc ModulesHelp { } {
+	global bmi_stressorversion
+
+	puts stderr "\tInitializes your environment to use the bmi_stressor"
+	puts stderr "\n\tVersion $bmi_stressorversion\n"
+}
+
+module-whatis "initializes bmi_stressor"
+
+# for Tcl script use only
+set bmi_stressor 1.0
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+setenv BMISTRESSORROOT /srv/gs1/projects/scg/bmi_stressor
+prepend-path PATH /srv/gs1/projects/scg/bmi_stressor

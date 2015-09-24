@@ -1,0 +1,23 @@
+#%Module1.0
+#
+## hicup modulefile
+##
+## Initializes hicup
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the hicup package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes hicup package"
+
+# for Tcl script use only
+set version 0.5.2
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+module load bowtie
+
+prepend-path PATH $::env(MODULESAPPSDIR)/hicup/$version

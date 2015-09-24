@@ -1,0 +1,26 @@
+#%Module1.0
+#
+## libXt modulefile
+##
+## Initializes libXt
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the libXt package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes libXt package"
+
+# for Tcl script use only
+set version 1.1.5
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PKG_CONFIG_PATH $::env(MODULESAPPSDIR)/libXt/$version/lib/pkgconfig
+prepend-path MANPATH $::env(MODULESAPPSDIR)/libXt/$version/share/man
+prepend-path C_INCLUDE_PATH $::env(MODULESAPPSDIR)/libXt/$version/include
+prepend-path C_INCLUDE_PATH $::env(MODULESAPPSDIR)/libXt/$version/include/X11
+prepend-path LD_LIBRARY_PATH $::env(MODULESAPPSDIR)/libXt/$version/lib

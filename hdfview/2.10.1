@@ -1,0 +1,22 @@
+#%Module1.0
+#
+## bwa modulefile
+##
+## Initializes bwa aligner
+##
+proc ModulesHelp { } {
+	global bwaversion
+
+	puts stderr "\tInitializes your environment to use HDFView. Call the shell script hdfview.sh."
+	puts stderr "\n\tVersion $hdfversion\n"
+}
+
+module-whatis "HD4 and HD5 file viewer"
+
+# for Tcl script use only
+set hdfversion 2.10.1
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/hdfview/$hdfversion/bin

@@ -1,0 +1,22 @@
+#%Module1.0
+#
+## novoalign modulefile
+##
+## Initializes novoalign aligner
+##
+proc ModulesHelp { } {
+	global novoalignversion
+
+	puts stderr "\tInitializes your environment to use the novoalign sequence alignment program"
+	puts stderr "\n\tVersion $novoalignversion\n"
+}
+
+module-whatis "initializes novoalign sequence alignment program"
+
+# for Tcl script use only
+set novoalignversion V2.08.03
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/novoalign/$novoalignversion

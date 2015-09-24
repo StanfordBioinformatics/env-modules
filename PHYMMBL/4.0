@@ -1,0 +1,22 @@
+#%Module1.0
+#
+## PHYMMBL modulefile
+##
+## Initializes PHYMMBL metagenomics classification tool
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use PHYMMBL metagenomics classification tool\n"
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes PHYMMBL metagenomics classification tool"
+
+# for Tcl script use only
+set version 4.0
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/PHYMMBL/$version

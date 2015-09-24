@@ -1,0 +1,24 @@
+#%Module1.0
+#
+## apr modulefile
+##
+## Initializes apr
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the apr package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes apr package"
+
+module add apr-util/1.5.4
+
+# for Tcl script use only
+set version 1.5.1
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/apr/$version/bin

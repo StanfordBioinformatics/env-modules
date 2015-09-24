@@ -1,0 +1,22 @@
+#%Module1.0
+#
+## Peak-seq modulefile
+##
+## Initializes peak-seq module
+##
+proc ModulesHelp { } {
+	global peakseqversion
+
+	puts stderr "\tInitializes your environment to use Peak-Seq."
+	puts stderr "\n\tVersion $peakseqversion\n"
+}
+
+module-whatis "initializes peakseq module"
+
+# for Tcl script use only
+set peakseqversion 1.25
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+append-path PATH $::env(MODULESAPPSDIR)/PeakSeq/$peakseqversion/bin

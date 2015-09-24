@@ -1,0 +1,25 @@
+#%Module1.0
+#
+## Varscan2 modulefile
+##
+## Initializes Varscan2.
+##
+proc ModulesHelp { } {
+	global varscan2version
+
+	puts stderr "\tInitializes your environment to use Varscan2"
+}
+
+module-whatis "initializes Varscan2"
+
+#module add java/6u35
+module add java/latest
+
+# for Tcl script use only
+set varscan2version 2.3.7
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+setenv VARSCAN2ROOT $::env(MODULESAPPSDIR)/varscan2/varscan-$varscan2version
+prepend-path PATH $::env(MODULESAPPSDIR)/varscan2/varscan-$varscan2version

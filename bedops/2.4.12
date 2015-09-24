@@ -1,0 +1,22 @@
+#%Module1.0
+#
+## bedops modulefile
+##
+## Initializes bedops
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the bedops package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes bedops package"
+
+# for Tcl script use only
+set version 2.4.12
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/bedops/$version/bin

@@ -1,0 +1,22 @@
+#%Module1.0
+#
+## sjcount modulefile
+##
+## Initializes sjcount
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the sjcount package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes sjcount package"
+
+# for Tcl script use only
+set version 3.1-be48a3beb
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/sjcount/$version

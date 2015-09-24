@@ -1,0 +1,26 @@
+#%Module1.0
+#
+## pipsqk modulefile
+##
+## Initializes pipsqk pipeline development platform
+##
+proc ModulesHelp { } {
+	global pipsqkversion
+
+	puts stderr "\tInitializes your environment to use the pipsqk pipeline development platform"
+	puts stderr "\n\tVersion $pipsqkversion\n"
+}
+
+module-whatis "initializes pipsqk pipeline development platform"
+
+# for Tcl script use only
+set pipsqkversion 0.1.3
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+module add python/2.7
+
+prepend-path PYTHONPATH $::env(MODULESAPPSDIR)/gbsc/pipsqk/$pipsqkversion/
+prepend-path PATH $::env(MODULESAPPSDIR)/gbsc/pipsqk/$pipsqkversion/pipsqk/
+

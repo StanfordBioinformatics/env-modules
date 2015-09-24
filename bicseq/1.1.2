@@ -1,0 +1,23 @@
+#%Module1.0
+#
+## bicseq modulefile
+##
+## Initializes bicseq somatic CNV caller
+##
+proc ModulesHelp { } {
+	global bicseqversion
+
+	puts stderr "\tInitializes your environment to use the bicseq somatic CNV caller"
+	puts stderr "\n\tVersion $bicseqversion\n"
+}
+
+module-whatis "initializes bicseq somatic CNV caller"
+
+# for Tcl script use only
+set bicseqversion 1.1.2
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+setenv BICSEQROOT $::env(MODULESAPPSDIR)/bicseq/bicseq-$bicseqversion/PERL_pipeline/BICseq_1.1.2/BIC-seq
+prepend-path PATH $::env(MODULESAPPSDIR)/bicseq/bicseq-$bicseqversion/PERL_pipeline/BICseq_1.1.2/BIC-seq

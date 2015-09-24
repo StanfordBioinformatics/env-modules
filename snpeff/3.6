@@ -1,0 +1,22 @@
+#%Module1.0
+#
+## STAR modulefile
+##
+## Initializes STAR.
+##
+proc ModulesHelp { } {
+	global STARversion
+
+	puts stderr "\tInitializes your environment to use SnpEff (http://snpeff.sourceforge.net/SnpEff.html). SnpEff is \"a variant annotation and effect prediction tool. It annotates and predicts the effects of variants on genes (such as amino acid changes)\""
+}
+
+module-whatis "SnpEff http://snpeff.sourceforge.net/SnpEff.html"
+
+# for Tcl script use only
+set snpeffversion 3.6
+
+module add modsappsdir
+
+setenv SnpEffJar $::env(MODULESAPPSDIR)/snpeff/$snpeffversion/snpEff.jar
+setenv SnpSiftJar $::env(MODULESAPPSDIR)/snpeff/$snpeffversion/SnpSift.jar
+setenv SnpSiftJar $::env(MODULESAPPSDIR)/snpeff/$snpeffversion/snpEff.config

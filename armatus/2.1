@@ -1,0 +1,24 @@
+#%Module1.0
+#
+## weblogo modulefile
+##
+## Initializes armatus
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the armatus package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes armatus package"
+
+# for Tcl script use only
+set version 2.1
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+module add gcc/4.8.1
+module add boost/1.57.0
+
+prepend-path PATH $::env(MODULESAPPSDIR)/armatus/$version/bin

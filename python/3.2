@@ -1,0 +1,25 @@
+#%Module1.0
+#
+## python modulefile
+##
+## Initializes python.
+##
+proc ModulesHelp { } {
+	global pythonversion
+
+	puts stderr "\tInitializes your environment to use python,"
+	puts stderr "\ta scripting language."
+	puts stderr "\n\tVersion $pythonversion\n"
+}
+
+module-whatis "initializes python"
+
+# No 'conflict' in this file, since python 3.1's executable is called 'python3'
+
+set pythonversion 3.2.3
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+# "prepend-path" used to mask the default python in /usr/bin
+prepend-path PATH $::env(MODULESAPPSDIR)/python/$pythonversion/bin

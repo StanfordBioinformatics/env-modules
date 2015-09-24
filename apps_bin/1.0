@@ -1,0 +1,20 @@
+#%Module1.0
+#
+## appsbin modulefile
+##
+proc ModulesHelp { } {
+	global appsbinversion
+
+	puts stderr "\tInitializes your environment to use appsbin."
+	puts stderr "\n\tVersion $appsbinversion\n"
+}
+
+module-whatis "initializes apps bin module"
+
+# for Tcl script use only
+set appsbinversion 1.0
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+append-path PATH $::env(MODULESAPPSDIR)/bin

@@ -1,0 +1,26 @@
+#%Module1.0
+#
+## hotspot modulefile
+##
+## Initializes hotspot
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the hotspot package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes hotspot package"
+
+# for Tcl script use only
+set version 2.4.12
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+module add bedops
+module add bedtools
+
+prepend-path PATH $::env(MODULESAPPSDIR)/hotspot/$version/hotspot-deploy/bin
+prepend-path PATH $::env(MODULESAPPSDIR)/hotspot/$version/pipeline-scripts
+prepend-path PATH $::env(MODULESAPPSDIR)/hotspot/$version/ScriptTokenizer/src

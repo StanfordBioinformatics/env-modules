@@ -1,0 +1,25 @@
+#%Module1.0
+#
+## speedseq modulefile
+##
+## Initializes speedseq
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the speedseq package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes speedseq package"
+
+# for Tcl script use only
+set version 0.0.3a
+
+module add python/2.7
+module add root/5.34.30
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/speedseq/$version/speedseq/bin

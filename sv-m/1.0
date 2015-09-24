@@ -1,0 +1,24 @@
+#%Module1.0
+#
+## sv-m modulefile
+##
+## Initializes sv-m
+##
+proc ModulesHelp { } {
+	global sv-mversion
+
+	puts stderr "\tInitializes your environment to use the SV-M"
+	puts stderr "\n\tVersion $sv-mversion\n"
+}
+
+module-whatis "initializes sv-m"
+
+# for Tcl script use only
+set sv-mversion 1.0
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/sv-m/
+setenv SVMROOT $::env(MODULESAPPSDIR)/sv-m/
+setenv SVM $::env(MODULESAPPSDIR)/sv-m/

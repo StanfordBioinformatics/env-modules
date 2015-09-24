@@ -1,0 +1,33 @@
+#%Module1.0
+#
+## breakdancer modulefile
+##
+## Initializes  breakdancer
+##
+proc ModulesHelp { } {
+	global breakdancerversion
+
+	puts stderr "\tInitializes your environment to use the GBSC sequenicng pipeline on DNAnexus"
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes breakdancer"
+
+# for Tcl script use only
+set version 0.1.0
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+# This module defines env vars LIMS_HOST and LIMS_RAKEFILE.
+ module add gbsc/limshostenv/prod
+module load python/2.7
+module load dnanexus_new/1.5.10
+module load gbsc/gbsc_utils
+
+#exports env var DXTOOLKIT that needs to be sourced.
+module load dx-toolkit/current 
+
+prepend-path PYTHONPATH $::env(MODULESAPPSDIR)/dnanexusScgpm
+prepend-path PYTHONPATH $::env(MODULESAPPSDIR)/dnanexusScgpm/pipeline_utils
+prepend-path PATH $::env(MODULESAPPSDIR)/dnanexusScgpm/scripts:$::env(MODULESAPPSDIR)dnanexusScgpm/pipeline_utils 
+prepend-path PYTHONPATH $::env(MODULESAPPSDIR)/gbsc/scgpm_lims/current/

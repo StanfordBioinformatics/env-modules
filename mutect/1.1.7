@@ -1,0 +1,30 @@
+#%Module1.0
+#
+## MuTect modulefile
+##
+## Initializes MuTect.
+##
+proc ModulesHelp { } {
+	global mutectversion
+
+	puts stderr "\tInitializes your environment to use MuTect, a tool"
+	puts stderr "\tfor detecting somatic mutations in paired cancer samples."
+	puts stderr "\thttp://www.broadinstitute.org/cancer/cga/mutect"
+	puts stderr "\n\tVersion $mutectversion\n"
+}
+
+module-whatis "initializes MuTect"
+
+#module add java/6u35
+module add java/latest
+
+# for Tcl script use only
+set mutectversion 1.1.7
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+setenv MUTECTENV $::env(MODULESAPPSDIR)/mutect/mutect-$mutectversion
+setenv MUTECTROOT $::env(MODULESAPPSDIR)/mutect/mutect-$mutectversion
+setenv MUTECT $::env(MODULESAPPSDIR)/mutect/mutect-$mutectversion/mutect-$mutectversion.jar
+prepend-path PATH $::env(MODULESAPPSDIR)/mutect/mutect-$mutectversion

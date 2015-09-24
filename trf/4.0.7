@@ -1,0 +1,25 @@
+#%Module1.0
+#
+## TRF modulefile
+##
+## Initializes TRF
+##
+proc ModulesHelp { } {
+global version
+
+puts stderr "\tInitializes your environment to use the TRF package"
+puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes TRF package"
+
+# Add required modules
+# None
+
+# for Tcl script use only.
+set version 4.0.7
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/trf/4.0.7

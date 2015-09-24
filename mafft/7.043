@@ -1,0 +1,22 @@
+#%Module1.0
+#
+## mafft modulefile
+##
+## Initializes mafft package
+##
+proc ModulesHelp { } {
+	global mafftversion
+
+	puts stderr "\tInitializes your environment to use the mafft package"
+	puts stderr "\n\tVersion $mafftversion\n"
+}
+
+module-whatis "initializes samtools package"
+
+# for Tcl script use only
+set mafftversion 7.043
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/mafft/$mafftversion/bin

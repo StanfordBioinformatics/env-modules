@@ -1,0 +1,25 @@
+#%Module1.0
+#
+## metaphlan modulefile
+##
+## Initializes metaphlan
+##
+proc ModulesHelp { } {
+	global metaphlanversion
+
+	puts stderr "\tInitializes your environment to use the MetaPhlan"
+	puts stderr "\n\tVersion $metaphlanversion\n"
+}
+
+module-whatis "initializes metaphlan"
+
+module add python/2.7
+
+# for Tcl script use only
+set metaphlanversion 2.2.0
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/metaphlan/$metaphlanversion/biobakery-metaphlan2-1c047f491780
+setenv METAPHLANROOT $::env(MODULESAPPSDIR)/metaphlan/$metaphlanversion/biobakery-metaphlan2-1c047f491780

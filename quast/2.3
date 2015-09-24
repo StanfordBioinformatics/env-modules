@@ -1,0 +1,23 @@
+#%Module1.0
+#
+## quast modulefile
+##
+## Initializes quast module
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use quast.\n"
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes quast module"
+
+# for Tcl script use only
+set version 2.3
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PYTHONPATH $::env(MODULESAPPSDIR)/quast/$version/
+prepend-path PATH $::env(MODULESAPPSDIR)/quast/$version/

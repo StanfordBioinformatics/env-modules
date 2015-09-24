@@ -1,0 +1,17 @@
+#%Module1.0
+#
+## gcc modulefile
+##
+proc ModulesHelp { } {
+	puts stderr "\tgcc 4.8.1,"
+	puts stderr "\t"
+}
+
+module-whatis "gcc"
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+set version 4.7.4
+
+prepend-path PATH $::env(MODULESAPPSDIR)/gnu/gcc/$version/bin
+prepend-path LD_LIBRARY_PATH $::env(MODULESAPPSDIR)/gnu/cloog/0.18.0/lib:$::env(MODULESAPPSDIR)/gnu/mpc/1.0.1/lib:$::env(MODULESAPPSDIR)/gnu/mpfr/3.1.2/lib:$::env(MODULESAPPSDIR)/gnu/gmp/5.1.2/lib:$::env(MODULESAPPSDIR)/gnu/gcc/$version/lib64

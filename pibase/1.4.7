@@ -1,0 +1,24 @@
+#%Module1.0
+#
+## pibase modulefile
+##
+## Initializes bibase
+##
+proc ModulesHelp { } {
+	global pibaseversion
+
+	puts stderr "\tInitializes your environment to use pibase"
+}
+
+module-whatis "initializes pibase sequence alignment program"
+
+# for Tcl script use only
+set pibaseversion 1.4.7
+module load python/2.7
+module load pysam/0.5
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+setenv PIBASEROOT $::env(MODULESAPPSDIR)/pibase/$pibaseversion/
+prepend-path PATH $::env(MODULESAPPSDIR)/pibase/$pibaseversion/

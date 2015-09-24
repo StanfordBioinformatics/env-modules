@@ -1,0 +1,15 @@
+#%Module1.0
+#
+## bamtools modulefile
+##
+
+module-whatis "adds bamtools to path and bamtools libraries to LD_LIBRARY_PATH"
+
+# for Tcl script use only
+set version 2.2.3
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH /srv/gsfs0/SCGS/software/bamtools/$version/bin
+prepend-path LD_LIBRARY_PATH /srv/gsfs0/SCGS/software/bamtools/$version/lib

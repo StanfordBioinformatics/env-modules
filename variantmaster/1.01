@@ -1,0 +1,26 @@
+#%Module1.0
+#
+## variantmaster modulefile
+##
+## Initializes variantmaster aligner
+##
+proc ModulesHelp { } {
+	global variantmasterversion
+
+	puts stderr "\tInitializes your environment to use the variantmaster sequence alignment program"
+	puts stderr "\n\tVersion $variantmasterversion\n"
+}
+
+#module-whatis "initializes variantmaster sequence alignment program"
+
+# for Tcl script use only
+set variantmasterversion 1.01
+module load python/2.7
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+#
+# These lines aren't needed: installing variantMaster puts script in python directories.
+#setenv VARIANTMASTERROOT $::env(MODULESAPPSDIR)/variantmaster/variantmaster-$variantmasterversion
+#prepend-path PATH $::env(MODULESAPPSDIR)/variantmaster/variantmaster-$variantmasterversion

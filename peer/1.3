@@ -1,0 +1,23 @@
+#%Module1.0
+#
+## PEER modulefile
+##
+## Initializes PEER
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the PEER commandline utility peertool"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes PEER package"
+
+# for Tcl script use only
+set version 1.3
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/peer/$version/bin
+

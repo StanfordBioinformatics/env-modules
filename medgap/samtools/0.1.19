@@ -1,0 +1,25 @@
+#%Module1.0
+#
+## samtools modulefile
+##
+## Initializes samtools package
+##
+proc ModulesHelp { } {
+	global samtoolsversion
+
+	puts stderr "\tInitializes your environment to use the samtools package"
+	puts stderr "\n\tVersion $samtoolsversion\n"
+}
+
+module-whatis "initializes samtools package"
+
+# for Tcl script use only
+set samtoolsversion 0.1.19
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH /srv/gsfs0/SCGS/software/samtools/samtools-$samtoolsversion/bin
+prepend-path MANPATH /srv/gsfs0/SCGS/software/samtools/samtools-$samtoolsversion/man
+setenv SAMTOOLS_HOME /srv/gsfs0/SCGS/software/samtools/samtools-$samtoolsversion
+setenv SAMTOOLS /srv/gsfs0/SCGS/software/samtools/samtools-$samtoolsversion/bin

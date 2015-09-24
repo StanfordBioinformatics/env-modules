@@ -1,0 +1,23 @@
+#%Module1.0
+#
+## oncofuse modulefile
+##
+## Initializes oncofuse
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the oncofuse package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes oncofuse package"
+
+# for Tcl script use only
+set version 1.0.9
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+setenv OFJAR $::env(MODULESAPPSDIR)/oncofuse/oncofuse-$version
+prepend-path PATH $::env(MODULESAPPSDIR)/oncofuse/oncofuse-$version

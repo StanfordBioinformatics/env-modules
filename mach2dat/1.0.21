@@ -1,0 +1,22 @@
+#%Module1.0
+#
+## mach2dat modulefile
+##
+## Initializes mach2dat
+##
+proc ModulesHelp { } {
+	global mach2datversion
+
+	puts stderr "\tInitializes your environment to use the mach2dat Package\n"
+	puts stderr "\n\tVersion $mach2datversion\n"
+}
+
+module-whatis "initializes mach2dat"
+
+# for Tcl script use only
+set mach2datversion 1.0.21
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/mach2dat/$mach2datversion/executables

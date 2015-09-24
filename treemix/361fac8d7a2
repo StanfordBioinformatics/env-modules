@@ -1,0 +1,22 @@
+#%Module1.0
+#
+## treemix modulefile
+##
+## Initializes treemix
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the treemix package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes treemix package"
+
+# for Tcl script use only
+set version 361fac8d7a2
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/treemix/$version/bin

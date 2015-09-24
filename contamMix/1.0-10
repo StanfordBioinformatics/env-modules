@@ -1,0 +1,24 @@
+#%Module1.0
+#
+## contamMix modulefile
+##
+## Initializes contamMix
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the contamMix package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes contamMix package"
+
+# for Tcl script use only
+set version 1.0-10
+
+module add r/3.2.0
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH /srv/gsfs0/software/R/3.2.0/lib64/R/library/contamMix/exec

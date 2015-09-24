@@ -1,0 +1,26 @@
+#%Module1.0
+#
+## macs modulefile
+##
+## Initializes MACS ChIP-Seq analysis package
+##
+proc ModulesHelp { } {
+	global macsversion
+
+	puts stderr "\tInitializes your environment to use the MACS ChIP-Seq analysis package\n" 
+	puts stderr "\n\tVersion $bwaversion\n"
+}
+
+module-whatis "initializes MACS ChIP-Seq analysis package"
+
+# for Tcl script use only
+set macsversion 2.1.0
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+module add python/2.7
+
+prepend-path PATH $::env(MODULESAPPSDIR)/macs/$macsversion/bin
+prepend-path PYTHONPATH $::env(MODULESAPPSDIR)/macs/$macsversion/lib/python
+

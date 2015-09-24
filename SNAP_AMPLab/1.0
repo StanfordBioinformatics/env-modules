@@ -1,0 +1,22 @@
+#%Module1.0
+#
+## SNAP aligner modulefile
+##
+## Initializes SNAP aligner
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the SNAP package from the Berkeley AMP Lab"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes SNAP package from the Berkeley AMP Lab"
+
+# for Tcl script use only
+set version 1.0
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/SNAP_AMPLab/$version

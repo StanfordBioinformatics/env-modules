@@ -1,0 +1,23 @@
+#%Module1.0
+#
+## ngsutils modulefile
+##
+## Initializes ngsutils
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use ngsutils\n"
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes ngsutils program"
+
+# for Tcl script use only
+set version 0.56
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+module add python/2.7
+
+prepend-path PATH $::env(MODULESAPPSDIR)/ngsutils/ngsutils-ngsutils-0.5.6/bin

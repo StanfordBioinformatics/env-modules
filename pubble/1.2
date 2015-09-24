@@ -1,0 +1,25 @@
+#%Module1.0
+#
+## pubble modulefile
+#
+proc ModulesHelp { } {
+global version
+
+puts stderr "\tInitializes your environment to use the pubble package"
+puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes pubble package"
+
+# Add required modules
+#module add pubble/1.0  # Example
+
+# for Tcl script use only.
+set version 1.2 
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+module load texlive
+module load python/3.4
+
+prepend-path PATH /srv/gsfs0/SCGS/pipeline/pubble/1.2

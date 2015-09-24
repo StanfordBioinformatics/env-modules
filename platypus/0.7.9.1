@@ -1,0 +1,26 @@
+#%Module1.0
+#
+## gatk modulefile
+##
+## Initializes gatk
+##
+proc ModulesHelp { } {
+	global gatkversion
+
+	puts stderr "\tInitializes your environment to use the GATK"
+	puts stderr "\n\tVersion $gatkversion\n"
+}
+
+module-whatis "initializes gatk"
+
+module load python/2.6
+
+# for Tcl script use only
+set gatkversion 3.1.1
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/platypus/platypus-0.7.9.1/
+setenv PLATYPUSROOT $::env(MODULESAPPSDIR)/platypus/platypus-0.7.9.1
+setenv PLATYPUS $::env(MODULESAPPSDIR)/platypus/platypus-0.7.9.1

@@ -1,0 +1,14 @@
+#%Module1.0
+
+proc ModulesHelp { } {
+        puts stderr "\t use R for CLI"
+        puts stderr "\t use library(); to see installed R packages"
+        }
+
+module-whatis   "Latest version of R"
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path	PATH			$::env(MODULESAPPSDIR)/R/3.2.0/bin
+prepend-path	LD_LIBRARY_PATH		$::env(MODULESAPPSDIR)/R/3.2.0/lib64/R/lib

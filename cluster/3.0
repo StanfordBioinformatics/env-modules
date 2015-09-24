@@ -1,0 +1,22 @@
+#%Module1.0
+#
+## cluster modulefile
+##
+## Initializes cluster
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the cluster package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes cluster package"
+
+# for Tcl script use only
+set version 3.0
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/cluster/$version/bin

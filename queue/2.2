@@ -1,0 +1,24 @@
+#%Module1.0
+#
+## Queue modulefile
+##
+## Initializes bwa aligner
+##
+proc ModulesHelp { } {
+	global queueversion
+
+	puts stderr "\tInitializes your environment to use Queue"
+	puts stderr "\n\tVersion $queueversion\n"
+}
+
+module-whatis "initializes Queue"
+
+module add java
+
+# for Tcl script use only
+set queueversion 2.2
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/queue/queue-$queueversion/

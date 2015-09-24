@@ -1,0 +1,25 @@
+#%Module1.0
+#
+## vardict modulefile
+##
+## Initializes vardict
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the vardict package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes vardict package"
+
+# for Tcl script use only
+set version 2014
+
+module add r/3.1.1
+module add samtools/1.2  
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/vardict/$version/VarDict

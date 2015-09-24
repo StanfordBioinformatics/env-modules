@@ -1,0 +1,29 @@
+#%Module1.0
+#
+## phylophlan modulefile
+##
+## Initializes phylophlan
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the phylophlan package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes phylophlan package"
+
+module add python/2.7
+module add muscle/3.8.31
+module add usearch/5.2.32
+#module add usearch/7.0.1090
+module add fasttree/2.1.7
+
+# for Tcl script use only
+set version 0.99
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+#prepend-path PATH $::env(MODULESAPPSDIR)/phylophlan/PhyloPhlAn$version/taxcuration/*.py
+prepend-path PATH $::env(MODULESAPPSDIR)/phylophlan/PhyloPhlAn$version

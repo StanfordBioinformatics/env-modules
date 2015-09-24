@@ -1,0 +1,24 @@
+#%Module1.0
+#
+## freebayes modulefile
+##
+## Initializes freebayes
+##
+proc ModulesHelp { } {
+	global freebayesversion
+
+	puts stderr "\tInitializes your environment to use the FREEBAYES"
+	puts stderr "\n\tVersion $freebayesversion\n"
+}
+
+module-whatis "initializes freebayes"
+
+# for Tcl script use only
+set freebayesversion 0.9.14
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/freebayes/freebayes-$freebayesversion
+setenv FREEBAYESROOT $::env(MODULESAPPSDIR)/freebayes/freebayes-$freebayesversion
+setenv FREEBAYES $::env(MODULESAPPSDIR)/freebayes/freebayes-$freebayesversion

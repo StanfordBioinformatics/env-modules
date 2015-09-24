@@ -1,0 +1,22 @@
+#%Module1.0
+#
+## wgs modulefile
+##
+## Initializes wgs
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the wgs package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes wgs package"
+
+# for Tcl script use only
+set version 8.3rc2
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/wgs/wgs-$version/Linux-amd64/bin

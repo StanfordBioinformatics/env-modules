@@ -1,0 +1,27 @@
+#%Module1.0
+#
+## apf_pipelines modulefile
+##
+## Initializes standard apf analysis pipelines.
+##
+proc ModulesHelp { } {
+	global apfpipelinesversion
+
+	puts stderr "\tInitializes your environment to use the standard set of"
+	puts stderr "\tanalysis pipelines with the apf module"
+	puts stderr "\n\tVersion $apfpipelinesversion\n"
+}
+
+module-whatis "initializes standard apf analysis pipelines"
+
+# for Tcl script use only
+set apfpipelinesversion 4.5.3
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+# Set environment variables key to the APF pipelines.
+
+setenv GENOME_HOME "/srv/gsfs0/shared_data/RefGenomes"
+
+prepend-path RUBYLIB $::env(MODULESAPPSDIR)/gbsc/apf/pipelines/$apfpipelinesversion/lib

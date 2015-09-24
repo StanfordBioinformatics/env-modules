@@ -1,0 +1,23 @@
+#%Module1.0
+#
+## cutadapt modulefile
+##
+## Initializes cutadapt adapter trimming program
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the git version control system."
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes bwa sequence alignment program"
+
+# for Tcl script use only
+set version 2.4.3.368
+
+# sets the MODULESAPPSDIR env var
+module load modsappsdir
+module load hub/2.2.0
+
+prepend-path PATH $::env(MODULESAPPSDIR)/git/bin

@@ -1,0 +1,28 @@
+#%Module1.0
+#
+## CREST modulefile
+##
+## Initializes  CREST
+##
+proc ModulesHelp { } {
+	global crestversion
+
+	puts stderr "\tInitializes your environment to use BreakDacner"
+	puts stderr "\n\tVersion $crestversion\n"
+}
+
+module-whatis "initializes Breakdancer"
+
+# for Tcl script use only
+set crestversion 1.0
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+module load cap3
+module load perl-scg
+
+setenv BLATSERVER "scg3-ln01.local"
+setenv BLATPORT "1063"
+
+setenv CRESTROOT $:::env(MODULESAPPSDIR)/crest/crest-$crestversion/
+prepend-path PATH $:::env(MODULESAPPSDIR)/crest/crest-$crestversion/

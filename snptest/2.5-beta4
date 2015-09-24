@@ -1,0 +1,23 @@
+#%Module1.0
+#
+## snptest modulefile
+##
+## Initializes snptest
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to snptest"
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes snptest"
+
+# for Tcl script use only
+set version 2.5-beta4
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/snptest/$version
+

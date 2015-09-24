@@ -1,0 +1,22 @@
+#%Module1.0
+#
+## bcbio-variation-recall modulefile
+##
+## Initializes bcbio-variation-recall
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the bcbio-variation-recall package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes bcbio-variation-recall package"
+
+# for Tcl script use only
+set version 0.0.8
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/bcbio-variation-recall/$version/bcbio.variation.recall/bin

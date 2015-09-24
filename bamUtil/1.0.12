@@ -1,0 +1,22 @@
+#%Module1.0
+#
+## bamUtil modulefile
+##
+## Initializes bamUtil
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use bamUtil.\n"
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes bamUtil\n"
+
+# for Tcl script use only
+set version 1.0.12
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/bamUtil/$version

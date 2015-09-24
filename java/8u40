@@ -1,0 +1,12 @@
+#%Module1.0
+#
+proc ModulesHelp { } {
+        puts stderr "\tInitializes your environment to use v8 java"
+}
+
+module-whatis "initializes java"
+
+setenv JAVA_HOME /srv/gsfs0/software/java/jdk1.8.0_40
+prepend-path PATH /srv/gsfs0/software/java/jdk1.8.0_40/bin
+prepend-path JRE_HOME /srv/gsfs0/software/java/jdk1.8.0_40/jre
+prepend-path MANPATH /srv/gsfs0/software/java/jdk1.8.0_40/man

@@ -1,0 +1,31 @@
+#%Module1.0
+#
+## nanoscope modulefile
+##
+## Initializes nanoscope
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the nanoscope package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes nanoscope package"
+
+# for Tcl script use only
+set version 422958a
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+module add python/2.7
+module add gnu_parallel
+module add bwa
+module add samtools
+module add pysam
+module add blast
+module add bedtools
+
+prepend-path PATH $::env(MODULESAPPSDIR)/nanoscope/$version/bin
+

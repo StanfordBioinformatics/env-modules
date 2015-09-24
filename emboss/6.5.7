@@ -1,0 +1,22 @@
+#%Module1.0
+#
+## emboss modulefile
+##
+## Initializes emboss aligner
+##
+proc ModulesHelp { } {
+	global embossversion
+
+	puts stderr "\tInitializes your environment to use the emboss package\n"
+	puts stderr "\n\tVersion $embossversion\n"
+}
+
+module-whatis "initializes emboss package"
+
+# for Tcl script use only
+set embossversion 6.5.7
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/EMBOSS/$embossversion/bin

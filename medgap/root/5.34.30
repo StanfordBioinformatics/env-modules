@@ -1,0 +1,31 @@
+#%Module1.0
+#
+## roob modulefile
+##
+## Initializes  root
+##
+proc ModulesHelp { } {
+	global rootversion
+
+	puts stderr "\tInitializes your environment to use ROOT"
+	puts stderr "\n\tVersion $rootversion\n"
+}
+
+module-whatis "initializes ROOT"
+
+# for Tcl script use only
+set rootversion 5.34.30
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+setenv ROOTSYS /srv/gsfs0/SCGS/software/root/$rootversion
+setenv ROOTROOT /srv/gsfs0/SCGS/software/root/$rootversion
+prepend-path PATH /srv/gsfs0/SCGS/software/root/$rootversion/bin
+prepend-path PATH /srv/gsfs0/SCGS/software/root/$rootversion/include/root
+prepend-path LD_LIBRARY_PATH /srv/gsfs0/SCGS/software/root/$rootversion/lib/root
+prepend-path LDFLAGS -L/srv/gsfs0/SCGS/software/root/$rootversion/lib/root
+prepend-path MANPATH /srv/gsfs0/SCGS/software/root/$rootversion/share/man
+prepend-path C_INCLUDE_PATH /srv/gsfs0/SCGS/software/root/$rootversion/include/root
+prepend-path CPLUS_INCLUDE_PATH /srv/gsfs0/SCGS/software/root/$rootversion/include/root
+prepend-path CPPFLAGS -I/srv/gsfs0/SCGS/software/root/$rootversion/include/root

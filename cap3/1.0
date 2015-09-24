@@ -1,0 +1,23 @@
+#%Module1.0
+#
+## CAP3 modulefile
+##
+## Initializes  CAP3
+##
+proc ModulesHelp { } {
+	global cap3version
+
+	puts stderr "\tInitializes your environment to use CAP3"
+	puts stderr "\n\tVersion $cap3version\n"
+}
+
+module-whatis "initializes CAP3"
+
+# for Tcl script use only
+set cap3version 1.0
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+setenv CAP3ROOT $:::env(MODULESAPPSDIR)/cap3/cap3-$cap3version/
+prepend-path PATH $:::env(MODULESAPPSDIR)/cap3/cap3-$cap3version/

@@ -1,0 +1,20 @@
+#%Module1.0
+#
+## java modulefile
+##
+## Initializes java runtime environment
+##
+proc ModulesHelp { } {
+	global bwaversion
+
+	puts stderr "\tInitializes your environment to use java"
+	puts stderr "\n\tVersion $javaversion\n"
+}
+
+module-whatis "initializes java"
+
+# for Tcl script use only
+set javaversion latest
+
+setenv JAVA_HOME /usr/java/$javaversion
+prepend-path PATH /usr/java/$javaversion/bin

@@ -1,0 +1,36 @@
+#%Module1.0
+#
+## roob modulefile
+##
+## Initializes  root
+##
+proc ModulesHelp { } {
+	global rootversion
+
+	puts stderr "\tInitializes your environment to use ROOT"
+	puts stderr "\n\tVersion $rootversion\n"
+}
+
+module-whatis "initializes ROOT"
+
+# for Tcl script use only
+set rootversion 5.34.30
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+setenv ROOTSYS $:::env(MODULESAPPSDIR)/root/$rootversion
+setenv ROOTROOT $:::env(MODULESAPPSDIR)/root/$rootversion
+prepend-path PATH $:::env(MODULESAPPSDIR)/root/$rootversion/bin
+#prepend-path PATH $:::env(MODULESAPPSDIR)/root/$rootversion/include/root
+prepend-path LD_LIBRARY_PATH $:::env(MODULESAPPSDIR)/root/$rootversion/lib/root
+prepend-path LD_LIBRARY_PATH $:::env(MODULESAPPSDIR)/root/$rootversion/lib
+prepend-path LDFLAGS -L$:::env(MODULESAPPSDIR)/root/$rootversion/lib/root
+prepend-path LDFLAGS -L$:::env(MODULESAPPSDIR)/root/$rootversion/lib
+prepend-path MANPATH $::env(MODULESAPPSDIR)/root/$rootversion/share/man
+prepend-path C_INCLUDE_PATH $::env(MODULESAPPSDIR)/root/$rootversion/include/root
+prepend-path C_INCLUDE_PATH $::env(MODULESAPPSDIR)/root/$rootversion/include
+prepend-path CPLUS_INCLUDE_PATH $::env(MODULESAPPSDIR)/root/$rootversion/include/root
+prepend-path CPLUS_INCLUDE_PATH $::env(MODULESAPPSDIR)/root/$rootversion/include
+prepend-path CPPFLAGS -I$::env(MODULESAPPSDIR)/root/$rootversion/include/root
+prepend-path CPPFLAGS -I$::env(MODULESAPPSDIR)/root/$rootversion/include

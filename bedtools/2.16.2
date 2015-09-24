@@ -1,0 +1,22 @@
+#%Module1.0
+#
+## bedtools modulefile
+##
+## Initializes bedtools utilities
+##
+proc ModulesHelp { } {
+	global bedtoolsversion
+
+	puts stderr "\tInitializes your environment to use the bedtools utility programs"
+	puts stderr "\n\tVersion $bedtoolsversion\n"
+}
+
+module-whatis "initializes bedtools utilities"
+
+# for Tcl script use only
+set bedtoolsversion 2.16.2
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/bedtools/$bedtoolsversion/bin

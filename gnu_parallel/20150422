@@ -1,0 +1,22 @@
+#%Module1.0
+#
+## gnu_parallel modulefile
+##
+## Initializes gnu_parallel
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the gnu_parallel package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes gnu_parallel package"
+
+# for Tcl script use only
+set version 20150422
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/gnu_parallel/$version/bin

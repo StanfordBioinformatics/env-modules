@@ -1,0 +1,26 @@
+#%Module1.0
+#
+## rMATS modulefile
+##
+## Initializes rMATS
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the rMATS package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes rMATS package"
+
+# for Tcl script use only
+set version 3.0.9
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+module add python/2.7
+module add samtools/0.1.19
+module add bowtie/0.12.8
+module add tophat/1.4.1
+
+prepend-path PATH $::env(MODULESAPPSDIR)/rMATS/$version

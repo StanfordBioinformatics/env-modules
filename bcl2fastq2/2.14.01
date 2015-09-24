@@ -1,0 +1,22 @@
+#%Module1.0
+#
+## bcl2fastq modulefile
+##
+## Initializes bcl2fastq utilities
+##
+proc ModulesHelp { } {
+	global bcl2fastqversion
+
+	puts stderr "\tIllumina's BCL to FASTQ converter and demultiplexer for NextSeq 500 and HiSeq X Systems"
+	puts stderr "\n\tVersion $bcl2fastqversion\n"
+}
+
+module-whatis "Illumina's BCL to FASTQ converter and demultiplexer for NextSeq 500 and HiSeq X Systems"
+
+# for Tcl script use only
+set bcl2fastqversion 2.14.01
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/bcl2fastq2/$bcl2fastqversion

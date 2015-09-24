@@ -1,0 +1,24 @@
+#%Module1.0
+#
+## swig modulefile
+##
+## Initializes swig
+##
+proc ModulesHelp { } {
+global version
+
+puts stderr "\tInitializes your environment to use the swig package"
+puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes swig package"
+
+# Add required modules
+
+# for Tcl script use only.
+set version 3.0.2
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/swig/3.0.2/bin

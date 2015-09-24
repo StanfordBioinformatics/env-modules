@@ -1,0 +1,24 @@
+#%Module1.0
+#
+## weblogo modulefile
+##
+## Initializes weblogo
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the weblogo package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes weblogo package"
+
+# for Tcl script use only
+set version 39dbdd7
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+module add gcc/4.8.1
+module add boost/1.5.1
+
+prepend-path PATH $::env(MODULESAPPSDIR)/armatus/$version

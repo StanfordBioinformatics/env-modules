@@ -1,0 +1,23 @@
+#%Module1.0
+#
+## plink modulefile
+##
+## Initializes plink package
+##
+proc ModulesHelp { } {
+	global plinkversion
+
+	puts stderr "\tInitializes your environment to use the plink package"
+	puts stderr "\tCompiled by Alex with local lapack"
+	puts stderr "\n\tVersion $plinkversion\n"
+}
+
+module-whatis "initializes plink package"
+
+# for Tcl script use only
+set plink 1.07
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+append-path PATH  $::env(MODULESAPPSDIR)/plink/1.07

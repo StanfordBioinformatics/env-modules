@@ -1,0 +1,26 @@
+#%Module1.0
+#
+## CONTIGuator modulefile
+##
+## Initializes CONTIGuator
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the CONTIGuator package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes CONTIGuator package"
+
+# for Tcl script use only
+set version 2.7.4
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+module add blast
+module add primer3
+module add mummer
+module add python/2.7
+
+prepend-path PATH $::env(MODULESAPPSDIR)/CONTIGuator/$version

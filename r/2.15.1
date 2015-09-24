@@ -1,0 +1,15 @@
+#%Module1.0
+
+proc ModulesHelp { } {
+        puts stderr "\t ITS-maintained R v 2.15.1 (in GPFS)"
+        puts stderr "\t use R for CLI"
+        puts stderr "\t use library(); to see installed R packages"
+        puts stderr "\t built on RHEL6.3"
+        }
+
+module-whatis   "Latest version of R"
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/R/R-2.15.1/bin

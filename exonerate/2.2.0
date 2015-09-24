@@ -1,0 +1,23 @@
+#%Module1.0
+#
+## exonerate modulefile
+##
+## Initializes exonerate
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the exonerate tool for pairwise sequence comparison"
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes exonerate package"
+
+# for Tcl script use only.
+set version 2.2.0
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/exonerate/$version/bin
+prepend-path MANPATH $::env(MODULESAPPSDIR)/exonerate/$version/share/man

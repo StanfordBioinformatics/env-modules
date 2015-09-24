@@ -1,0 +1,26 @@
+#%Module1.0
+#
+## freec modulefile
+##
+## Initializes freec aligner
+##
+proc ModulesHelp { } {
+	global freecversion
+
+	puts stderr "\tInitializes your environment to use the freec"
+	puts stderr "\n\tVersion $freecversion\n"
+}
+
+module-whatis "initializes freec"
+
+# for Tcl script use only
+set freecversion 7.2
+#module load samtools
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/freec/freec-$freecversion/
+setenv FREECROOT $::env(MODULESAPPSDIR)/freec/freec-$freecversion/
+setenv HG19LENGTH $::env(MODULESAPPSDIR)/freec/data/hg19_freec.len
+setenv HG19GEM $::env(MODULESAPPSDIR)/freec/data/out76_hg19.gem
