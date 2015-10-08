@@ -15,7 +15,7 @@ proc ModulesHelp { } {
 module-whatis "initializes dna_nexus"
 
 # for Tcl script use only
-set version 0.131.0
+set version 0.163.0
 
 # sets the MODULESAPPSDIR env var
 module add modsappsdir
