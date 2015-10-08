@@ -1,0 +1,39 @@
+#%Module1.0
+#
+## breakdancer modulefile
+##
+## Initializes  breakdancer
+##
+proc ModulesHelp { } {
+	global breakdancerversion
+
+	puts stderr "\tInitializes your environment to use the GBSC sequenicng pipeline on DNAnexus"
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes breakdancer"
+
+# for Tcl script use only
+set version 0.1.0
+set repos $::env(MODULESAPPSDIR)/dx-scgpm-pipeline
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+# This module defines env vars LIMS_HOST and LIMS_RAKEFILE.
+module add gbsc/limshostenv/prod
+module load python/2.7
+module load dnanexus_new/1.5.10
+module load gbsc/gbsc_utils
+module load r/3.2.0
+
+#exports env var DXTOOLKIT that needs to be sourced.
+module load dx-toolkit/current 
+
+prepend-path $repos
+prepend-path PYTHONPATH $repos/pipeline_utils
+prepend-path PYTHONPATH $::env(MODULESAPPSDIR)/gbsc/scgpm_lims/current/
+prepend-path PATH $repos/scripts
+
+#putting stuff in my local environment for testing applets
+prepend-path PATH $repos/applets/casava_bcl_to_fastq/resources/home/dnanexus
