@@ -15,10 +15,13 @@ proc ModulesHelp { } {
 
 # for Tcl script use only
 set version current
+set repos $::env(MODULESAPPSDIR)/gbsc/scgpm_lims/current
 
 # sets the MODULESAPPSDIR env var
 module add modsappsdir
 
 module add python/2.7
 
-prepend-path PYTHONPATH $::env(MODULESAPPSDIR)/gbsc/scgpm_lims/current/
+prepend-path PYTHONPATH $repos
+#i.e. from scgpm_lims import Connection
+prepend-path PATH $repos/scgpm_lims/scripts/
