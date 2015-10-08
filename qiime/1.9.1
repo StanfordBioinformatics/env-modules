@@ -1,0 +1,26 @@
+#%Module1.0
+#
+## qiime modulefile
+##
+## Initializes qiime
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the qiime package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes qiime package"
+
+# for Tcl script use only
+set version 1.9.1
+
+module add python/2.7
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/qiime/$version/bin
+prepend-path PYTHONPATH $::env(MODULESAPPSDIR)/qiime/$version
+prepend-path PYTHONPATH $::env(MODULESAPPSDIR)/qiime/$version/lib/python2.7/site-packages
