@@ -15,7 +15,7 @@ module-whatis "initializes breakdancer"
 
 # for Tcl script use only
 set version 0.1.0
-set repos $::env(MODULESAPPSDIR)/dx-scgpm-pipeline
+set repos $::env(MODULESAPPSDIR)/gbsc/dx-scgpm-pipeline
 
 # sets the MODULESAPPSDIR env var
 module add modsappsdir
@@ -30,7 +30,6 @@ module load r/3.2.0
 #exports env var DXTOOLKIT that needs to be sourced.
 module load dx-toolkit/current 
 
-prepend-path $repos
 prepend-path PYTHONPATH $repos/pipeline_utils
 prepend-path PYTHONPATH $::env(MODULESAPPSDIR)/gbsc/scgpm_lims/current/
 prepend-path PATH $repos/scripts
