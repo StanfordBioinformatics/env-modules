@@ -15,11 +15,10 @@ proc ModulesHelp { } {
 module-whatis "initializes apf (analysis pipeline framework)"
 
 # for Tcl script use only
-set apfversion 5.0.0
+set apfversion 4.8.2
 
 # sets the MODULESAPPSDIR env var
 module add modsappsdir
 
-#prereq sjm
 append-path RUBYLIB $::env(MODULESAPPSDIR)/gbsc/apf/framework/$apfversion/lib
 append-path PATH $::env(MODULESAPPSDIR)/gbsc/apf/framework/$apfversion/bin
