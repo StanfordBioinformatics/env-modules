@@ -22,4 +22,4 @@ module add modsappsdir
 set pysampath $::env(MODULESAPPSDIR)/pysam/$pysamversion
 
 # Add the pysam directory to PYTHONPATH.
-append-path PYTHONPATH $pysampath/lib64/python2.6/site-packages
+prepend-path PYTHONPATH $pysampath/lib64/python2.6/site-packages/pysam-0.6-py2.6-linux-x86_64.egg
