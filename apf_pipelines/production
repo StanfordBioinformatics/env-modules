@@ -15,7 +15,7 @@ proc ModulesHelp { } {
 module-whatis "initializes standard apf analysis pipelines"
 
 # for Tcl script use only
-set apfpipelinesversion 4.6.0
+set apfpipelinesversion 4.7.0
 
 # sets the MODULESAPPSDIR env var
 module add modsappsdir
