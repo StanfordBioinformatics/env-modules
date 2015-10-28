@@ -23,4 +23,4 @@ module add java
 # sets the MODULESAPPSDIR env var
 module add modsappsdir
 
-prepend-path PATH $::env(MODULESAPPSDIR)/fastqc/$fastqcversion/FastQC
+prepend-path PATH $::env(MODULESAPPSDIR)/fastqc/$fastqcversion
