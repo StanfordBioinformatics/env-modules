@@ -1,0 +1,26 @@
+#%Module1.0
+#
+## fastqc modulefile
+##
+## Initializes fastqc.
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use rar and unrar"
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "A compression and decompression utility."
+
+# for Tcl script use only
+set version 5.2.1
+
+# fastqc requires java
+module add java
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/rar/$version/bin
+prepend-path LD_LIBRARY_PATH $::env(MODULESAPPSDIR)/rar/$version/lib
