@@ -18,5 +18,6 @@ module-whatis "initializes dna_nexus"
 set version 0.163.0
 
 # sets the MODULESAPPSDIR env var
-module add modsappsdir
+
+module load python/2.7.6
 setenv DXTOOLKIT $::env(MODULESAPPSDIR)/dx-toolkit/$version/environment
