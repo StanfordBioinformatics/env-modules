@@ -1,0 +1,26 @@
+#%Module1.0
+#
+## Crossmap modulefile
+##
+## Initializes python CrossMap package
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the Crossmap python package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes RSeQC package"
+
+# for Tcl script use only
+set version 0.2.1
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+module add gcc/5.2.0
+module add python/2.7
+
+prepend-path PATH $::env(MODULESAPPSDIR)/crossmap/$version/bin
+prepend-path PYTHONPATH $::env(MODULESAPPSDIR)/crossmap/$version/lib/python2.7/site-packages
+setenv CROSSMAP_PATH $::env(MODULESAPPSDIR)/crossmap/$version/
