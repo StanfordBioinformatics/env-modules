@@ -1,0 +1,29 @@
+#%Module1.0
+#
+## stmp modulefile
+##
+## Initializes stmp
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the stmp package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes stmp package"
+
+# for Tcl script use only
+set version 1.0.0
+
+module add python/2.7
+module add annovar/20150617
+module add snpeff/4.1l
+module add bcftools/1.2
+module add bedtools/2.23.0
+module add pyyaml/3.11
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/stmp/stmp-$version/code

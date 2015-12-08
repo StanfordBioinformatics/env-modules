@@ -1,0 +1,24 @@
+#%Module1.0
+#
+## xlwt modulefile
+##
+## Initializes xlwt
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the xlwt package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes xlwt package"
+
+# for Tcl script use only
+set version 1.0.0
+
+module add python/2.7
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PYTHONPATH $::env(MODULESAPPSDIR)/xlwt/$version
+prepend-path PYTHONPATH $::env(MODULESAPPSDIR)/xlwt/$version/lib/python

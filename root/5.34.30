@@ -22,11 +22,10 @@ module add modsappsdir
 setenv ROOTSYS $:::env(MODULESAPPSDIR)/root/$rootversion
 setenv ROOTROOT $:::env(MODULESAPPSDIR)/root/$rootversion
 prepend-path PATH $:::env(MODULESAPPSDIR)/root/$rootversion/bin
-#prepend-path PATH $:::env(MODULESAPPSDIR)/root/$rootversion/include/root
 prepend-path LD_LIBRARY_PATH $:::env(MODULESAPPSDIR)/root/$rootversion/lib/root
-prepend-path LD_LIBRARY_PATH $:::env(MODULESAPPSDIR)/root/$rootversion/lib
+#prepend-path LD_LIBRARY_PATH $:::env(MODULESAPPSDIR)/root/$rootversion/lib
 prepend-path LDFLAGS -L$:::env(MODULESAPPSDIR)/root/$rootversion/lib/root
-prepend-path LDFLAGS -L$:::env(MODULESAPPSDIR)/root/$rootversion/lib
+#prepend-path LDFLAGS -L$:::env(MODULESAPPSDIR)/root/$rootversion/lib
 prepend-path MANPATH $::env(MODULESAPPSDIR)/root/$rootversion/share/man
 prepend-path C_INCLUDE_PATH $::env(MODULESAPPSDIR)/root/$rootversion/include/root
 prepend-path C_INCLUDE_PATH $::env(MODULESAPPSDIR)/root/$rootversion/include

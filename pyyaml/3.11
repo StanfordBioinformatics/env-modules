@@ -1,0 +1,24 @@
+#%Module1.0
+#
+## pyyaml modulefile
+##
+## Initializes pyyaml
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the pyyaml package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes pyyaml package"
+
+# for Tcl script use only
+set version 3.11
+
+module add python/2.7
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PYTHONPATH $::env(MODULESAPPSDIR)/pyyaml/$version
+prepend-path PYTHONPATH $::env(MODULESAPPSDIR)/pyyaml/$version/lib/python

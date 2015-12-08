@@ -1,0 +1,23 @@
+#%Module1.0
+#
+## metAMOS modulefile
+##
+## Initializes metAMOS
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the metAMOS package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes metAMOS package"
+
+# for Tcl script use only
+set version 1.5rc3
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/metAMOS/$version
+prepend-path PYTHONPATH $::env(MODULESAPPSDIR)/metAMOS/$version

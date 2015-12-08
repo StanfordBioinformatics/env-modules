@@ -1,9 +1,0 @@
-#%Module1.0
-
-proc ModulesHelp { } {
-        puts stderr "\t zlib 1.2.7"
-        }
-
-module-whatis   "Latest version of R"
-
-prepend-path		LD_LIBRARY_PATH		 $::env(MODULESAPPSDIR)/zlib/1.2.7/lib

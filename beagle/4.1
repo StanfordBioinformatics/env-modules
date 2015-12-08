@@ -1,0 +1,26 @@
+#%Module1.0
+#
+## beagle modulefile
+##
+## Initializes beagle
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the beagle package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes beagle package"
+
+# for Tcl script use only
+set version 4.1
+
+module add java/8u40
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/beagle/$version
+setenv BEAGLE $::env(MODULESAPPSDIR)/beagle/$version/beagle.12Oct15.b2c.jar
+setenv EXAMPLE $::env(MODULESAPPSDIR)/beagle/$version/run.beagle.12Oct15.b2c.example

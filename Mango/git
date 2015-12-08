@@ -1,0 +1,17 @@
+#%Module1.0
+
+proc ModulesHelp { } {
+        puts stderr "\t use mango.R for CLI"
+        puts stderr "\t use library(); to see installed R packages"
+        }
+
+module-whatis   "Latest version of dphansti's Mango from https://github.com/dphansti/mango "
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+#this is a meta-module
+module add bowtie/1.1.1
+module add bedtools/2.16.2
+module add MACS2
+module add r/3.2.2

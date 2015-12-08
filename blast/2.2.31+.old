@@ -23,5 +23,5 @@ module add modsappsdir
 setenv BLASTDB   $::env(MODULESAPPSDIR)/blast/db
 
 # sets location of BLAST executables.
-setenv BLASTROOT $::env(MODULESAPPSDIR)/blast/$blastversion/bin/
-prepend-path PATH $::env(MODULESAPPSDIR)/blast/$blastversion/bin/
+setenv BLASTROOT $::env(MODULESAPPSDIR)/blast/ncbi-blast-$blastversion/bin/
+prepend-path PATH $::env(MODULESAPPSDIR)/blast/ncbi-blast-$blastversion/bin/

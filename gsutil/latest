@@ -16,9 +16,6 @@ puts stderr "\n\tVersion $version\n"
 # Add required modules
 
 # for Tcl script use only.
-set version 4.7
+set version latest
 
-# sets the MODULESAPPSDIR env var
-module add modsappsdir
-
-prepend-path PATH $::env(MODULESAPPSDIR)/gsutil/4.7
+prepend-path PATH $::env(MODULESAPPSDIR)/gsutil/$version

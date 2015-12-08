@@ -14,7 +14,7 @@ proc ModulesHelp { } {
 #module-whatis "initializes speedseq package"
 
 # for Tcl script use only
-set version 0.0.3a
+set version 0.1.0
 
 module add python/2.7
 module add root/5.34.30
@@ -24,3 +24,4 @@ module load gcc/5.2.0
 module add modsappsdir
 
 prepend-path PATH $::env(MODULESAPPSDIR)/speedseq/$version/speedseq/bin
+setenv HUMAN_G1K_V37 /srv/gsfs0/projects/gbsc/Resources/speedseq/human_g1k_v37.fasta

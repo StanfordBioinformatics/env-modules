@@ -1,0 +1,19 @@
+#%Module1.0
+#
+## sublime modulefile
+##
+## Initializes sublime text 
+##
+proc ModulesHelp { } {
+	global sublimeversion
+	puts stderr "\tInitializes your environment to use the Sublime Text program"
+	puts stderr "\n\tVersion $sublimeversion\n"
+}
+
+module-whatis "initializes Sublime Text editor program"
+
+set sublimeversion 2.0.2
+
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/sublime/$sublimeversion/bin

@@ -1,0 +1,23 @@
+#%Module1.0
+#
+## dna_nexus modulefile
+##
+## Initializes dna_nexus package.
+##
+#
+set version 3.2
+
+proc ModulesHelp { } {
+	global version
+	global dnanexusversion
+
+	puts stderr "\tInitializes your environment to use the destiny $version R package from Bioconductor."
+}
+
+module-whatis "initializes Destiny"
+
+# for Tcl script use only
+
+module load r/3.2.2
+module load gcc/5.2.0
+

@@ -1,0 +1,15 @@
+#%Module1.0
+#
+##
+proc ModulesHelp { } {
+	puts stderr "\tInitializes your environment to use the sailfish software\n"
+	puts stderr "\n\tVersion 0.7.5\n"
+}
+
+module-whatis "initializes sailfish software"
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/sailfish/SailfishBeta-0.7.5_Linux-x86-64/bin
+prepend-path LD_LIBRARY_PATH $::env(MODULESAPPSDIR)/sailfish/SailfishBeta-0.7.5_Linux-x86-64/lib

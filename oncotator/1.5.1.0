@@ -17,7 +17,7 @@ proc ModulesHelp { } {
 set version 1.5.1.0
 
 module add python/2.7
-module add r/3.2.0
+module add r/3.1.1
 
 # sets the MODULESAPPSDIR env var
 module add modsappsdir

@@ -15,4 +15,4 @@ module-whatis "Initializes ogetools.accounting python module for processing OGE 
 # sets the MODULESAPPSDIR env var
 module add modsappsdir
 
-prepend-path PYTHONPATH $::env(MODULESAPPSDIR)/gbsc/gbsc_utils/ogetools
+prepend-path PYTHONPATH $::env(MODULESAPPSDIR)/gbsc/gbsc_utils

@@ -13,4 +13,4 @@ module add modsappsdir
 module add perl-scg
 
 setenv PRINSEQ $::env(MODULESAPPSDIR)/prinseq/prinseq-lite-0.20.4/
-prepend-path PATH $::env(MODULESAPPSDIR)/prinseq/prinseq-lite-0.20.4
+#prepend-path PATH $::env(MODULESAPPSDIR)/prinseq/prinseq-lite-0.20.4

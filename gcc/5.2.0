@@ -24,4 +24,3 @@ prepend-path LD_LIBRARY_PATH $::env(MODULESAPPSDIR)/gnu/gcc/$version/lib64
 prepend-path MANPATH $::env(MODULESAPPSDIR)/gnu/gcc/$version/share/man
 setenv CC $::env(MODULESAPPSDIR)/gnu/gcc/$version/bin/gcc
 setenv CXX $::env(MODULESAPPSDIR)/gnu/gcc/$version/bin/g++
-

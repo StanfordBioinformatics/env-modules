@@ -1,0 +1,23 @@
+#%Module1.0
+#
+## eigensoft modulefile
+##
+## Initializes eigensoft
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the eigensoft package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes eigensoft package"
+
+# for Tcl script use only
+set version 6.0.1
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path C_INCLUDE_PATH $::env(MODULESAPPSDIR)/eigensoft/EIG$version/include
+prepend-path PATH $::env(MODULESAPPSDIR)/eigensoft/EIG$version/bin

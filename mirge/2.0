@@ -1,0 +1,28 @@
+#%Module1.0
+#
+## mirge modulefile
+##
+## Initializes mirge
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the mirge package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes mirge package"
+
+# for Tcl script use only
+set version 2.0
+
+module add perl-scg/1.0
+module add python/2.7
+module add cutadapt/1.8.1
+module add bowtie/1.1.1
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/mirge/$version/miRge
+prepend-path PERL5LIB $::env(MODULESAPPSDIR)/mirge/$version/miRge
