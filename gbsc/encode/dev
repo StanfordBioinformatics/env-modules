@@ -9,7 +9,7 @@ set version 0.1.0
 
 # sets the MODULESAPPSDIR env var
 module load modsappsdir
-module load python/2.7
+module load python/2.7.9
 module load gbsc/scgpm_lims
 module load gbsc/gbsc_utils
 module load gbsc/limshostenv/dev
