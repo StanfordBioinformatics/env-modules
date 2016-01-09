@@ -20,7 +20,7 @@ set repos $::env(MODULESAPPSDIR)/gbsc/scgpm_lims/current
 # sets the MODULESAPPSDIR env var
 module add modsappsdir
 
-module add python/2.7.9
+module add python/2.7
 
 prepend-path PYTHONPATH $repos
 #i.e. from scgpm_lims import Connection

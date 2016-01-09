@@ -31,7 +31,7 @@ prepend-path PYTHONPATH $prefix/pipeline2
 prepend-path PATH $prefix/pipeline2
 
 module add sjm/1.2/15sec
-module add python/2.7.9
+module add python/2.7
 
 
 #setenv SNAP_SHOW_PEAKSEQ_REQUEST_URL /api/peakseq_inputs/show?experiment_run_id=
