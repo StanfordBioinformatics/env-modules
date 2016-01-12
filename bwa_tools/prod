@@ -15,7 +15,7 @@ proc ModulesHelp { } {
 module-whatis "initializes bwa pipeline scripts"
 
 # for Tcl script use only
-set bwatoolsversion 3.1.0
+set bwatoolsversion 3.2.0
 
 # sets the MODULESAPPSDIR env var
 module add modsappsdir
