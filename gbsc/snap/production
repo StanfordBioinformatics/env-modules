@@ -15,9 +15,9 @@ module-whatis "initializes SNAP for the production server (NUMMEL)"
 
 # for Tcl script use only
 set snapproductionversion production
-set prefix /srv/gsfs0/projects/gbsc/workspace/nathankw/Scoring/
+set prefix $MODULESAPPSDIR/gbsc/EncodeScoring 
 #setenv SNAP_ENVIRONMENT production
-setenv SNAP_PEAKSEQ_EXECUTABLE $prefix/pipeline2
+setenv SNAP_PEAKSEQ_EXECUTABLE $prefix
 #setenv SNAP_HOSTNAME scg-snap.stanford.edu
 #setenv SNAP_URL http://scg-snap.stanford.edu
 setenv R_LIBS $prefix/idr/spp_package
@@ -25,13 +25,14 @@ setenv R_LIBS $prefix/idr/spp_package
 #prepend-path RUBYLIB /srv/gsfs0/software/gbsc/gbsc_utils/snap
 #prepend-path RUBYLIB /srv/gs1/apps/snap_support/production/current
 #prepend-path PATH /srv/gsfs0/software/gbsc/gbsc_utils/snap
-prepend-path PYTHONPATH $prefix/pipeline2/Utils
-prepend-path PATH $prefix/pipeline2/Utils
-prepend-path PYTHONPATH $prefix/pipeline2
-prepend-path PATH $prefix/pipeline2
+prepend-path PYTHONPATH $prefix/Utils
+prepend-path PATH $prefix/Utils
+prepend-path PYTHONPATH $prefix
+prepend-path PATH $prefix
 
 module add sjm/1.2/15sec
-module add python/2.7
+module add python/2.7.9
+module load r/3.2.2
 
 
 #setenv SNAP_SHOW_PEAKSEQ_REQUEST_URL /api/peakseq_inputs/show?experiment_run_id=
