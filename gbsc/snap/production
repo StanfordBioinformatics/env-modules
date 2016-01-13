@@ -15,7 +15,7 @@ module-whatis "initializes SNAP for the production server (NUMMEL)"
 
 # for Tcl script use only
 set snapproductionversion production
-set prefix $MODULESAPPSDIR/gbsc/EncodeScoring 
+set prefix $::env(MODULESAPPSDIR)/gbsc/EncodeScoring 
 #setenv SNAP_ENVIRONMENT production
 setenv SNAP_PEAKSEQ_EXECUTABLE $prefix
 #setenv SNAP_HOSTNAME scg-snap.stanford.edu
