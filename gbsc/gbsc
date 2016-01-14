@@ -1,0 +1,17 @@
+#%Module1.0
+#
+## breakdancer modulefile
+##
+## Initializes  breakdancer
+##
+proc ModulesHelp { } {
+
+	puts stderr "\tInitializes your environment to use packages within the gbsc software directory that contains many different internal software projects. This is really useful when needing to do package imports, i.e. in Python.")"
+}
+
+
+set GBSC	$::env(MODULESAPPSDIR)/gbsc
+setenv GBSC ${GBSC}
+
+prepend-path PYTHONPATH ${GBSC}
+prepend-path PATH ${GBSC}
