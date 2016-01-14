@@ -16,8 +16,8 @@ module-whatis "initializes breakdancer"
 # for Tcl script use only
 set version 0.1.0
 
-# sets the MODULESAPPSDIR env var
-module add modsappsdir
+module load gbsc/gbsc #adds the gbsc software folder to PYTHONPATH
+
 # This module defines env vars LIMS_HOST and LIMS_RAKEFILE.
 module add gbsc/limshostenv/prod
 module load python/2.7
