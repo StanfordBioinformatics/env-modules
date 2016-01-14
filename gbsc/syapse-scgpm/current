@@ -1,0 +1,24 @@
+#%Module1.0
+#
+## breakdancer modulefile
+##
+## Initializes  breakdancer
+##
+proc ModulesHelp { } {
+	global breakdancerversion
+
+	puts stderr "\tInitializes your environment to use GBSC's gbsc_utils github repository code.")"
+	puts stderr "\n\tVersion $version\n"
+}
+
+# for Tcl script use only
+set version current
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+set SYAPSE_SCGPM	$::env(MODULESAPPSDIR)/syapse_scgpm/$version
+setenv SYAPSE_SCGPM ${SYAPSE_SCGPM}
+
+prepend-path PYTHONPATH ${SYAPSE_SCGPM}
+prepend-path PATH ${SYAPSE_SCGPM}
