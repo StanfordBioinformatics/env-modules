@@ -14,7 +14,8 @@ proc ModulesHelp { } {
 # for Tcl script use only
 set version current
 
-module load gbsc/gbsc #adds the gbsc software folder to PYTHONPATH
+# Adds the gbsc software folder to PYTHONPATH
+module load gbsc/gbsc
 
 set SYAPSE_SCGPM	$::env(GBSC)/syapse_scgpm/$version
 setenv SYAPSE_SCGPM ${SYAPSE_SCGPM}
