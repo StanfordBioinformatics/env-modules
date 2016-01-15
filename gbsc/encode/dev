@@ -11,7 +11,7 @@ set version 0.1.0
 module load gbsc/gbsc #adds the gbsc software folder to PYTHONPATH
 set repos $::env(GBSC)/encode
 
-module load python/2.7
+module load python/2.7.9
 module load gbsc/syapse_scgpm/current
 module load gbsc/scgpm_lims
 module load gbsc/gbsc_utils
