@@ -7,7 +7,6 @@
 proc ModulesHelp { } {
 	global breakdancerversion
 
-	puts stderr "\tInitializes your environment to use GBSC's gbsc_utils github repository code.")"
 	puts stderr "\n\tVersion $version\n"
 }
 
@@ -16,8 +15,10 @@ set version current
 
 # Adds the gbsc software folder to PYTHONPATH
 module load gbsc/gbsc
+module load python/2.7.9
 
-set SYAPSE_SCGPM	$::env(GBSC)/syapse_scgpm/$version
+set SYAPSE_SCGPM	$::env(GBSC)/syapse_scgpm/$version/
 setenv SYAPSE_SCGPM ${SYAPSE_SCGPM}
 
 prepend-path PATH ${SYAPSE_SCGPM}/scripts
+prepend-path PYTHONPATH ${SYAPSE_SCGPM}

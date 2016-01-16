@@ -15,23 +15,23 @@ module-whatis "initializes SNAP for the production server (NUMMEL)"
 # for Tcl script use only
 #
 module load gbsc/syapse_scgpm/current
-set prefix $::env(MODULESAPPSDIR)/gbsc/EncodeScoring 
+set repos $::env(MODULESAPPSDIR)/gbsc/EncodeScoring 
 #setenv SNAP_ENVIRONMENT production
-setenv SNAP_PEAKSEQ_EXECUTABLE $prefix
+setenv SNAP_PEAKSEQ_EXECUTABLE $repos
 #setenv SNAP_HOSTNAME scg-snap.stanford.edu
 #setenv SNAP_URL http://scg-snap.stanford.edu
-setenv R_LIBS $prefix/idr/spp_package
-#prefix-path RUBYLIB /srv/gs1/apps/snap_support/production/current
+setenv R_LIBS $repos/idr/spp_package
+#repos-path RUBYLIB /srv/gs1/apps/snap_support/production/current
 #prepend-path RUBYLIB /srv/gsfs0/software/gbsc/gbsc_utils/snap
 #prepend-path RUBYLIB /srv/gs1/apps/snap_support/production/current
 #prepend-path PATH /srv/gsfs0/software/gbsc/gbsc_utils/snap
-prepend-path PYTHONPATH $prefix/Utils
-prepend-path PATH $prefix/Utils
-prepend-path PYTHONPATH $prefix
-prepend-path PATH $prefix
+prepend-path PYTHONPATH $repos/Utils
+prepend-path PATH $repos/Utils
+prepend-path PYTHONPATH $repos
+prepend-path PATH $repos
 
 module load gbsc/syapse_scgpm/current
-module add sjm/1.3.2/15sec
+module add sjm/1.3.0/15sec
 module add python/2.7.9
 module load r/3.2.2
 
