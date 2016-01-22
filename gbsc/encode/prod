@@ -9,7 +9,7 @@ set version current
 
 module load gbsc/gbsc 
 #adds the gbsc software folder to PYTHONPATH
-set repos $::env(GBSC)/encode
+set repos $::env(GBSC)/encode/$version
 
 module load gbsc/syapse_scgpm/current
 module load gbsc/scgpm_lims/current
@@ -20,6 +20,5 @@ module load sjm/1.3.0/15sec
 module load python/2.7.9 
 #contains syapse_client package
 
-prepend-path PATH $repos/$version/dcc_submit
-prepend-path PYTHONPATH $repos/$version/dcc_submit
-prepend-path PYTHONPATH $::env(MODULESAPPSDIR)
+prepend-path PATH $repos/encode/dcc_submit
+prepend-path PYTHONPATH $repos

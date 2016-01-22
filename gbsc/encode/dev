@@ -5,11 +5,11 @@ proc ModulesHelp { } {
 	puts stderr "\tInitializes your environment to use scripts for working with Syapse for ENCODE"
 }
 
-set version 0.1.0
+set version current
 
 
 module load gbsc/gbsc #adds the gbsc software folder to PYTHONPATH
-set repos $::env(GBSC)/encode
+set repos $::env(GBSC)/encode/$version
 
 module load python/2.7.9
 module load gbsc/syapse_scgpm/current
@@ -22,5 +22,5 @@ module load gbsc/mandrill
 module load sjm/1.2/15sec
 module load gbsc/snap/production
 
-prepend-path PATH $repos/$version/dcc_submit
-prepend-path PYTHONPATH $repos/$version/dcc_submit
+prepend-path PATH $repos/encode/dcc_submit
+prepend-path PYTHONPATH $repos
