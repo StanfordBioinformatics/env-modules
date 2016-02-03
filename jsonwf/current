@@ -15,7 +15,7 @@ module-whatis "Initializes jsonwf pipeline scripts"
 
 # sets the MODULESAPPSDIR env var
 module add modsappsdir
-module load sjm
+module load sjm/1.3.0/15sec
 
 append-path PATH $::env(MODULESAPPSDIR)/gbsc/jsonwf/current/bin
 append-path PYTHONPATH $::env(MODULESAPPSDIR)/gbsc/jsonwf/current/lib

@@ -20,5 +20,8 @@ module add modsappsdir
 set GBSC	$::env(MODULESAPPSDIR)/gbsc
 setenv GBSC ${GBSC}
 
+set GBSC_UTILS ${GBSC}/gbsc_utils
+setenv GBSC_UTILS ${GBSC_UTILS}
+
 prepend-path PYTHONPATH ${GBSC}
-prepend-path PATH ${GBSC}/gbsc_utils
+prepend-path PATH ${GBSC_UTILS}

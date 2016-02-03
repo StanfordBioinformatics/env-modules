@@ -5,5 +5,5 @@
 ##
 
 setenv UHTS_LIMS_URL "https://uhts-test.stanford.edu"
-setenv UHTS_LIMS_TOKEN  ead892fe4b1ddc91297e
+setenv UHTS_LIMS_TOKEN  98d11f3c5e3be1e81386
 

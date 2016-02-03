@@ -17,8 +17,11 @@ set version current
 module load gbsc/gbsc
 module load python/2.7.9
 
-set SYAPSE_SCGPM	$::env(GBSC)/syapse_scgpm/$version/
+set REPOS_NAME syapse_scgpm
+set SYAPSE_SCGPM	$::env(GBSC)/${REPOS_NAME}/$version
 setenv SYAPSE_SCGPM ${SYAPSE_SCGPM}
 
-prepend-path PATH ${SYAPSE_SCGPM}/scripts
+prepend-path PATH ${SYAPSE_SCGPM}/${REPOS_NAME}/scripts
 prepend-path PYTHONPATH ${SYAPSE_SCGPM}
+
+setenv SYAPSE_SCGPM_CONF ${SYAPSE_SCGPM}/${REPOS_NAME}/conf_syapse_connection.json
