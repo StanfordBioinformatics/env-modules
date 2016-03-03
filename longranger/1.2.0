@@ -19,6 +19,7 @@ set version 1.2.0
 # sets the MODULESAPPSDIR env var
 module add modsappsdir
 module add python/2.7
+module add bcl2fastq2/2.17.1.14
 
 setenv TENX_REFDATA /srv/gsfs0/software/longranger/refdata-hg19-1.2.0
 

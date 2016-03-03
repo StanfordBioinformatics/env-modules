@@ -35,7 +35,6 @@ module add sjm/1.3.0/15sec
 module add python/2.7.9
 module load r/3.2.2
 
-
 #setenv SNAP_SHOW_PEAKSEQ_REQUEST_URL /api/peakseq_inputs/show?experiment_run_id=
 #setenv SNAP_UNSCORED_PEAKSEQ_REQUESTS_URL /api/peakseq_inputs/show_unscored_peakseq_runs
 #setenv SNAP_PEAKSEQ_REQUEST_RESULTS_URL /api/peakseq_results/update
