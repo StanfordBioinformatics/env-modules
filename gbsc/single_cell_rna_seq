@@ -17,4 +17,4 @@ module load gbsc/gbsc_utils
 module load jsonwf/current
 
 #prepend-path PYTHONPATH ${GBSC}
-prepend-path PATH ${GBSC_UTILS}/single_cell_rna_seq
+prepend-path PATH $::env(GBSC_UTILS)/single_cell_rna_seq
