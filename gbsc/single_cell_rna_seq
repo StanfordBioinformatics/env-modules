@@ -1,0 +1,19 @@
+#%Module1.0
+#
+## breakdancer modulefile
+##
+## Initializes  breakdancer
+##
+proc ModulesHelp { } {
+	global breakdancerversion
+
+	puts stderr "\tInitializes your environment to use GBSC's gbsc_utils github repository code.")"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#set version 0.1.0
+
+module load gbsc/gbsc_utils
+
+#prepend-path PYTHONPATH ${GBSC}
+prepend-path PATH ${GBSC_UTILS}/single_cell_rna_seq
