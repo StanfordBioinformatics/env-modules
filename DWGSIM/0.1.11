@@ -1,0 +1,25 @@
+#%Module1.0
+#
+## Python modulefile
+##
+## Initializes Python
+##
+proc ModulesHelp { } {
+global version
+
+puts stderr "\tInitializes DWGSIM module to simulate next-gen reads"
+puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes Python package"
+
+# Add required modules
+#module add python/2.7  # Example
+
+# for Tcl script use only.
+set version 0.1.11
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/DWGSIM/0.1.11
