@@ -1,0 +1,21 @@
+#%Module1.0
+#
+## fastqc modulefile
+##
+## Initializes fastqc.
+##
+
+proc ModulesHelp { } { 
+# global version
+
+   puts stdout "\tInitializes your environment to use SevenBridge's CGC Uploader. This module just exports the varible \$CGC_UPLOADER, and you must change to that directory and the run command from there, i.e.: "
+   puts stdout "\t\t >cd \$CGC_UPLOADER"
+   puts stdout "\t\t >bin/cgc-uploader.sh"
+	 puts stdout "Documentation at http://docs.cancergenomicscloud.org/docs/upload-via-the-command-line."
+}
+
+#requires java >= 1.7
+module load java/latest
+
+#the uploader must be run from this directory:
+setenv CGC_UPLOADER  $::env(MODULESAPPSDIR)/sb-genomics/cgc/cgc-uploader
