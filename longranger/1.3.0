@@ -1,0 +1,34 @@
+#%Module1.0
+#
+## longranger modulefile
+##
+## Initializes longranger
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the longranger package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes longranger package"
+
+# for Tcl script use only
+set version 1.3.0
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+module add python/2.7
+module add bcl2fastq2/2.17.1.14
+
+prepend-path PATH $::env(MODULESAPPSDIR)/longranger/$version
+
+setenv TENX_REFDATA /srv/gsfs0/software/longranger/refdata-hg19-1.2.0
+
+#setenv MROFLAGS --vdrmode=rolling
+#setenv MROPATH $::env(MODULESAPPSDIR)/longranger/$version/pipelines-cs/$version/mro
+
+#prepend-path PATH $::env(MODULESAPPSDIR)/longranger/$version/freebayes/7dd41dbc8:$::env(MODULESAPPSDIR)/longranger/$version/bcftools/9058fceb15:$::env(MODULESAPPSDIR)/longranger/$version/bedtools/v2.21.0:$::env(MODULESAPPSDIR)/longranger/$version/anaconda-cs/2.2.0/bin:$::env(MODULESAPPSDIR)/longranger/$version/bwa/0.7.12:$::env(MODULESAPPSDIR)/longranger/$version/martian-cs/$version/bin:$::env(MODULESAPPSDIR)/longranger/$version/pipelines-cs/$version/lib/bin:$::env(MODULESAPPSDIR)/longranger/$version/pipelines-cs/$version/bin:$::env(MODULESAPPSDIR)/longranger/$version/vcflib/6485fbc:$::env(MODULESAPPSDIR)/longranger/$version/samtools/0.1.19
+
+#prepend-path PYTHONPATH $::env(MODULESAPPSDIR)/longranger/$version/martian-cs/$version/adapters/python
+#prepend-path PYTHONPATH $::env(MODULESAPPSDIR)/longranger/$version/pipelines-cs/$version/lib/python
