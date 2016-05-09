@@ -1,0 +1,24 @@
+#%Module1.0
+#
+## trinity modulefile
+##
+## Initializes presto
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the changeo python package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes trinity package"
+
+# for Tcl script use only
+set version 0.3.2
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+module add presto
+module add python/3.4
+
+prepend-path PATH $::env(MODULESAPPSDIR)/changeo/$version/bin
