@@ -1,0 +1,20 @@
+#%Module1.0
+#
+proc ModulesHelp { } {
+	global pythonversion
+
+	puts stderr "\tInitializes your environment to use MACHETE."
+}
+
+module-whatis "initializes MACHETE"
+
+set version current
+
+module add python/2.7.9
+module add r/3.2.5
+module add bowtie/2.2.7
+
+# "prepend-path" used to mask the default python in /usr/bin
+set MACHETE $::env(MODULESAPPSDIR)/machete-nathankw/${version}
+setenv MACHETE ${MACHETE}
+prepend-path PATH $MACHETE
