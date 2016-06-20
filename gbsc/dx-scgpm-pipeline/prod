@@ -1,5 +1,5 @@
 #%Module1.0
-#
+
 ## breakdancer modulefile
 ##
 ## Initializes  breakdancer
@@ -16,7 +16,8 @@ module-whatis "initializes breakdancer"
 # for Tcl script use only
 set version 0.1.0
 
-module load gbsc/gbsc #adds the gbsc software folder to PYTHONPATH
+#add the gbsc software folder to PYTHONPATH
+module load gbsc/gbsc 
 set repos $::env(GBSC)/dx-scgpm-pipeline
 
 
