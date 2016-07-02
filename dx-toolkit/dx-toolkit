@@ -14,14 +14,12 @@ proc ModulesHelp { } {
 module-whatis "initializes dna_nexus"
 
 # for Tcl script use only
-set prod 0.175.1
+set prod 0.182.1
 
-# sets the MODULESAPPSDIR env var
-module add modsappsdir
 module load python/2.7
 
-if { [catch {$::env(DXTOOLKIT_VERSION)}]} {
-	set DXTOOLKIT_VERSION $prod
-}
+#if { [catch {$::env(DXTOOLKIT_VERSION)}]} {
+#	setenv DXTOOLKIT_VERSION $prod
+#}
 
-setenv DXTOOLKIT $::env(MODULESAPPSDIR)/dx-toolkit/$DXTOOLKIT_VERSION/environment
+setenv DXTOOLKIT $::env(MODULESAPPSDIR)/dx-toolkit/$::env(DXTOOLKIT_VERSION)/environment
