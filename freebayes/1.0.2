@@ -14,8 +14,10 @@ proc ModulesHelp { } {
 module-whatis "initializes freebayes"
 
 # for Tcl script use only
-set version 0.9.14
+set version 1.0.2
 
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
 
 prepend-path PATH $::env(MODULESAPPSDIR)/freebayes/$version
 setenv FREEBAYESROOT $::env(MODULESAPPSDIR)/freebayes/$version
