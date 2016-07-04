@@ -16,9 +16,9 @@ module-whatis "initializes freebayes"
 # for Tcl script use only
 set version 1.0.2
 
-# sets the MODULESAPPSDIR env var
-module add modsappsdir
+module add gcc/5.2.0
 
-prepend-path PATH $::env(MODULESAPPSDIR)/freebayes/$version
+prepend-path PATH $::env(MODULESAPPSDIR)/freebayes/$version/bin
+prepend-path PATH $::env(MODULESAPPSDIR)/freebayes/$version/scripts
 setenv FREEBAYESROOT $::env(MODULESAPPSDIR)/freebayes/$version
-setenv FREEBAYES $::env(MODULESAPPSDIR)/freebayes/$version
+setenv FREEBAYES $::env(MODULESAPPSDIR)/freebayes/$version/bin/freebayes
