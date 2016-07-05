@@ -1,0 +1,18 @@
+#%Module1.0
+#
+## fastqc modulefile
+##
+## Initializes fastqc.
+##
+proc ModulesHelp { } {
+	global fastqcversion
+
+	puts stderr "jq is like sed for JSON data - you can use it to slice and filter and map and transform structured data with the same ease that sed, awk, grep and friends let you play with text."
+}
+
+module-whatis "initializes jq"
+
+# for Tcl script use only
+set version 1.5
+
+prepend-path PATH $::env(MODULESAPPSDIR)/jq/$version
