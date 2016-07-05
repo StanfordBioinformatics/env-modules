@@ -1,0 +1,19 @@
+#%Module1.0
+#
+## breakdancer modulefile
+##
+## Initializes  breakdancer
+##
+proc ModulesHelp { } {
+
+	puts stderr "\tInitializes your environment to use GBSC utils for DNAnexus."
+	puts stderr "\n\tVersion $version\n"
+}
+
+# for Tcl script use only
+set version current
+
+module load python/2.7.9
+
+prepend-path PATH /srv/gsfs0/software/gbsc/dnanexus/$version
+prepend-path PYTHONPATH /srv/gsfs0/software/gbsc/dnanexus/$version
