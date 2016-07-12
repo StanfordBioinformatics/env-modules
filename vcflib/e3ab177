@@ -1,0 +1,23 @@
+#%Module1.0
+#
+## vcflib modulefile
+##
+## Initializes vcflib package
+##
+proc ModulesHelp { } {
+	global vcflibversion
+
+	puts stderr "\tInitializes your environment to use the vcflib package,\n"
+	puts stderr "\ta set of tools to analyze .vcf files.\n" 
+	puts stderr "\n\tVersion $version, which was downloaded on 2016-06-11 from the head of the git repository."
+}
+
+module-whatis "initializes vcflib package with git version e3ab177, which was downloaded on 2016-06-11 from the head of the git repository."
+
+# for Tcl script use only
+set version e3ab177
+
+module load gcc/5.2.0
+
+setenv VCFLIBROOT $::env(MODULESAPPSDIR)/vcflib/$version/bin
+prepend-path PATH $::env(MODULESAPPSDIR)/vcflib/$version/bin
