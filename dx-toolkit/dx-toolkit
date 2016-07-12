@@ -17,9 +17,6 @@ module-whatis "initializes dna_nexus"
 set prod 0.193.0
 
 module load python/2.7.9
-module load gcc/5.2.0
-#Need to load gcc, otherwise can get errors when using dx, such as 
-## Error while retrieving session configuration: ImportError: /lib64/libc.so.6: version `GLIBC_2.13'
 
 if { [catch {$::env(DXTOOLKIT_VERSION)}]} {
 	setenv DXTOOLKIT_VERSION $prod
