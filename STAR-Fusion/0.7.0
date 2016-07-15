@@ -1,0 +1,19 @@
+#%Module1.0
+#
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use STAR-Fusion"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes PyQt4 package"
+
+# for Tcl script use only
+set version 0.7.0
+
+
+# sets the MODULESAPPSDIR env var
+prereq STAR
+
+prepend-path PATH $::env(MODULESAPPSDIR)/STAR-Fusion/$version
