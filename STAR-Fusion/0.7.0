@@ -13,7 +13,9 @@ proc ModulesHelp { } {
 set version 0.7.0
 
 
-# sets the MODULESAPPSDIR env var
+module load perl-scg/5.24.0 
+#perl-scg/5.24.0 has Set::IntervalTree and DB_File packages installed as required by STAR-Fusion
+
 prereq STAR
 
 prepend-path PATH $::env(MODULESAPPSDIR)/STAR-Fusion/$version
