@@ -1,0 +1,40 @@
+#%Module1.0
+#
+## STAR modulefile
+##
+## Initializes STAR
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use STAR, which"
+	puts stderr "\taligns RNA-seq reads to a reference genome using uncompressed suffix arrays."
+	puts stderr "\thttps://code.google.com/p/rna-star/"
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes STAR"
+
+# for Tcl script use only
+set version 2.5.1b
+
+module load perl-scg/5.24.0
+module load gcc/5.2.0
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/STAR/STAR_$version/bin/Linux_x86_64
+prepend-path PATH $::env(MODULESAPPSDIR)/STAR/STAR_$version/STAR-Fusion
+
+# set env vars for STAR Genome and GTF locations
+setenv STAR_HG19_GENOME /srv/gsfs0/shared_data/RefGenomes/H_sapiens/hg19/indexes/STAR/$version/iGenomes/09_30_2015
+setenv STAR_HG19_GTF /srv/gsfs0/shared_data/RefGenomes/iGenomes/human/09_30_2015/Homo_sapiens/UCSC/hg19/Annotation/Archives/archive-2015-07-17-14-32-32/Genes/genes.gtf
+setenv STAR_HG19_FASTA /srv/gsfs0/shared_data/RefGenomes/GATK_Resource_Bundle/2.8/hg19/ucsc.hg19.fasta
+setenv STAR_MM9_GENOME /srv/gsfs0/shared_data/RefGenomes/Mus_musculus/mm9/indexes/STAR/$version/iGenomes/05_14_2014
+setenv STAR_MM9_GTF /srv/gsfs0/shared_data/RefGenomes/Mus_musculus/mm9/illumina_igenomes_mus_musculus_ucsc_mm9.gtf
+setenv STAR_MM9_FASTA /srv/gsfs0/shared_data/RefGenomes/Mus_musculus/mm9/mm9.fa
+#setenv STAR_RN5_GENOME /srv/gsfs0/shared_data/RefGenomes/R_norvegicus/rn5/indexes/STAR/$version/iGenomes/05_14_2014
+#setenv STAR_RN5_GTF /srv/gsfs0/shared_data/RefGenomes/R_norvegicus/rn5/illumina_igenomes_rattus_norvegicus_ucsc_rn5.gtf
+#setenv STAR_XENTRO9_GENOME /srv/gsfs0/shared_data/RefGenomes/X_tropicalis/xenTro9/indexes/STAR/$version
+#setenv STAR_XENTRO9_GTF /srv/gsfs0/shared_data/RefGenomes/X_tropicalis/xenTro9/Xtropicalisv9.0.Named.primaryTrs.gff3 
