@@ -18,4 +18,8 @@ module load perl-scg/5.24.0
 
 prereq STAR
 
-prepend-path PATH $::env(MODULESAPPSDIR)/STAR-Fusion/$version
+set repos $::env(MODULESAPPSDIR)/STAR-Fusion/$version
+prepend-path PATH $repos
+
+setenv STARFusion $repos
+
