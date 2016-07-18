@@ -7,9 +7,15 @@ proc ModulesHelp { } {
 
 module-whatis   "Latest version of R"
 
-set version 3.2.2
+set version 3.3.0
 
+# sets the MODULESAPPSDIR env var
 module load gcc/5.2.0
+module load zlib/1.2.8
+module load xz/5.2.2 
+module load pcre/8.37
+module load bzip2/1.0.6
+module load curl/7.49.1
 
 set repos $::env(MODULESAPPSDIR)/R/$version
 prepend-path	PATH $repos/bin
