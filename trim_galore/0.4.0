@@ -23,6 +23,4 @@ module add python/2.7
 # trim_galore requires fastqc
 module add fastqc
 
-module add perl-scg/1.0
-
 prepend-path PATH $::env(MODULESAPPSDIR)/trim_galore/$version/
