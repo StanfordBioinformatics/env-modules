@@ -1,0 +1,23 @@
+#%Module1.0
+#
+## GFF modulefile
+##
+## Initializes GFF
+##
+proc ModulesHelp { } {
+	global igvversion
+
+	puts stderr "\tInitializes your environment to use GFF Genome Feature Extraction\n"
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes GFF"
+
+# for Tcl script use only
+set version 2.3
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/gff/$version/gff_scripts
+setenv GFF $::env(MODULESAPPSDIR)/gff/$version/gff_scripts
