@@ -18,9 +18,8 @@ module-whatis "initializes fastqc"
 set fastqcversion 0.11.4
 
 # fastqc requires java
-module add java
+# module add java
 
-# sets the MODULESAPPSDIR env var
-module add modsappsdir
+module load perl-scg/5.24.0
 
 prepend-path PATH $::env(MODULESAPPSDIR)/fastqc/$fastqcversion
