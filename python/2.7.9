@@ -15,8 +15,8 @@ proc ModulesHelp { } {
 module-whatis "initializes python"
 set pythonversion 2.7.9
 
-# sets the MODULESAPPSDIR env var
-module add modsappsdir
+module load gcc/5.2.0
+
 # "prepend-path" used to mask the default python in /usr/bin
 setenv PYTHONROOT $::env(MODULESAPPSDIR)/python/$pythonversion/bin
 prepend-path PATH $::env(MODULESAPPSDIR)/python/$pythonversion/bin
