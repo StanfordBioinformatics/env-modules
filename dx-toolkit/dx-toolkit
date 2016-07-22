@@ -19,7 +19,6 @@ set prod 0.193.0
 module load python/2.7.9
 
 if {! [info  exists env(DXTOOLKIT_VERSION)]} {
-	puts stderr "hi"
 	setenv DXTOOLKIT_VERSION $prod
 }
 
