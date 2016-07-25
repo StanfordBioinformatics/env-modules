@@ -1,0 +1,4 @@
+#%Module1.0
+
+setenv DXTOOLKIT_VERSION 0.193.0
+module load dx-toolkit/dx-toolkit
