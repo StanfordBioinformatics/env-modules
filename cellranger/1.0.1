@@ -1,0 +1,27 @@
+#%Module1.0
+#
+## longranger modulefile
+##
+## Initializes longranger
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the 10X Cell Ranger package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes longranger package"
+
+# for Tcl script use only
+set version 1.0.1
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+module add python/2.7
+module add bcl2fastq2/2.17.1.14
+
+prepend-path PATH $::env(MODULESAPPSDIR)/cellranger/$version
+
+setenv CELLRANGER_REFDATA $::env(MODULESAPPSDIR)/cellranger/$version/refdata-cellranger-1.0.0
+
