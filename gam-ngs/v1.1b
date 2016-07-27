@@ -1,0 +1,22 @@
+#%Module1.0
+#
+## samtools modulefile
+##
+## Initializes samtools package
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the gam-ngs package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes gam-ngs package"
+
+# for Tcl script use only
+set version v1.1b
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/gam-ngs/$version/bin
