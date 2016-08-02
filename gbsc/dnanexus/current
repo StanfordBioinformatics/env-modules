@@ -10,10 +10,15 @@ proc ModulesHelp { } {
 	puts stderr "\n\tVersion $version\n"
 }
 
-# for Tcl script use only
-set version current
 
 module load python/2.7.9
+module load dx-toolkit/dx-toolkit
 
-prepend-path PATH /srv/gsfs0/software/gbsc/dnanexus/$version
-prepend-path PYTHONPATH /srv/gsfs0/software/gbsc/dnanexus/$version
+
+set version current
+set repos $::env(MODULESAPPSDIR)/gbsc/dnanexus/$version
+
+setenv DX_LOGIN_CONF $repos/dnanexus_conf.json
+
+prepend-path PATH $repos
+prepend-path PYTHONPATH $repos
