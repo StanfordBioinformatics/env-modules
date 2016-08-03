@@ -16,8 +16,8 @@ module-whatis "initializes Google Cloud SDK"
 # for Tcl script use only
 set version latest
 
-# Require python/2.7
-prereq python/2.7
+# Require pythoe/2.7
+module load python/2.7
 
 # sets the MODULESAPPSDIR env var
 module add modsappsdir
