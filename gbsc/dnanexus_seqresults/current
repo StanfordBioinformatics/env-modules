@@ -14,11 +14,12 @@ proc ModulesHelp { } {
 module load python/2.7.9
 module load dx-toolkit/dx-toolkit
 
-
+set name dnanexus_seqresults
 set version current
-set repos $::env(MODULESAPPSDIR)/gbsc/dnanexus/$version
+set repos $::env(MODULESAPPSDIR)/gbsc/$name/$version/
 
-setenv DX_LOGIN_CONF $repos/dnanexus_conf.json
+setenv DX_LOGIN_CONF $repos/$name/dnanexus_conf.json
 
-prepend-path PATH $repos
+prepend-path PATH $repos/$name
 prepend-path PYTHONPATH $repos
+
