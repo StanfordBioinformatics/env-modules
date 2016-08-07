@@ -23,4 +23,5 @@ module load sjm/1.2/15sec
 module load gbsc/snap/production
 
 prepend-path PATH $repos/encode/dcc_submit
+prepend-path PATH $repos/${reposName}/upload_seq_results_to_syapse
 prepend-path PYTHONPATH $repos
