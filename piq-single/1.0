@@ -1,0 +1,25 @@
+#%Module1.0
+#
+## PIQ-single modulefile
+##
+## Initializes PIQ-single
+##
+proc ModulesHelp { } {
+	global picardtoolsversion
+
+	puts stderr "\tInitializes your environment to use PIQ-single peak caller"
+	puts stderr "\t(https://bitbucket.org/thashim/piq-single/overview)"
+	puts stderr "\n\tVersion PIQ-single $version\n"
+}
+
+module-whatis "initializes PIQ-single peak caller"
+
+# for Tcl script use only
+set version 1.0
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+module add r/3.2.0
+
+prepend-path PATH $::env(MODULESAPPSDIR)/piq-single/$version
+setenv PIQ $::env(MODULESAPPSDIR)/piq-single/$version

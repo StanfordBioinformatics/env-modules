@@ -1,0 +1,21 @@
+#%Module1.0
+#
+## gbsc_billing modulefile
+##
+## Initializes the GBSC billing scripts
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the GBSC billing scripts\n"
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes GBSC billing scripts"
+
+# for Tcl script use only
+set version latest
+
+prereq python/2.7
+
+prepend-path PATH $::env(MODULESAPPSDIR)/gbsc/gbsc_billing/
