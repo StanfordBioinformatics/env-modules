@@ -1,0 +1,30 @@
+#%Module1.0
+#
+## oncotator modulefile
+##
+## Initializes oncotator
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the oncotator package. After loading this module, type 'source $ONCOTATOR_ACTIVATE'."
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes oncotator package"
+
+# for Tcl script use only
+set version 1.8.0.0
+set repos $::env(MODULESAPPSDIR)/oncotator/$version
+
+module add r/3.1.1
+module load gcc/5.2.0
+
+prepend-path PATH $repos/bin
+prepend-path PYTHONPATH $repos
+setenv ONCO_DBDIR /srv/gsfs0/projects/gbsc/Resources/oncotator/oncotator_v1_ds_Jan262015
+setenv ONCO_UNIPROT /srv/gsfs0/projects/gbsc/Resources/oncotator/tx_exact_uniprot_matches.txt
+setenv ONCO_UNIPROTCLIN /srv/gsfs0/projects/gbsc/Resources/oncotator/tx_exact_uniprot_matches.AKT1_CRLF2_FGFR1.txt
+
+setenv ONCOTATOR_ACTIVATE $repos/bin/activate
+
