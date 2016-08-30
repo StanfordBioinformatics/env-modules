@@ -1,0 +1,23 @@
+#%Module1.0
+#
+## python modulefile
+##
+## Initializes python.
+##
+proc ModulesHelp { } {
+	global pythonversion
+
+	puts stderr "This Python has been compiled with sqlite3 enabled."
+	puts stderr "\n\tVersion $pythonversion\n"
+}
+
+module-whatis "initializes python"
+set pythonversion 2.7.9_sqlite
+
+module load gcc/5.2.0
+
+# "prepend-path" used to mask the default python in /usr/bin
+setenv PYTHONROOT $::env(MODULESAPPSDIR)/python/$pythonversion/bin
+prepend-path PATH $::env(MODULESAPPSDIR)/python/$pythonversion/bin
+prepend-path LD_LIBRARY_PATH $::env(MODULESAPPSDIR)/python/$pythonversion/lib
+prepend-path PYTHONPATH $::env(MODULESAPPSDIR)/python/$pythonversion/lib/python
