@@ -1,0 +1,22 @@
+#%Module1.0
+#
+## STAR modulefile
+##
+## Initializes STAR
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tA tool to identify CLIP-seq peaks."
+	puts stderr "\thttps://github.com/YeoLab/clipper"
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "A tool to identify CLIP-seq peaks (https://github.com/YeoLab/clipper)."
+
+# for Tcl script use only
+set version 0.2.0
+
+module load python/2.7.9_sqlite
+module load pysam/0.8.3
+
