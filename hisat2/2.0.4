@@ -1,0 +1,23 @@
+#%Module1.0
+#
+## longranger modulefile
+##
+## Initializes longranger
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the HISAT2 graph-based alignment software"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes longranger package"
+
+# for Tcl script use only
+set version 2.0.4
+
+# sets the MODULESAPPSDIR env var
+
+prepend-path PATH $::env(MODULESAPPSDIR)/hisat2/$version
+
+
