@@ -1,0 +1,21 @@
+#%Module1.0
+#
+## Python modulefile
+##
+## Initializes Python
+##
+proc ModulesHelp { } {
+global version
+
+puts stderr "\tThis Python has been compiled with shared libs (--enable-shared) and sqlite3 enabled."
+puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes Python package"
+
+module load gcc/5.2.0
+
+set version 3.4.5_shlib
+set repos $::env(MODULESAPPSDIR)/python/$version
+
+prepend-path PATH $repos/bin
