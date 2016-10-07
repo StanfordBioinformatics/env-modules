@@ -1,0 +1,25 @@
+#%Module1.0
+#
+## breakdancer modulefile
+##
+## Initializes  breakdancer
+##
+proc ModulesHelp { } {
+
+	puts stderr "\tInitializes your environment to use GBSC utils for DNAnexus."
+	puts stderr "\n\tVersion $version\n"
+}
+
+
+module load python/2.7.9
+module load dx-toolkit/dx-toolkit
+
+set name gbsc_dnanexus
+set version current
+set repos $::env(MODULESAPPSDIR)/gbsc/$name/$version/
+
+setenv DX_LOGIN_CONF $repos/$name/dnanexus_conf.json
+
+prepend-path PATH $repos/$name/scripts
+prepend-path PYTHONPATH $repos
+
