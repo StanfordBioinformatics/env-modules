@@ -13,6 +13,7 @@ proc ModulesHelp { } {
 
 module load python/2.7.9
 module load dx-toolkit/dx-toolkit
+module load jq/1.5
 
 set name gbsc_dnanexus
 set version current
