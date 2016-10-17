@@ -13,7 +13,7 @@ proc ModulesHelp { } {
 
 module load python/2.7.9
 module load dx-toolkit/dx-toolkit
-module load gbsc/gbsc_dnanexus/current
+#module load gbsc/gbsc_dnanexus/current
 module load gbsc/scgpm_lims/current gbsc/limshostenv/prod
 
 set name scgpm_seqresults_dnanexus
@@ -22,4 +22,6 @@ set repos $::env(MODULESAPPSDIR)/gbsc/$name/$version/
 
 prepend-path PATH $repos/$name/scripts
 prepend-path PYTHONPATH $repos
+prepend-path PYTHONPATH $repos/$name
+#Added the above line for PYTHONPATH to get the submodules
 
