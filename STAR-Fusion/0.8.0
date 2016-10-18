@@ -19,6 +19,7 @@ prereq STAR
 
 set repos $::env(MODULESAPPSDIR)/STAR-Fusion/$version
 prepend-path PATH $repos
+prepend-path PERL5LIB $repos/PerlLib
 
 setenv STARFusion $repos
 
