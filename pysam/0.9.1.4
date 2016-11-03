@@ -1,0 +1,22 @@
+#%Module1.0
+#
+## pysam modulefile
+##
+## Initializes pysam
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the pysam package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes pysam package"
+
+# for Tcl script use only
+set version 0.9.1.4
+
+module add python/2.7.9_sqlite
+
+#prepend-path PATH $::env(MODULESAPPSDIR)/pysam/$version/bin
+prepend-path PYTHONPATH $::env(MODULESAPPSDIR)/pysam/$version/lib/python2.7/site-packages
