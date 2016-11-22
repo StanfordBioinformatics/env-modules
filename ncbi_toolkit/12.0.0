@@ -1,0 +1,22 @@
+#%Module1.0
+#
+## rsem modulefile
+##
+## Initializes rsem
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the rsem package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes rsem package"
+set version 12.0.0
+set repos $::env(MODULESAPPSDIR)/src/ncbi_toolkit/ncbi_cxx--12_0_0/GCC481-Debug64
+set bin $repos/bin
+
+prepend-path PATH $repos/bin
+
+setenv NCBI_TOOLKIT_BIN $bin
+
