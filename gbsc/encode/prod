@@ -12,6 +12,8 @@ module load gbsc/gbsc
 #adds the gbsc software folder to PYTHONPATH
 set repos $::env(GBSC)/${reposName}/$version
 
+module load gbsc/scgpm_seqresults_dnanexus/current
+module load jq/1.5
 module load gbsc/syapse_scgpm/current
 module load gbsc/scgpm_lims/current
 module load gbsc/limshostenv/prod
