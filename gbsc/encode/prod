@@ -18,7 +18,6 @@ module load gbsc/syapse_scgpm/current
 module load gbsc/scgpm_lims/current
 module load gbsc/limshostenv/prod
 module load gbsc/gbsc_utils/current
-module load gbsc/mandrill/current
 module load sjm/1.3.0/15sec
 module load python/2.7.9 
 module load dx-toolkit/dx-toolkit
