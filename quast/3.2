@@ -16,8 +16,7 @@ module-whatis "initializes quast module"
 # for Tcl script use only
 set version 3.2
 
-# sets the MODULESAPPSDIR env var
-module add modsappsdir
+module load python/3.2
 
 prepend-path PYTHONPATH $::env(MODULESAPPSDIR)/quast/$version/
 prepend-path PYTHONPATH $::env(MODULESAPPSDIR)/quast/$version/libs
