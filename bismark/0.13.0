@@ -16,8 +16,7 @@ module-whatis "initializes the Bismark bisulfite mapper"
 # for Tcl script use only
 set version 0.13.0
 
-# sets the MODULESAPPSDIR env var
-module add modsappsdir
+module load perl-scg/5.24.0
 
 # Bismark depends on bowtie and samtools.
 prereq bowtie

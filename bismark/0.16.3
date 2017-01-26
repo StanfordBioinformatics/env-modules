@@ -13,8 +13,7 @@ proc ModulesHelp { } {
 
 module-whatis "initializes the Bismark bisulfite mapper" 
 
-# for Tcl script use only
-set version 0.16.3
+module load perl-scg/5.24.0
 
 set repos $::env(MODULESAPPSDIR)/bismark/$version
 # Bismark depends on bowtie and samtools.
