@@ -13,10 +13,13 @@ proc ModulesHelp { } {
 
 module-whatis "initializes the Bismark bisulfite mapper" 
 
-module load perl-scg/5.24.0
+set version 0.16.3
 
+#set MODULESAPPSDIR /srv/gsfs0/software
+#setenv MODULESAPPSDIR $MODULESAPPSDIR
 set repos $::env(MODULESAPPSDIR)/bismark/$version
 # Bismark depends on bowtie and samtools.
+module load perl-scg/5.24.0
 module load bowtie
 module load samtools
 
