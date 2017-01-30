@@ -1,0 +1,21 @@
+#%Module1.0
+#
+## spades modulefile
+##
+## Initializes spades
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the spades package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes spades package"
+
+module add python/2.7
+
+# for Tcl script use only
+set version 3.10.0
+
+prepend-path PATH $::env(MODULESAPPSDIR)/spades/SPAdes-$version-Linux/bin
