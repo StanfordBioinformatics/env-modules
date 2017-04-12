@@ -1,0 +1,36 @@
+#%Module1.0
+#
+## SOAPFuse modulefile
+##
+## Initializes SOAPFuse
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the SOAPFuse package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes SOAPFuse package"
+
+# for Tcl script use only
+set version 1.27
+
+#module add perl-scg/1.0
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/SOAPFuse/SOAPfuse-v$version
+prepend-path PATH $::env(MODULESAPPSDIR)/SOAPFuse/SOAPfuse-v$version/source
+prepend-path PATH $::env(MODULESAPPSDIR)/SOAPFuse/SOAPfuse-v$version/source/For-DE
+prepend-path PATH $::env(MODULESAPPSDIR)/SOAPFuse/SOAPfuse-v$version/source/bin
+prepend-path PATH $::env(MODULESAPPSDIR)/SOAPFuse/SOAPfuse-v$version/source/bin/aln_bin
+prepend-path PATH $::env(MODULESAPPSDIR)/SOAPFuse/SOAPfuse-v$version/source/bin/perl_module/Parallel/ForkManager
+prepend-path PATH $::env(MODULESAPPSDIR)/SOAPFuse/SOAPfuse-v$version/config
+prepend-path PERL5LIB $::env(MODULESAPPSDIR)/SOAPFuse/SOAPfuse-v$version/source/bin/perl_module
+prepend-path PERL5LIB $::env(MODULESAPPSDIR)/SOAPFuse/SOAPfuse-v$version/source/bin/perl_module/Image
+prepend-path PERL5LIB $::env(MODULESAPPSDIR)/SOAPFuse/SOAPfuse-v$version/source/bin/perl_module/JSON
+prepend-path PERL5LIB $::env(MODULESAPPSDIR)/SOAPFuse/SOAPfuse-v$version/source/bin/perl_module/Parallel
+prepend-path PERL5LIB $::env(MODULESAPPSDIR)/SOAPFuse/SOAPfuse-v$version/source/bin/perl_module/SOAPfuse
+prepend-path PERL5LIB $::env(MODULESAPPSDIR)/SOAPFuse/SOAPfuse-v$version/source/bin/perl_module/SVG
