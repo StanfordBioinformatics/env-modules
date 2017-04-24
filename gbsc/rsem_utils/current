@@ -1,0 +1,20 @@
+#%Module1.0
+#
+##
+proc ModulesHelp { } {
+	puts stderr "\tInitializes your environment to use scripts for working with GBSC's rsem_utils scripts."
+}
+
+set version current
+set reposName rsem_utils
+
+module load gbsc/gbsc 
+#Sets the GBSC env variable that points to the gbsc software folder, and 
+# prepends it to PATH and PYTHONPATH.
+set repos $::env(GBSC)/${reposName}/$version
+
+module load python/2.7.9 
+module load r/3.3.1
+
+prepend-path PATH $repos
+prepend-path PYTHONPATH $repos
