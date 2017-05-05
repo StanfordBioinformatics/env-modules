@@ -1,0 +1,25 @@
+#%Module1.0
+#
+## bds_atac modulefile
+##
+## Initializes bds_atac
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the bds_atac package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes bds_atac package"
+
+# for Tcl script use only
+set version "57c6f92"
+
+module add bigdatascript/0.9999
+#module add miniconda3/4.0.5
+
+prepend-path PATH $::env(MODULESAPPSDIR)/bds_atac/$version/bds_atac
+
+setenv ATACSEQ_BDS $::env(MODULESAPPSDIR)/bds_atac/$version/bds_atac/atac.bds
+setenv CHIPSEQ_BDS $::env(MODULESAPPSDIR)/bds_atac/$version/bds_atac/chipseq/chipseq.bds
