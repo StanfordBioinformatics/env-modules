@@ -1,0 +1,19 @@
+#%Module1.0
+#
+##
+proc ModulesHelp { } {
+	puts stderr "\tInitializes your environment to the encode_utils repos."
+}
+
+set version current
+set reposName encode_utils
+
+module load gbsc/gbsc 
+#adds the gbsc software folder to PYTHONPATH
+set repos $::env(GBSC)/${reposName}/$version
+
+module load jq/1.5
+module load python/2.7.9 
+
+prepend-path PATH $repos/${reposName}/$repos_name
+prepend-path PYTHONPATH $repos
