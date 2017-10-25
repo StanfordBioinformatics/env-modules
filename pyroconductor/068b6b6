@@ -1,0 +1,24 @@
+#%Module1.0
+#
+## pyroconductor modulefile
+##
+## Initializes pyroconductor analysis package
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the pyroconductor analysis package\n" 
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes pyroconductor analysis package"
+
+# for Tcl script use only
+set version 068b6b6
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+module add python/2.7
+
+prepend-path PYTHONPATH $::env(MODULESAPPSDIR)/pyroconductor/$version/lib/python2.7/site-packages/

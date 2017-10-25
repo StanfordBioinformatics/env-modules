@@ -1,0 +1,21 @@
+#%Module1.0
+#
+## anaconda modulefile
+##
+## Initializes athena
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tAdd Anaconda3 and requirements to the environment."
+	puts stderr "\n\tVersion $version\n"
+}
+
+# for Tcl script use only
+set version 2017-09-22
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/anaconda3/extras/bin
+prepend-path PATH $::env(MODULESAPPSDIR)/anaconda3/$version/bin

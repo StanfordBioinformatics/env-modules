@@ -1,0 +1,26 @@
+#%Module1.0
+#
+## juicer modulefile
+##
+## Initializes juicer aligner
+##
+proc ModulesHelp { } {
+	global juicerversion
+
+	puts stderr "\tInitializes your environment to use the juicer package\n"
+	puts stderr "\n\tVersion $juicerversion\n"
+}
+
+module-whatis "initializes juicer package"
+
+# for Tcl script use only
+set juicerversion 1.5.4
+
+module add bwa/0.7.15
+module add java/8u66
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/juicer/juicer-$juicerversion/scripts
+prepend-path PATH $::env(MODULESAPPSDIR)/juicer/juicer-$juicerversion/scripts/common

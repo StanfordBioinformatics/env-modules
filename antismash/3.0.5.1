@@ -1,0 +1,35 @@
+#%Module1.0
+#
+## antismash modulefile
+##
+## Initializes antismash
+##
+proc ModulesHelp { } {
+global version
+
+puts stderr "\tInitializes your environment to use the antismash package"
+puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes antismash package"
+
+# Add required modules
+
+# for Tcl script use only.
+set version 3.0.5.1
+
+# sets the MODULESAPPSDIR env var
+module add python/2.7
+module add modsappsdir
+module add xz/5.2.2
+module add glimmer/3.02
+module add glimmerhmm/3.0.4
+module add hmmer/2.3.2
+module add hmmer/3.1b2
+module add fasttree/2.1.7
+module add diamond/0.7.11
+module add muscle/3.8.31
+module add prodigal/2.6.3
+module add blast/2.2.31+
+
+prepend-path PATH $::env(MODULESAPPSDIR)/antismash/3.0.5.1/

@@ -1,0 +1,25 @@
+#%Module1.0
+#
+## libtool modulefile
+##
+## Initializes libtool
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the libtool package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes libtool package"
+
+# for Tcl script use only
+set version 2.4.6
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/libtool/$version/bin
+prepend-path MANPATH $::env(MODULESAPPSDIR)/libtool/$version/share/man
+prepend-path C_INCLUDE_PATH $::env(MODULESAPPSDIR)/libtool/$version/include
+prepend-path LD_LIBRARY_PATH $::env(MODULESAPPSDIR)/libtool/$version/lib

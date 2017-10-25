@@ -18,5 +18,9 @@ set version 1.5.2
 
 # sets the MODULESAPPSDIR env var
 module add modsappsdir
+module add openmpi-x86_64
+module add sparsehash/2.0.2
+module add boost/1.59.0
+module add sqlite/3.6.20
 
 prepend-path PATH $::env(MODULESAPPSDIR)/abyss/abyss-$version/bin

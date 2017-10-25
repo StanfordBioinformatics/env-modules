@@ -1,0 +1,22 @@
+#%Module1.0
+#
+## SOAPec modulefile
+##
+## Initializes SOAPec
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the SOAPec package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes SOAPec package"
+
+# for Tcl script use only
+set version 2.03
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/SOAPec/SOAPec_bin_v$version/bin

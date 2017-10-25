@@ -1,4 +1,21 @@
 #%Module1.0
+#
+## dna_nexus modulefile
+##
+## Initializes dna_nexus package.
+##
 
-setenv DXTOOLKIT_VERSION 0.182.1
-module load dx-toolkit/dx-toolkit
+proc ModulesHelp { } { 
+  puts stderr "\tInitializes your environment to use DNAnexus. You must source the BASH startup script after loading this module. Type 'source \$DXTOOLKIT'."
+}
+
+
+module-whatis "Initializes dx-toolki"
+
+# for Tcl script use only
+set version 0.182.1
+
+module load python/2.7.9
+
+set DXTOOLKIT $::env(MODULESAPPSDIR)/dx-toolkit/$version)/environment
+setenv DXTOOLKIT $DXTOOLKIT

@@ -1,0 +1,24 @@
+#%Module1.0
+#
+## texinfo modulefile
+##
+## Initializes texinfo package
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the texinfo package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes texinfo package"
+
+# for Tcl script use only
+set version 6.4
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/texinfo/$version/bin
+prepend-path LD_LIBRARY_PATH $::env(MODULESAPPSDIR)/texinfo/$version/lib
+prepend-path MANPATH $::env(MODULESAPPSDIR)/texinfo/$version/share/man

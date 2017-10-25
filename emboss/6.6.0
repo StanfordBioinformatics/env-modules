@@ -1,0 +1,26 @@
+#%Module1.0
+#
+## emboss modulefile
+##
+## Initializes emboss aligner
+##
+proc ModulesHelp { } {
+	global embossversion
+
+	puts stderr "\tInitializes your environment to use the emboss package\n"
+	puts stderr "\n\tVersion $embossversion\n"
+}
+
+module-whatis "initializes emboss package"
+
+# for Tcl script use only
+set embossversion 6.6.0
+
+module add primer3/2.3.7
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/EMBOSS/$embossversion/bin
+prepend-path LD_LIBRARY_PATH $::env(MODULESAPPSDIR)/EMBOSS/$embossversion/lib
+prepend-path C_INCLUDE_PATH $::env(MODULESAPPSDIR)/EMBOSS/$embossversion/include

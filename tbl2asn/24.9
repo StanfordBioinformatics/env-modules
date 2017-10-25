@@ -1,0 +1,22 @@
+#%Module1.0
+#
+## tbl2asn modulefile
+##
+## Initializes tbl2asn
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the tbl2asn package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes tbl2asn package"
+
+# for Tcl script use only
+set version 24.9
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/tbl2asn/$version

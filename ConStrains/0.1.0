@@ -1,0 +1,29 @@
+#%Module1.0
+#
+## metaphlan modulefile
+##
+## Initializes ConStrains
+##
+proc ModulesHelp { } {
+	global constrainsversion
+
+	puts stderr "\tInitializes your environment to use the ConStrains"
+	puts stderr "\n\tVersion $constrainsversion\n"
+}
+
+module-whatis "initializes ConStrains"
+
+module add python/2.7
+module add bowtie/2.2.6
+module add metaphlan/2.2.0
+module add samtools/1.2
+
+# for Tcl script use only
+set constrainsversion 0.1.0
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/ConStrains/$constrainsversion/
+setenv CONSTRAINSDB $::env(MODULESAPPSDIR)/ConStrains/$constrainsversion/db/ref_db
+setenv CONSTRAINSGDB $::env(MODULESAPPSDIR)/ConStrains/$constrainsversion/db/gsize.db

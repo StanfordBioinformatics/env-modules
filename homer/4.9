@@ -1,0 +1,24 @@
+#%Module1.0
+#
+## homer modulefile
+##
+## Initializes homer
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use homer\n"
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes homer program"
+
+# for Tcl script use only
+set version 4.9
+
+#module add blat
+#module add weblogo
+module add samtools/1.4
+module add r/3.3.1
+
+prepend-path PATH $::env(MODULESAPPSDIR)/homer/$version/bin

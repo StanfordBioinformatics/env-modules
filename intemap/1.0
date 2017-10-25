@@ -1,0 +1,31 @@
+#%Module1.0
+#
+## InteMAP modulefile
+##
+## Initializes InteMAP
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the InteMAP package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes InteMAP package"
+
+# for Tcl script use only
+set version 1.0
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+module add idba/1.1.1
+module add celera/8.3rc2
+module add abyss/1.5.2/
+module add bowtie/2.2.7
+module add mummer/3.23
+module add quake/0.3.5
+module add python/2.7
+module add perl-scg/1.0
+
+
+prepend-path PATH $::env(MODULESAPPSDIR)/intemap/$version

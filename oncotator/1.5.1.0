@@ -16,15 +16,16 @@ proc ModulesHelp { } {
 # for Tcl script use only
 set version 1.5.1.0
 
-module add python/2.7
-module add r/3.1.1
-
 # sets the MODULESAPPSDIR env var
 module add modsappsdir
 
 prepend-path PATH $::env(MODULESAPPSDIR)/oncotator/oncotator-$version/bin
 prepend-path PYTHONPATH $::env(MODULESAPPSDIR)/oncotator/oncotator-$version
+prepend-path PYTHONPATH $::env(MODULESAPPSDIR)/oncotator/oncotator-$version/lib
 prepend-path PYTHONPATH $::env(MODULESAPPSDIR)/oncotator/oncotator-$version/lib/python
 setenv ONCO_DBDIR /srv/gsfs0/projects/gbsc/Resources/oncotator/oncotator_v1_ds_Jan262015
 setenv ONCO_UNIPROT /srv/gsfs0/projects/gbsc/Resources/oncotator/tx_exact_uniprot_matches.txt
 setenv ONCO_UNIPROTCLIN /srv/gsfs0/projects/gbsc/Resources/oncotator/tx_exact_uniprot_matches.AKT1_CRLF2_FGFR1.txt
+
+module add python/2.7
+module add r/3.1.1

@@ -19,6 +19,7 @@ set version 1.0.1b
 module add python/2.7
 module add blast/2.2.30+
 module add perl-scg/1.0
+module add java/latest
 
 # sets the MODULESAPPSDIR env var
 module add modsappsdir

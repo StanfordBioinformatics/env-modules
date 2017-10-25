@@ -1,0 +1,22 @@
+#%Module1.0
+#
+## pigz modulefile
+##
+## Initializes pigz
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the pigz package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes pigz package"
+
+# for Tcl script use only
+set version 2.3.4
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/pigz/pigz-$version

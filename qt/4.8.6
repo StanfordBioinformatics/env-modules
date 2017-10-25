@@ -1,0 +1,24 @@
+#%Module1.0
+#
+## qt modulefile
+##
+## Initializes qt
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the qt package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes qt package"
+
+# for Tcl script use only
+set version 4.8.6
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/qt/$version/bin
+prepend-path LD_LIBRARY_PATH $::env(MODULESAPPSDIR)/qt/$version/lib
+prepend-path C_INCLUDE_PATH $::env(MODULESAPPSDIR)/qt/$version/include

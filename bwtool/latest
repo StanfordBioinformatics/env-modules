@@ -1,0 +1,20 @@
+#%Module1.0
+#
+## bwtool modulefile
+##
+## Initializes bwtool
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use bwtool, for bigWig files\n"
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes bwtool"
+
+# for Tcl script use only
+set version latest
+
+prepend-path PATH $::env(MODULESAPPSDIR)/bwtool/$version/bin
+

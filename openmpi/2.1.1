@@ -1,0 +1,26 @@
+#%Module1.0
+#
+## openmpi modulefile
+##
+## Initializes openmpi
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the openmpi package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes openmpi package"
+
+# for Tcl script use only
+set version 2.1.1
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/openmpi/$version/bin
+prepend-path PKG_CONFIG_PATH $::env(MODULESAPPSDIR)/openmpi/$version/lib/pkgconfig
+prepend-path MANPATH $::env(MODULESAPPSDIR)/openmpi/$version/share/man
+prepend-path C_INCLUDE_PATH $::env(MODULESAPPSDIR)/openmpi/$version/include
+prepend-path LD_LIBRARY_PATH $::env(MODULESAPPSDIR)/openmpi/$version/lib

@@ -15,7 +15,8 @@ module-whatis "initializes gatk"
 
 #module add java/6u35
 #module add java/latest
-module load java/7u03
+#module load java/7u03
+module load java/8u66
 
 # for Tcl script use only
 set gatkversion 3.4.0

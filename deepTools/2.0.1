@@ -10,12 +10,13 @@ proc ModulesHelp { } {
 	puts stderr "\n\tVersion $version\n"
 }
 
-#module-whatis "initializes bwa sequence alignment program"
+module-whatis "initializes deepTools package"
 
 # for Tcl script use only
 set version 2.0.1
 
-module load python/2.7
+module add python/2.7
+module add gcc/5.2.0
 
 # sets the MODULESAPPSDIR env var
 module add modsappsdir

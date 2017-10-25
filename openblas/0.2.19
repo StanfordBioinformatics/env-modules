@@ -1,0 +1,24 @@
+#%Module1.0
+#
+## openblas modulefile
+##
+## Initializes openblas package
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the openblas package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes openblas package"
+
+# for Tcl script use only
+set version 0.2.19
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path LD_LIBRARY_PATH $::env(MODULESAPPSDIR)/openblas/$version/lib
+prepend-path LDFLAGS -L$:::env(MODULESAPPSDIR)/openblas/$version/lib
+prepend-path C_INCLUDE_PATH $::env(MODULESAPPSDIR)/openblas/$version/include

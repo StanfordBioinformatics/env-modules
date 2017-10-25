@@ -24,12 +24,9 @@ module add samtools/1.2
 module add rsem/1.2.21
 module load java
 
-# sets the MODULESAPPSDIR env var
-module add modsappsdir
-
 set repos $::env(MODULESAPPSDIR)/trinity/$version
-prepend-path $repos
+prepend-path PATH $repos
 prepend-path PATH $repos/util
 prepend-path PERL5LIB $repos/PerlLib
 
-stenev TRINITY_HOME $repos
+setenv TRINITY_HOME $repos

@@ -1,0 +1,23 @@
+#%Module1.0
+#
+## blas modulefile
+##
+## Initializes blas
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the blas package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes blas package"
+
+# for Tcl script use only
+set version 3.7.0
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path LD_LIBRARY_PATH $::env(MODULESAPPSDIR)/blas/BLAS-$version
+prepend-path LDFLAGS -L$:::env(MODULESAPPSDIR)/blas/BLAS-$version

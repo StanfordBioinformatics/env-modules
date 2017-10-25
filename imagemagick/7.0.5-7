@@ -1,0 +1,25 @@
+#%Module1.0
+#
+## imagemagick modulefile
+##
+## Initializes imagemagick
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the imagemagick package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes imagemagick package"
+
+# for Tcl script use only
+set version 7.0.5-7
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/imagemagick/$version/bin
+prepend-path MANPATH $::env(MODULESAPPSDIR)/imagemagick/$version/share/man
+prepend-path C_INCLUDE_PATH $::env(MODULESAPPSDIR)/imagemagick/$version/include
+prepend-path LD_LIBRARY_PATH $::env(MODULESAPPSDIR)/imagemagick/$version/lib

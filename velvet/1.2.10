@@ -11,13 +11,29 @@ proc ModulesHelp { } {
 	puts stderr "\n\tVersion $version\n"
 }
 
-#module-whatis "initializes weblogo package"
+#module-whatis "initializes velvet package"
 
 # for Tcl script use only
 set version 1.2.10
+
+module add bioperl/1.6.924
 
 # sets the MODULESAPPSDIR env var
 module add modsappsdir
 
 prepend-path PATH $::env(MODULESAPPSDIR)/velvet/$version
-setenv VELVET_CONTRIB /srv/gsfs0/software/velvet/1.2.10/contrib/
+prepend-path PATH $::env(MODULESAPPSDIR)/velvet/$version/contrib/AssemblyAssembler1.3
+prepend-path PATH $::env(MODULESAPPSDIR)/velvet/$version/contrib/VelvetOptimiser-2.2.4
+prepend-path PATH $::env(MODULESAPPSDIR)/velvet/$version/contrib/MetaVelvet-v0.3.1
+prepend-path PATH $::env(MODULESAPPSDIR)/velvet/$version/contrib/afg_handling
+prepend-path PATH $::env(MODULESAPPSDIR)/velvet/$version/contrib/columbus_scripts
+prepend-path PATH $::env(MODULESAPPSDIR)/velvet/$version/contrib/estimate-exp_cov
+prepend-path PATH $::env(MODULESAPPSDIR)/velvet/$version/contrib/extractContigReads
+prepend-path PATH $::env(MODULESAPPSDIR)/velvet/$version/contrib/fasta2agp
+prepend-path PATH $::env(MODULESAPPSDIR)/velvet/$version/contrib/observed-insert-length.pl
+prepend-path PATH $::env(MODULESAPPSDIR)/velvet/$version/contrib/read_prepare
+prepend-path PATH $::env(MODULESAPPSDIR)/velvet/$version/contrib/select_paired
+prepend-path PATH $::env(MODULESAPPSDIR)/velvet/$version/contrib/show_repeats
+prepend-path PATH $::env(MODULESAPPSDIR)/velvet/$version/contrib/shuffleSequences_fasta
+setenv VELVET_CONTRIB $::env(MODULESAPPSDIR)/velvet/$version/contrib
+

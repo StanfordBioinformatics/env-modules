@@ -1,0 +1,21 @@
+#%Module1.0
+#
+## utils modulefile
+##
+## Adds utils to path. Assorted tools and scripts.
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tAdd utils and requirements to the environment."
+        puts stderr "\tThese are hacks and kludges from the sysadmin."
+	puts stderr "\n\tVersion $version\n"
+}
+
+# for Tcl script use only
+set version 0.01
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/utils/$version

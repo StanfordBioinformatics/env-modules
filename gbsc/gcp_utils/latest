@@ -1,0 +1,19 @@
+#%Module1.0
+#
+## gcp_utils modulefile
+##
+## Initializes gcp_utils, a set of scripts to support the GBSC-managed Google Cloud.
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the GBSC GCP utils for managing the Google Cloud\n"
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes gcp_utils"
+
+# for Tcl script use only
+set version latest
+
+prepend-path PATH $::env(MODULESAPPSDIR)/gbsc/gcp_utils/$version

@@ -1,0 +1,27 @@
+#%Module1.0
+#
+## transdecoder modulefile
+##
+## Initializes transdecoder
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the transdecoder package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes transdecoder package"
+
+# for Tcl script use only
+set version 3.0.0
+
+module add perl-scg/5.24.0
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/transdecoder/TransDecoder-$version
+prepend-path PATH $::env(MODULESAPPSDIR)/transdecoder/TransDecoder-$version/util
+prepend-path PATH $::env(MODULESAPPSDIR)/transdecoder/TransDecoder-$version/util/bin
+prepend-path PERL5LIB $::env(MODULESAPPSDIR)/transdecoder/TransDecoder-$version/PerlLib

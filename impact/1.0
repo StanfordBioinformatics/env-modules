@@ -1,0 +1,35 @@
+#%Module1.0
+#
+## impact modulefile
+##
+## Initializes impact
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the impact package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes impact package"
+
+# for Tcl script use only
+set version 1.0
+
+module add java/latest
+module add r/3.2.2
+module add samtools/1.1
+module add bcftools/1.2
+module add bwa/0.7.8
+module add picard-tools/1.119
+module add annovar/20141112
+module add varscan2/2.3.8
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/impact/$version/module1
+prepend-path PATH $::env(MODULESAPPSDIR)/impact/$version/module2
+prepend-path PATH $::env(MODULESAPPSDIR)/impact/$version/module3
+prepend-path PATH $::env(MODULESAPPSDIR)/impact/$version/module4
+

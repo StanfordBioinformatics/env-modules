@@ -1,0 +1,25 @@
+#%Module1.0
+#
+## pyqi modulefile
+##
+## Initializes pyqi
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the pyqi package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes pyqi package"
+
+# for Tcl script use only
+set version 0.3.2
+
+module add python/2.7
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/pyqi/$version/bin
+prepend-path PYTHONPATH $::env(MODULESAPPSDIR)/pyqi/$version/lib/python2.7/site-packages

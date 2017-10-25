@@ -1,0 +1,29 @@
+#%Module1.0
+#
+## maker modulefile
+##
+## Initializes maker package
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use maker\n"
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes maker"
+
+# for Tcl script use only
+set version 2.31.8
+
+# Add modules for dependencies
+module add blast
+module add perl-scg/5.14.4
+module add bioperl
+module add repeatmasker
+module add exonerate
+
+setenv MAKERROOT $::env(MODULESAPPSDIR)/maker/maker-$version/
+prepend-path PATH $::env(MODULESAPPSDIR)/maker/maker-$version/bin
+setenv ZOE /srv/gsfs0/software/src/SNAP/snap/Zoe
+prepend-path PATH /srv/gsfs0/software/src/SNAP/snap

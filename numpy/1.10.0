@@ -1,0 +1,25 @@
+#%Module1.0
+#
+## numpy modulefile
+##
+## Initializes numpy analysis package
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the numpy analysis package\n" 
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes numpy analysis package"
+
+# for Tcl script use only
+set version 1.10.0
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+module add python/2.7
+
+prepend-path PATH $::env(MODULESAPPSDIR)/numpy/$version/bin
+prepend-path PYTHONPATH $::env(MODULESAPPSDIR)/numpy/$version/lib/python2.7/site-packages

@@ -1,0 +1,19 @@
+#%Module1.0
+
+proc ModulesHelp { } {
+        puts stderr "\t use R for CLI"
+        puts stderr "\t use library(); to see installed R packages"
+        }
+
+module-whatis   "Latest version of R"
+
+set version 3.3.1
+set repos_name illumina_fastq
+
+module load python/2.7.9
+module load gbsc/gbsc 
+#gbsc/gbsc exports GBSC variable and adds that to PATH and PYTHONPATH
+
+set repos $::env(GBSC)/${repos_name}
+
+prepend-path PATH ${repos}/scripts

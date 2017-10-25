@@ -1,0 +1,24 @@
+#%Module1.0
+#
+## proovread modulefile
+##
+## Initializes proovread
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use proovread: PacBio hybrid error correction through iterative short read consensus\n"
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes proovread"
+
+# for Tcl script use only
+set version latest 
+
+# Set up dependencies
+module add perl-scg
+module add samtools/1.1
+module add blast/2.2.31+
+
+prepend-path PATH $::env(MODULESAPPSDIR)/proovread/bin

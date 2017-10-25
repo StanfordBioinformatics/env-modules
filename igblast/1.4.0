@@ -1,0 +1,28 @@
+#%Module1.0
+#
+## igblast modulefile
+##
+## Initializes igblast package
+##
+proc ModulesHelp { } {
+	global igblastversion
+
+	puts stderr "\tInitializes your environment to use igblast\n"
+	puts stderr "\n\tVersion $igblastversion\n"
+}
+
+module-whatis "initializes igblast"
+
+# for Tcl script use only
+set igblastversion 1.4.0
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+# sets location of IGBLAST DBs.
+setenv IGBLASTDB   $::env(MODULESAPPSDIR)/igblast/db
+
+# sets location of IGBLAST executables.
+setenv IGBLASTROOT $::env(MODULESAPPSDIR)/igblast/ncbi-igblast-$igblastversion/bin
+setenv IGDATA $::env(MODULESAPPSDIR)/igblast/ncbi-igblast-$igblastversion/bin
+prepend-path PATH $::env(MODULESAPPSDIR)/igblast/ncbi-igblast-$igblastversion/bin

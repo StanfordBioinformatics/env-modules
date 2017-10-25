@@ -1,0 +1,31 @@
+#%Module1.0
+#
+## gcc modulefile
+##
+## Initializes gcc
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the gcc package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes gcc package"
+
+# for Tcl script use only
+set version 7.2.0
+
+module add gmp/6.1.2
+module add mpfr/3.1.5
+module add mpc/1.0.3
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/gnu/gcc/$version/bin
+prepend-path LD_LIBRARY_PATH $::env(MODULESAPPSDIR)/gnu/gcc/$version/lib64
+prepend-path LD_LIBRARY_PATH $::env(MODULESAPPSDIR)/gnu/gcc/$version/lib
+prepend-path MANPATH $::env(MODULESAPPSDIR)/gnu/gcc/$version/share/man
+setenv CC $::env(MODULESAPPSDIR)/gnu/gcc/$version/bin/gcc
+setenv CXX $::env(MODULESAPPSDIR)/gnu/gcc/$version/bin/g++

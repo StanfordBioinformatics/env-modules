@@ -1,0 +1,33 @@
+#%Module1.0
+#
+## prokka modulefile
+##
+## Initializes prokka
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the prokka package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes prokka package"
+
+# for Tcl script use only
+set version 1.12
+
+module add bioperl/1.6.924
+module add blast/2.3.0+
+module add hmmer/3.1b2
+module add aragorn/1.2.36
+module add prodigal/2.6.3
+module add tbl2asn/25.3
+module add gnu_parallel/20160122
+module add infernal/1.1.1
+module add barrnap/0.7
+module add minced/0.2.0
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/prokka/prokka-$version/bin

@@ -1,0 +1,25 @@
+#%Module1.0
+#
+## ncurses modulefile
+##
+## Initializes ncurses
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the ncurses package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes ncurses package"
+
+# for Tcl script use only
+set version 6.0
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path MANPATH $::env(MODULESAPPSDIR)/ncurses/$version/share/man
+prepend-path C_INCLUDE_PATH $::env(MODULESAPPSDIR)/ncurses/$version/include
+prepend-path C_INCLUDE_PATH $::env(MODULESAPPSDIR)/ncurses/$version/include/ncurses
+prepend-path LD_LIBRARY_PATH $::env(MODULESAPPSDIR)/ncurses/$version/lib

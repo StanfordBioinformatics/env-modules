@@ -1,0 +1,19 @@
+#%Module1.0
+#
+## sdsl-lite modulefile
+##
+## Initializes sdsl-lite libraries
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the sdsl-lite (Succinct Data Structures) libraries"
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes sdsl-lite libraries"
+
+# for Tcl script use only
+set version 2.1.1
+
+prepend-path LD_LIBRARY_PATH $::env(MODULESAPPSDIR)/sdsl-lite/$version/lib

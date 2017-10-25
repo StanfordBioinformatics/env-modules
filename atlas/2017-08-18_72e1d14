@@ -1,0 +1,22 @@
+#%Module1.0
+#
+## atlas modulefile
+##
+## Initializes atlas
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the atlas package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes atlas package"
+
+# for Tcl script use only
+set version 2017-08-18_72e1d14 
+
+module add gcc/5.2.0
+module add armadillo/7.960.1
+
+prepend-path PATH $::env(MODULESAPPSDIR)/atlas/$version

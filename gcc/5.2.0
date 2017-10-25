@@ -21,6 +21,7 @@ module add modsappsdir
 
 prepend-path PATH $::env(MODULESAPPSDIR)/gnu/gcc/$version/bin
 prepend-path LD_LIBRARY_PATH $::env(MODULESAPPSDIR)/gnu/gcc/$version/lib64
+prepend-path LD_LIBRARY_PATH $::env(MODULESAPPSDIR)/gnu/gcc/$version/lib
 prepend-path MANPATH $::env(MODULESAPPSDIR)/gnu/gcc/$version/share/man
 setenv CC $::env(MODULESAPPSDIR)/gnu/gcc/$version/bin/gcc
 setenv CXX $::env(MODULESAPPSDIR)/gnu/gcc/$version/bin/g++

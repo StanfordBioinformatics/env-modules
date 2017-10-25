@@ -1,0 +1,20 @@
+#%Module1.0
+#
+## go language modulefile
+##
+## Initializes go
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the go language"
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes go"
+
+# for Tcl script use only
+set version 1.6.1
+
+setenv GOROOT $::env(MODULESAPPSDIR)/go/$version
+prepend-path PATH $::env(GOROOT)/bin

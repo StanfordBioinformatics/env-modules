@@ -1,0 +1,24 @@
+#%Module1.0
+#
+## biopython modulefile
+##
+## Initializes biopython analysis package
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the biopython analysis package\n" 
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes biopython analysis package"
+
+# for Tcl script use only
+set version 1.70
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+module add python/2.7
+
+prepend-path PYTHONPATH $::env(MODULESAPPSDIR)/biopython/biopython-$version/lib/python2.7/site-packages

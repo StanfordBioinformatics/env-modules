@@ -1,0 +1,21 @@
+#%Module1.0
+
+proc ModulesHelp { } {
+	global version
+        puts stderr "\n\t lzma $version"
+        }
+
+module-whatis "updated lzma"
+
+# for Tcl script use only
+set version 4.32.7
+#
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/lzma/$version/bin
+prepend-path LD_LIBRARY_PATH $::env(MODULESAPPSDIR)/lzma/$version/lib
+prepend-path C_INCLUDE_PATH $::env(MODULESAPPSDIR)/lzma/$version/include
+prepend-path CPATH $::env(MODULESAPPSDIR)/lzma/$version/include
+prepend-path CPLUS_INCLUDE_PATH $::env(MODULESAPPSDIR)/lzma/$version/include
+prepend-path MANPATH $::env(MODULESAPPSDIR)/lzma/$version/man

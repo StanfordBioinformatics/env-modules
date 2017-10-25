@@ -1,0 +1,30 @@
+#%Module1.0
+#
+## h3m2 modulefile
+##
+## Initializes h3m2
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use h3m2"
+	puts stderr "\n\tVersion $h3m2version\n"
+}
+
+module-whatis "initializes h3m2"
+
+# for Tcl script use only
+set version 2013-12-20
+
+module add r/3.2.2
+module add samtools/1.2
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+setenv PROG_PATH $::env(MODULESAPPSDIR)/h3m2/src/H3M2Tool/
+setenv HG19_BED $::env(MODULESAPPSDIR)/h3m2/src/H3M2Tool/SNP1000GP.HGb37_Exome.mod.bed
+setenv B37_BED $::env(MODULESAPPSDIR)/h3m2/src/H3M2Tool/SNP1000GP.HGb37_Exome.bed
+setenv HG19_FASTA /srv/gsfs0/shared_data/RefGenomes/GATK_Resource_Bundle/2.8/hg19/ucsc.hg19.fasta
+setenv B37_FASTA /srv/gsfs0/shared_data/RefGenomes/GATK_Resource_Bundle/2.8/b37/human_g1k_v37.fasta
+prepend-path PATH $::env(MODULESAPPSDIR)/h3m2/src/H3M2Tool

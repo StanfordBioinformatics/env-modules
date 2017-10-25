@@ -1,9 +1,5 @@
 #%Module1.0
 #
-## breakdancer modulefile
-##
-## Initializes  breakdancer
-##
 proc ModulesHelp { } {
 
 	puts stderr "\tInitializes your environment to use utils for SCGPM sequencing results on NAnexus."

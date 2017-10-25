@@ -1,0 +1,28 @@
+#%Module1.0
+#
+## pcre modulefile
+##
+## Initializes pcre
+##
+proc ModulesHelp { } {
+global version
+
+puts stderr "\tInitializes your environment to use the pcre package"
+puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes pcre package"
+
+# Add required modules
+
+# for Tcl script use only.
+set version 8.37
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/pcre/$version/bin
+prepend-path LIBRARY_PATH $::env(MODULESAPPSDIR)/pcre/$version/lib
+prepend-path LD_LIBRARY_PATH $::env(MODULESAPPSDIR)/pcre/$version/lib
+prepend-path CPATH $::env(MODULESAPPSDIR)/pcre/$version/include
+prepend-path PKG_CONFIG_PATH $::env(MODULESAPPSDIR)/pcre/$version/lib/pkgconfig

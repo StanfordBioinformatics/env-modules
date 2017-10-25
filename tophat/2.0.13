@@ -20,7 +20,7 @@ module add boost/1.51.0
 module add bowtie/1.1.1
 
 # For default bowtie2
-module add bowtie/2.2.4
+#module add bowtie/2.2.4
 
 # for Tcl script use only
 set version 2.0.13

@@ -1,0 +1,22 @@
+#%Module1.0
+#
+## fastlmm modulefile
+##
+## Initializes fastlmm analysis package
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the fastlmm analysis package\n" 
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes fastlmm analysis package"
+
+# for Tcl script use only
+set version v2.07
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/fastlmm/$version/FaSTLMM.207c.Linux/Linux_MKL

@@ -1,0 +1,21 @@
+#%Module1.0
+#
+## RNAstructure modulefile
+##
+## Initializes RNAstructure
+##
+proc ModulesHelp { } {
+global version
+
+puts stderr "\tInitializes your environment to use RNAstructure.\n"
+puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes RNAstructure package"
+
+# for Tcl script use only.
+set version latest
+
+prepend-path PATH /srv/gsfs0/software/RNAstructure/exe
+prepend-path DATAPATH /srv/gsfs0/software/RNAstructure/data_tables
+

@@ -1,0 +1,27 @@
+#%Module1.0
+#
+## sip modulefile
+##
+## Initializes sip
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the sip package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes sip package"
+
+# for Tcl script use only
+set version 4.17
+
+module add python/2.7
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/sip/$version/bin
+prepend-path LD_LIBRARY_PATH $::env(MODULESAPPSDIR)/sip/$version/lib
+prepend-path C_INCLUDE_PATH $::env(MODULESAPPSDIR)/sip/$version/include
+prepend-path PYTHONPATH $::env(MODULESAPPSDIR)/sip/$version/lib/python2.7/site-packages

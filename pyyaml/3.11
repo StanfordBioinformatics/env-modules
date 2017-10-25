@@ -20,5 +20,4 @@ module add python/2.7
 # sets the MODULESAPPSDIR env var
 module add modsappsdir
 
-prepend-path PYTHONPATH $::env(MODULESAPPSDIR)/pyyaml/$version
 prepend-path PYTHONPATH $::env(MODULESAPPSDIR)/pyyaml/$version/lib/python

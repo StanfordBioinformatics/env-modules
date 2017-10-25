@@ -1,0 +1,20 @@
+#%Module1.0
+
+proc ModulesHelp { } {
+	global version
+        puts stderr "\n\t bzip2 $version"
+        }
+
+module-whatis "updated bzip2"
+
+# for Tcl script use only
+set version 1.0.6
+#
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/bzip2/$version/bin
+prepend-path LIBRARY_PATH $::env(MODULESAPPSDIR)/bzip2/$version/lib
+prepend-path LD_LIBRARY_PATH $::env(MODULESAPPSDIR)/bzip2/$version/lib
+prepend-path CPATH $::env(MODULESAPPSDIR)/bzip2/$version/include
+prepend-path MANPATH $::env(MODULESAPPSDIR)/bzip2/$version/man

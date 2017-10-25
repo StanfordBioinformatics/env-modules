@@ -1,0 +1,17 @@
+#%Module1.0
+#
+## phyml modulefile
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the phyml package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes phyml package"
+
+# for Tcl script use only
+set version 3.2
+
+prepend-path PATH $::env(MODULESAPPSDIR)/phyml/$version/bin

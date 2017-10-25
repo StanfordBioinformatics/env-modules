@@ -1,0 +1,22 @@
+#%Module1.0
+#
+## sqlite modulefile
+##
+## Initializes sqlite
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the sqlite package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes sqlite package"
+
+# for Tcl script use only
+set version 3.6.20
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/sqlite/$version

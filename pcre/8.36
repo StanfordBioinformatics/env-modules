@@ -21,4 +21,8 @@ set version 8.36
 # sets the MODULESAPPSDIR env var
 module add modsappsdir
 
-prepend-path PATH $::env(MODULESAPPSDIR)/pcre/8.36/bin
+prepend-path PATH $::env(MODULESAPPSDIR)/pcre/$version/bin
+prepend-path LIBRARY_PATH $::env(MODULESAPPSDIR)/pcre/$version/lib
+prepend-path LD_LIBRARY_PATH $::env(MODULESAPPSDIR)/pcre/$version/lib
+prepend-path CPATH $::env(MODULESAPPSDIR)/pcre/$version/include
+prepend-path PKG_CONFIG_PATH $::env(MODULESAPPSDIR)/pcre/$version/lib/pkgconfig

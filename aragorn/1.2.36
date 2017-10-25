@@ -1,0 +1,23 @@
+#%Module1.0
+#
+## aragorn modulefile
+##
+## Initializes aragorn
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the aragorn package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes aragorn package"
+
+# for Tcl script use only
+set version 1.2.36
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/aragorn/aragorn$version/bin
+prepend-path MANPATH $::env(MODULESAPPSDIR)/aragorn/aragorn$version/man

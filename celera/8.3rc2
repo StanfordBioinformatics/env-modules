@@ -1,0 +1,22 @@
+#%Module1.0
+#
+## celera modulefile
+##
+## Initializes celera
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the celera package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes celera package"
+
+# for Tcl script use only
+set version wgs-8.3rc2
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/celera/$version/Linux-amd64/bin

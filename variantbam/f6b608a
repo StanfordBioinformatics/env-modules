@@ -1,0 +1,22 @@
+#%Module1.0
+#
+## variantbam modulefile
+##
+## Initializes variantbam
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the variantbam package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes variantbam package"
+
+# for Tcl script use only
+set version f6b608a
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/variantbam/$version/VariantBam/src

@@ -1,0 +1,25 @@
+#%Module1.0
+#
+## schmutzi modulefile
+##
+## Initializes schmutzi
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the schmutzi package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes schmutzi package"
+
+# for Tcl script use only
+set version 24fa163
+
+module add r/3.3.1
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/schmutzi/$version/schmutzi
+setenv SCHMUTZI $::env(MODULESAPPSDIR)/schmutzi/$version/schmutzi

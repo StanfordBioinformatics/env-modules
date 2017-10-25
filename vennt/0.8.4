@@ -1,0 +1,25 @@
+#%Module1.0
+#
+## vennt modulefile
+##
+## Initializes vennt analysis package
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the vennt analysis package\n" 
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes vennt analysis package"
+
+# for Tcl script use only
+set version 0.8.4
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+module add python/2.7
+
+prepend-path PATH $::env(MODULESAPPSDIR)/vennt/$version
+prepend-path PYTHONPATH $::env(MODULESAPPSDIR)/vennt/$version

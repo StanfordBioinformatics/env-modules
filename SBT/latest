@@ -1,0 +1,22 @@
+#%Module1.0
+#
+## SBT modulefile
+##
+## Initializes SBT package - sequence bloom tree
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use SBT (Sequence Bloom Tree)\n"
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes SBT"
+
+# for Tcl script use only
+set version latest
+
+# depends on jellyfish
+module add jellyfish
+
+prepend-path PATH $::env(MODULESAPPSDIR)/SBT

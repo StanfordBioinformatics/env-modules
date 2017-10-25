@@ -1,0 +1,25 @@
+#%Module1.0
+#
+## fastlmm modulefile
+##
+## Initializes fastlmm analysis package
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the fastlmm analysis package\n" 
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes fastlmm analysis package"
+
+# for Tcl script use only
+set version 0.2.31
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+module add python/2.7
+
+prepend-path PATH $::env(MODULESAPPSDIR)/fastlmm/$version/bin
+prepend-path PYTHONPATH $::env(MODULESAPPSDIR)/fastlmm/$version/lib/python2.7/site-packages

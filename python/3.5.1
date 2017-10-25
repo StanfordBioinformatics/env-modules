@@ -1,0 +1,19 @@
+#%Module1.0
+#
+## Python modulefile
+##
+## Initializes Python
+##
+proc ModulesHelp { } {
+global version
+
+puts stderr "\tInitializes your environment to use the Python package"
+puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes Python package"
+
+# for Tcl script use only.
+set version 3.5.1
+
+prepend-path PATH $::env(MODULESAPPSDIR)/python/$version/bin

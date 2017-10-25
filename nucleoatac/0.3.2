@@ -1,0 +1,25 @@
+#%Module1.0
+#
+## nucleoatac modulefile
+##
+## Initializes nucleoatac
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the nucleoatac package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes nucleoatac package"
+
+# for Tcl script use only
+set version 0.3.2
+
+module add python/2.7
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/nucleoatac/$version/bin
+prepend-path PYTHONPATH $::env(MODULESAPPSDIR)/nucleoatac/$version/lib/python2.7/site-packages

@@ -1,0 +1,24 @@
+#%Module1.0
+#
+## pycogent modulefile
+##
+## Initializes pycogent
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the pycogent package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes pycogent package"
+
+# for Tcl script use only
+set version 1.5.3
+
+module add python/2.7
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PYTHONPATH $::env(MODULESAPPSDIR)/pycogent/$version/lib/python2.7/site-packages

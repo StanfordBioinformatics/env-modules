@@ -1,0 +1,25 @@
+#%Module1.0
+#
+## mixcr modulefile
+##
+## Initializes mixcr
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the mixcr package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes mixcr package"
+
+# for Tcl script use only
+set version 1.7
+
+module add java/7u03
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/mixcr/mixcr-$version
+setenv MIXCR $::env(MODULESAPPSDIR)/mixcr/mixcr-$version/mixcr.jar

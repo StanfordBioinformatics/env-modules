@@ -17,11 +17,13 @@ proc ModulesHelp { } {
 set version 0.1.0
 
 module add python/2.7
-module add root/5.34.30
-module load gcc/5.2.0
+module add root/5.34.34
+#module add perl-scg/1.0
+#module add gcc/5.2.0
 
 # sets the MODULESAPPSDIR env var
 module add modsappsdir
 
 prepend-path PATH $::env(MODULESAPPSDIR)/speedseq/$version/speedseq/bin
-setenv HUMAN_G1K_V37 /srv/gsfs0/projects/gbsc/Resources/speedseq/human_g1k_v37.fasta
+setenv SPEEDSEQ_DIR $::env(MODULESAPPSDIR)/speedseq/$version/speedseq
+#setenv HUMAN_G1K_V37 /srv/gsfs0/projects/gbsc/Resources/speedseq/human_g1k_v37.fasta

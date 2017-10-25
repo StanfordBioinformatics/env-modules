@@ -1,0 +1,28 @@
+#%Module1.0
+#
+## msprime modulefile
+##
+## Initializes msprime analysis package
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the msprime analysis package\n" 
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes msprime analysis package"
+
+# for Tcl script use only
+set version 0.3.2
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+module add gsl/2.1
+module add hdf5/1.8.17
+module add gcc/5.2.0
+module add python/2.7
+
+prepend-path PATH $::env(MODULESAPPSDIR)/msprime/$version/bin
+prepend-path PYTHONPATH $::env(MODULESAPPSDIR)/msprime/$version/lib/python2.7/site-packages

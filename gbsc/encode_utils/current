@@ -15,5 +15,6 @@ set repos $::env(GBSC)/${reposName}/$version
 module load jq/1.5
 module load python/2.7.9 
 
-prepend-path PATH $repos/${reposName}/$repos_name
+prepend-path PATH $repos/${reposName}/$reposName
+prepend-path PATH $repos/${reposName}/MetaDataRegistration
 prepend-path PYTHONPATH $repos

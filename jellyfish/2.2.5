@@ -1,0 +1,21 @@
+#%Module1.0
+#
+## JELLYFISH modulefile
+##
+## Initializes JELLYFISH for efficient counting of kmers
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use JELLYFISH for efficient counting of kmers\n"
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes Jellyfish"
+
+# for Tcl script use only
+set version 2.2.5
+
+prepend-path PATH $::env(MODULESAPPSDIR)/jellyfish/$version/bin
+prepend-path MANPATH $::env(MODULESAPPSDIR)/jellyfish/$version/share/man
+prepend-path LD_LIBRARY_PATH $::env(MODULESAPPSDIR)/jellyfish/$version/lib

@@ -1,0 +1,26 @@
+#%Module1.0
+#
+## armadillo modulefile
+##
+## Initializes armadillo
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the armadillo package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes armadillo package"
+
+# for Tcl script use only
+set version 7.600.2
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/armadillo/$version/usr/local/include
+prepend-path PKG_CONFIG_PATH $::env(MODULESAPPSDIR)/armadillo/$version/usr/local/lib64/pkgconfig
+prepend-path C_INCLUDE_PATH $::env(MODULESAPPSDIR)/armadillo/$version/usr/local/include
+prepend-path C_INCLUDE_PATH $::env(MODULESAPPSDIR)/armadillo/$version/usr/local/include/armadillo_bits
+prepend-path LD_LIBRARY_PATH $::env(MODULESAPPSDIR)/armadillo/$version/usr/local/lib64

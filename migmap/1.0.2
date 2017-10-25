@@ -1,0 +1,27 @@
+#%Module1.0
+#
+## migmap modulefile
+##
+## Initializes migmap
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use migmap"
+	puts stderr "\n\tVersion $migmapversion\n"
+}
+
+module-whatis "initializes migmap"
+
+# for Tcl script use only
+set version 1.0.2
+
+module add java/8u66
+module add igblast/1.4.0
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+setenv MIGMAP $::env(MODULESAPPSDIR)/migmap/migmap-$version/migmap-${version}.jar
+setenv MIGMAPROOT $::env(MODULESAPPSDIR)/migmap/migmap-$version
+prepend-path PATH $::env(MODULESAPPSDIR)/migmap/migmap-$version

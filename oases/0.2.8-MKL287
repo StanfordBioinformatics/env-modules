@@ -1,0 +1,24 @@
+#%Module1.0
+#
+## oases modulefile
+##
+## Initializes oases
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the oases package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes oases package"
+
+# for Tcl script use only
+set version 0.2.8-MKL287
+
+module add velvet/1.2.10-MKL287
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/oases/$version

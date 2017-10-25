@@ -1,0 +1,25 @@
+#%Module1.0
+#
+## gsl modulefile
+##
+## Initializes gsl
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the gsl package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes gsl package"
+
+# for Tcl script use only
+set version 2.1
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/gsl/$version/bin
+prepend-path MANPATH $::env(MODULESAPPSDIR)/gsl/$version/share/man
+prepend-path C_INCLUDE_PATH $::env(MODULESAPPSDIR)/gsl/$version/include
+prepend-path LD_LIBRARY_PATH $::env(MODULESAPPSDIR)/gsl/$version/lib

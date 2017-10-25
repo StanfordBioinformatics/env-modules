@@ -1,0 +1,23 @@
+#%Module1.0
+#
+## bammds modulefile
+##
+## Initializes bammds
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use bammds\n"
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes bammds program"
+
+# for Tcl script use only
+set version 20140602
+
+module add samtools/1.4
+module add r/3.3.1
+
+prepend-path PATH $::env(MODULESAPPSDIR)/bammds/$version/bin
+prepend-path MANPATH $::env(MODULESAPPSDIR)/bammds/$version/share/man

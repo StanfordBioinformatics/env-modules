@@ -7,14 +7,13 @@
 proc ModulesHelp { } {
 	global dnanexusversion
 
-	puts stderr "\tInitializes your environment to use DNAnexus,"
-	puts stderr "\tutilities to upload data to DNAnexus"
+	puts stderr "\tInitializes your environment to use DNAnexus. You must source the BASH startup script after loading this module. Type 'source \$DXT'."
 }
 
 module-whatis "initializes dna_nexus"
 
 # for Tcl script use only
-set prod 0.193.0
+set prod 0.234.1
 
 module load python/2.7.9
 
@@ -24,3 +23,4 @@ if {! [info  exists env(DXTOOLKIT_VERSION)]} {
 
 set DXTOOLKIT $::env(MODULESAPPSDIR)/dx-toolkit/$::env(DXTOOLKIT_VERSION)/environment
 setenv DXTOOLKIT $DXTOOLKIT
+setenv DXT $DXTOOLKIT

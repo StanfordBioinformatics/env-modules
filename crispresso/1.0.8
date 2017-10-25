@@ -1,0 +1,29 @@
+#%Module1.0
+#
+## crispresso modulefile
+##
+## Initializes crispresso analysis package
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the crispresso analysis package\n" 
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes crispresso analysis package"
+
+# for Tcl script use only
+set version 1.0.8
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+module add python/2.7
+module add trimmomatic/0.36
+module add flash/1.2.11
+module add emboss/6.6.0
+module add seaborn/0.8.0
+
+prepend-path PATH $::env(MODULESAPPSDIR)/crispresso/$version/bin
+prepend-path PYTHONPATH $::env(MODULESAPPSDIR)/crispresso/$version/lib/python2.7/site-packages

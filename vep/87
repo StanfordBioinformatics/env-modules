@@ -1,0 +1,23 @@
+#%Module1.0
+#
+## variant_effect_predictor modulefile
+##
+## Initializes VEP
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the variant effect predictor package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes variant effect predictor package"
+
+# for Tcl script use only
+set version 87
+
+module add perl-scg/5.24.0
+
+prepend-path PERL5LIB $::env(MODULESAPPSDIR)/vep/ensembl-tools-release-$version
+prepend-path PATH $::env(MODULESAPPSDIR)/vep/ensembl-tools-release-$version/scripts/variant_effect_predictor
+prepend-path PATH $::env(MODULESAPPSDIR)/vep/ensembl-tools-release-$version/scripts/variant_effect_predictor/htslib

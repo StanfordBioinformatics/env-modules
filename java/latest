@@ -17,4 +17,8 @@ module-whatis "initializes java"
 set javaversion latest
 
 setenv JAVA_HOME /usr/java/$javaversion
+# Amin: shall I change this to the following?
+#setenv JAVA_HOME /srv/gsfs0/software/java/jre1.8.0_66
 prepend-path PATH /usr/java/$javaversion/bin
+# Amin: shall I change this to the following?
+#prepend-path PATH /srv/gsfs0/software/java/jre1.8.0_66/bin

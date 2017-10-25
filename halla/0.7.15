@@ -1,0 +1,25 @@
+#%Module1.0
+#
+## halla modulefile
+##
+## Initializes halla analysis package
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the halla analysis package\n" 
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes halla analysis package"
+
+# for Tcl script use only
+set version 0.7.15
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+module add python/2.7
+
+prepend-path PATH $::env(MODULESAPPSDIR)/halla/$version/bin
+prepend-path PYTHONPATH $::env(MODULESAPPSDIR)/halla/$version/lib/python2.7/site-packages

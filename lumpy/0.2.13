@@ -1,0 +1,23 @@
+#%Module1.0
+#
+## lumpy modulefile
+##
+## Initializes lumpy
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the lumpy package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes lumpy package"
+
+# for Tcl script use only
+set version 0.2.13
+
+# Add module dependencies
+module add python/2.7
+module add samtools/1.5
+
+prepend-path PATH $::env(MODULESAPPSDIR)/lumpy/$version/lumpy-sv/bin

@@ -1,0 +1,23 @@
+#%Module1.0
+#
+## autoconf modulefile
+##
+## Initializes autoconf
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the autoconf package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes autoconf package"
+
+# for Tcl script use only
+set version 2.69
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/autoconf/$version/bin
+prepend-path MANPATH $::env(MODULESAPPSDIR)/autoconf/$version/share/man

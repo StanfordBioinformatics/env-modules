@@ -1,0 +1,12 @@
+#%Module1.0
+#
+## rclone modulefile
+##
+
+module-whatis "gives access to the rclone package, which copies to any cloud storage"
+
+# for Tcl script use only
+set version 1.37
+
+prepend-path PATH $::env(MODULESAPPSDIR)/rclone/$version/bin
+prepend-path MANPATH $::env(MODULESAPPSDIR)/rclone/$version/man

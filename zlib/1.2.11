@@ -1,0 +1,20 @@
+#%Module1.0
+
+proc ModulesHelp { } {
+	global version
+        puts stderr "\n\t zlib $version"
+        }
+
+module-whatis "updated zlib"
+
+# for Tcl script use only
+set version 1.2.11
+#
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path LD_LIBRARY_PATH $::env(MODULESAPPSDIR)/zlib/$version/lib
+prepend-path C_INCLUDE_PATH $::env(MODULESAPPSDIR)/zlib/$version/include
+prepend-path CPLUS_INCLUDE_PATH $::env(MODULESAPPSDIR)/zlib/$version/include
+prepend-path MANPATH $::env(MODULESAPPSDIR)/zlib/$version/share/man
+setenv ZLIB_ROOT $::env(MODULESAPPSDIR)/zlib/$version/

@@ -1,0 +1,22 @@
+#%Module1.0
+#
+## gsutil modulefile
+##
+## Initializes gsutil
+##
+proc ModulesHelp { } {
+global version
+
+puts stderr "\tInitializes your environment to use the gsutil package"
+puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes gsutil package"
+
+# Add required modules
+
+# for Tcl script use only.
+set version 6.1.1
+
+prepend-path PATH $::env(MODULESAPPSDIR)/gsutil/$version
+prepend-path LD_LIBRARY_PATH $::env(MODULESAPPSDIR)/gmp/$version/lib

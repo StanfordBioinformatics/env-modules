@@ -1,0 +1,25 @@
+#%Module1.0
+#
+## ViennaRNA modulefile
+##
+## Initializes ViennaRNA
+##
+#
+proc ModulesHelp { } {
+global version
+
+puts stderr "\tInitializes your environment to use ViennaRNA.\n"
+puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes vim package"
+
+# for Tcl script use only.
+set version 2.3.2
+
+prepend-path PATH /srv/gsfs0/software/ViennaRNA/$version/bin
+
+prepend-path LIBRARY_PATH /srv/gsfs0/software/ViennaRNA/$version/lib
+prepend-path LD_LIBRARY_PATH /srv/gsfs0/software/ViennaRNA/$version/lib
+prepend-path CPATH /srv/gsfs0/software/ViennaRNA/$version/include
+prepend-path MANPATH /srv/gsfs0/software/ViennaRNA/$version/share/man

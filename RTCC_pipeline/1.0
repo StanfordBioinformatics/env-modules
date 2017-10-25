@@ -1,0 +1,32 @@
+#%Module1.0
+#
+## RTCC_pipeline modulefile
+##
+## Initializes RTCC_pipeline
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the RTCC_pipeline package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes RTCC_pipeline package"
+
+# for Tcl script use only
+set version 1.0
+
+module add python/2.7
+module add hiclib-RTCC_pipeline/9ed8d9e0ca7f
+module add gnuplot/5.0.2
+module add homer/4.7
+module add bowtie/2.2.6
+module add samtools/1.2
+module add pigz/2.3.3
+module add h5py/2.6.0
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/RTCC_pipeline/$version
+prepend-path PYTHONPATH $::env(MODULESAPPSDIR)/RTCC_pipeline/$version

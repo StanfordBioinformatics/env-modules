@@ -1,4 +1,8 @@
 #%Module1.0
 
+proc ModulesHelp { } { 
+  puts stderr "\tInitializes your environment to use DNAnexus. You must source the BASH startup script after loading this module. Type 'source \$DXTOOLKIT'."
+}
+
 setenv DXTOOLKIT_VERSION 0.197.0
 module load dx-toolkit/dx-toolkit

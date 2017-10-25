@@ -1,0 +1,19 @@
+#%Module1.0
+#
+## VARNA modulefile
+##
+## Initializes VARNA
+##
+proc ModulesHelp { } {
+global version
+
+puts stderr "\tInitializes your environment to use VARNA.\n"
+puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes VARNA package"
+
+# for Tcl script use only.
+set version 3-93
+
+prepend-path PATH /srv/gsfs0/software/VARNA/$version/

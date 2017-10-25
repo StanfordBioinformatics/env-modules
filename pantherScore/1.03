@@ -1,0 +1,29 @@
+#%Module1.0
+#
+## pantherScore modulefile
+##
+## Initializes pantherScore
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the pantherScore package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes pantherScore package"
+
+# for Tcl script use only
+set version 1.03
+
+module add perl-scg/1.0
+#module add bioperl/1.6.924
+module add hmmer/2.3.2
+module add blast/2.2.24+
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/pantherScore/pantherScore$version
+prepend-path PERL5LIB $::env(MODULESAPPSDIR)/pantherScore/pantherScore$version/lib
+setenv PANTHERLIB /srv/gsfs0/projects/gbsc/Resources/panther_library/10.0/PANTHER10.0

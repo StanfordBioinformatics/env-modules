@@ -1,0 +1,31 @@
+#%Module1.0
+#
+## TCR_pipeline modulefile
+##
+## Initializes TCR_pipeline
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the TCR_pipeline package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes TCR_pipeline package"
+
+# for Tcl script use only
+set version 1.0
+
+#module add perl-scg/5.24.0
+module add bioperl/1.6.924
+module add migmap/1.0.0
+module add cd-hit/4.6.5
+module add muscle/3.8.31
+module add emboss/6.6.0
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/TCR_pipeline/$version/bin
+prepend-path PATH $::env(MODULESAPPSDIR)/TCR_pipeline/$version/util
+prepend-path PERL5LIB $::env(MODULESAPPSDIR)/TCR_pipeline/$version/lib

@@ -1,0 +1,19 @@
+#%Module1.0
+#
+## scalce modulefile
+##
+## Initializes scalce
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the scalce compression package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes scalce package"
+
+# for Tcl script use only
+set version latest
+
+prepend-path PATH $::env(MODULESAPPSDIR)/scalce/$version

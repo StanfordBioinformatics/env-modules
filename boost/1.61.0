@@ -1,0 +1,26 @@
+#%Module1.0
+#
+## boost modulefile
+##
+## Initializes boost
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the boost package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes boost package"
+
+# for Tcl script use only
+set version 1.61.0
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path C_INCLUDE_PATH $::env(MODULESAPPSDIR)/boost/$version/include
+prepend-path CPLUS_INCLUDE_PATH $::env(MODULESAPPSDIR)/boost/$version/include
+prepend-path LD_LIBRARY_PATH $::env(MODULESAPPSDIR)/boost/$version/lib
+setenv CPPFLAGS -I$::env(MODULESAPPSDIR)/boost/$version/include
+setenv LDFLAGS -L$::env(MODULESAPPSDIR)/boost/$version/lib

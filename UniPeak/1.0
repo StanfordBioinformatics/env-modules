@@ -1,0 +1,20 @@
+#%Module1.0
+#
+## UniPeak modulefile
+##
+## Initializes UniPeak
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use UniPeak\n"
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes UniPeak program"
+
+# for Tcl script use only
+set version 1.0
+
+prepend-path PATH $::env(MODULESAPPSDIR)/UniPeak/$version/bin
+prepend-path PATH $::env(MODULESAPPSDIR)/UniPeak/$version/extras

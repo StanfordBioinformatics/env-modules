@@ -1,0 +1,26 @@
+#%Module1.0
+#
+## canu modulefile
+##
+## Initializes canu
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the canu package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes canu package"
+
+# for Tcl script use only
+set version fa3eede
+
+#module add perl-scg/1.0
+module add java/8u66
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/canu/$version/canu/Linux-amd64/bin
+prepend-path PERL5LIB $::env(MODULESAPPSDIR)/canu/$version/canu/Linux-amd64/bin/lib/canu

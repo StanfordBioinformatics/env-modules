@@ -1,0 +1,25 @@
+#%Module1.0
+#
+## export2graphlan modulefile
+##
+## Initializes export2graphlan
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the export2graphlan package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes export2graphlan package"
+
+module add python/2.7
+module add biom-format/2.1.5
+
+# for Tcl script use only
+set version 7b5795b
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/export2graphlan/$version/export2graphlan

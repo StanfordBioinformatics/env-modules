@@ -1,0 +1,21 @@
+#%Module1.0
+#
+## basespace-cli modulefile
+##
+## Initializes the Command line interface for Illumina's BaseSpace.
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the command line interface for BaseSpace"
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes the CLI for BaseSpace"
+
+# for Tcl script use only
+set version 0.7
+
+prereq python/2.7
+
+prepend-path PATH $::env(MODULESAPPSDIR)/basespace-cli/$version/bin

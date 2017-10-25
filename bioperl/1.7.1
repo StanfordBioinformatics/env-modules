@@ -1,0 +1,26 @@
+#%Module1.0
+#
+## bioperl modulefile
+##
+## Initializes bioperl
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the bioperl package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes bioperl package"
+
+# for Tcl script use only
+set version 1.7.1
+
+module add perl-scg/5.24.0
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/bioperl/BioPerl-$version/bin
+prepend-path PERL5LIB $::env(MODULESAPPSDIR)/bioperl/BioPerl-$version/lib/perl5
+prepend-path MANPATH $::env(MODULESAPPSDIR)/bioperl/BioPerl-$version/man

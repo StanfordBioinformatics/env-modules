@@ -1,0 +1,27 @@
+#%Module1.0
+#
+## trinity modulefile
+##
+## Initializes trinity
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the trinity package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes trinity package"
+
+# for Tcl script use only
+set version 2.4.0
+
+module add bowtie/2.3.1
+module add java/8u66
+
+set repos $::env(MODULESAPPSDIR)/trinity/trinityrnaseq-Trinity-v$version
+prepend-path PATH $repos
+prepend-path PATH $repos/util
+prepend-path PERL5LIB $repos/PerlLib
+
+setenv TRINITY_HOME $repos

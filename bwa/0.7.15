@@ -1,0 +1,25 @@
+#%Module1.0
+#
+## bwa modulefile
+##
+## Initializes bwa aligner
+##
+proc ModulesHelp { } {
+	global bwaversion
+
+	puts stderr "\tInitializes your environment to use the bwa sequence alignment program"
+	puts stderr "\n\tVersion $bwaversion\n"
+}
+
+#module-whatis "initializes bwa sequence alignment program"
+
+# for Tcl script use only
+set bwaversion 0.7.15
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/bwa/bwa-$bwaversion/bin/bwakit
+prepend-path PATH $::env(MODULESAPPSDIR)/bwa/bwa-$bwaversion/bin
+prepend-path MANPATH $::env(MODULESAPPSDIR)/bwa/bwa-$bwaversion/man
+setenv HG19_BWA /srv/gsfs0/shared_data/RefGenomes/GATK_Resource_Bundle/2.8/hg19/indexes/bwa/0.7.15/hg19.fa

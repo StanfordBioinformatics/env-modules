@@ -1,0 +1,34 @@
+#%Module1.0
+#
+## trup modulefile
+##
+## Initializes trup
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the trup package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes trup package"
+
+# for Tcl script use only
+set version a81e423
+
+module add bamtools/2.4.0
+module add zlib/1.2.8
+module add boost/1.58.0
+module add r/3.2.2
+module add blat/3.5
+module add bowtie/2.2.4
+module add samtools/1.2
+module add velvet/1.2.10
+module add oases/0.2.8
+module add gmap/2015-11-20
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/trup/$version/TRUP/bin
+setenv TRUP_ANNOTATION /srv/gsfs0/projects/gbsc/Resources/TRUP_ANNOTATION/

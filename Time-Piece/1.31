@@ -1,0 +1,25 @@
+#%Module1.0
+#
+## Time-Piece modulefile
+##
+## Initializes Time-Piece
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the Time-Piece package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes Time-Piece package"
+
+# for Tcl script use only
+set version 1.31
+
+module add ExtUtils-ParseXS/3.30
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PERL5LIB $::env(MODULESAPPSDIR)/Time-Piece/$version/lib/perl5
+prepend-path MANPATH $::env(MODULESAPPSDIR)/Time-Piece/$version/man

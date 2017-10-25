@@ -1,0 +1,21 @@
+#%Module1.0
+#
+## anaconda modulefile
+##
+## Initializes athena
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tSLURM."
+	puts stderr "\n\tVersion $version\n"
+}
+
+# for Tcl script use only
+set version current
+
+prepend-path PATH /scg/slurm/current/bin
+prepend-path LD_LIBRARY_PATH /scg/slurm/current/lib
+prepend-path MANPATH /scg/slurm/current/share/man:
+prepend-path LIBRARY_PATH /scg/slurm/current/lib
+ 

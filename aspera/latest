@@ -1,0 +1,17 @@
+#%Module1.0
+#
+## aspera modulefile
+##
+## Initializes aspera
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use aspera\n"
+}
+
+module-whatis "initializes aspera"
+
+# for Tcl script use only
+
+prepend-path PATH $::env(MODULESAPPSDIR)/aspera/bin

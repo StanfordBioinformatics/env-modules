@@ -1,0 +1,33 @@
+#%Module1.0
+#
+## lefse modulefile
+##
+## Initializes lefse
+##
+proc ModulesHelp { } {
+	global wgfastversion
+
+	puts stderr "\tInitializes your environment to use the WG-FAST"
+	puts stderr "\n\tVersion $lefseversion\n"
+}
+
+module-whatis "initializes wgfast"
+
+module add python/2.7
+module add gatk/2.5.2
+module add java/7u03
+module add samtools/0.1.19
+module add bwa/0.7.4
+module add raxml/8.1.6
+
+# for Tcl script use only
+set wgfastversion 1.0
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/wgfast/$wgfastversion/
+prepend-path PYTHONPATH $::env(MODULESAPPSDIR)/wgfast/$wgfastversion/wg-fast
+prepend-path PYTHONPATH $::env(MODULESAPPSDIR)/wgfast/$wgfastversion/dendropy
+#prepend-path PATH $::env(MODULESAPPSDIR)/wgfast/$wgfastversion/standard-RAxML
+

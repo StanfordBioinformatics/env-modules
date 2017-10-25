@@ -15,10 +15,7 @@ module-whatis "initializes RTG Core"
 
 # for Tcl script use only
 set rtgversion 3.5.1
-module load java/latest
-
-# sets the MODULESAPPSDIR env var
-module add modsappsdir
+#module load java/latest
 
 setenv RTGCOREROOT $::env(MODULESAPPSDIR)/rtg-core/rtg-core-$rtgversion
 prepend-path PATH $::env(MODULESAPPSDIR)/rtg-core/rtg-core-$rtgversion

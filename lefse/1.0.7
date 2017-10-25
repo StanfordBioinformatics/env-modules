@@ -1,0 +1,25 @@
+#%Module1.0
+#
+## lefse modulefile
+##
+## Initializes lefse
+##
+proc ModulesHelp { } {
+	global lefseversion
+
+	puts stderr "\tInitializes your environment to use the LEfSe"
+	puts stderr "\n\tVersion $lefseversion\n"
+}
+
+module-whatis "initializes lefse"
+
+module add python/2.7
+module add r/3.2.0
+
+# for Tcl script use only
+set lefseversion 1.0.7
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/lefse/$lefseversion/

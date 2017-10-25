@@ -1,0 +1,33 @@
+#%Module1.0
+#
+## miniconda3 modulefile
+##
+## Initializes miniconda3
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the miniconda3 package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes miniconda3 package"
+
+# for Tcl script use only
+set version 4.0.5
+
+prepend-path PATH $::env(MODULESAPPSDIR)/miniconda3/$version/bin
+prepend-path MANPATH $::env(MODULESAPPSDIR)/miniconda3/$version/share/man
+prepend-path C_INCLUDE_PATH $::env(MODULESAPPSDIR)/miniconda3/$version/include
+prepend-path LD_LIBRARY_PATH $::env(MODULESAPPSDIR)/miniconda3/$version/lib
+
+prepend-path PATH $::env(MODULESAPPSDIR)/miniconda3/$version/envs/bds_atac/bin
+prepend-path MANPATH $::env(MODULESAPPSDIR)/miniconda3/$version/envs/bds_atac/man
+prepend-path MANPATH $::env(MODULESAPPSDIR)/miniconda3/$version/envs/bds_atac/share/man
+prepend-path C_INCLUDE_PATH $::env(MODULESAPPSDIR)/miniconda3/$version/envs/bds_atac/include
+prepend-path LD_LIBRARY_PATH $::env(MODULESAPPSDIR)/miniconda3/$version/envs/bds_atac/lib
+
+prepend-path PATH $::env(MODULESAPPSDIR)/miniconda3/$version/envs/bds_atac_py3/bin
+prepend-path MANPATH $::env(MODULESAPPSDIR)/miniconda3/$version/envs/bds_atac_py3/share/man
+prepend-path C_INCLUDE_PATH $::env(MODULESAPPSDIR)/miniconda3/$version/envs/bds_atac_py3/include
+prepend-path LD_LIBRARY_PATH $::env(MODULESAPPSDIR)/miniconda3/$version/envs/bds_atac_py3/lib

@@ -1,0 +1,27 @@
+#%Module1.0
+#
+## xz modulefile
+##
+## Initializes xz package
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the xz package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes xz package"
+
+# for Tcl script use only
+set version 5.2.2
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/xz/$version/bin
+prepend-path LD_LIBRARY_PATH $::env(MODULESAPPSDIR)/xz/$version/lib
+prepend-path C_INCLUDE_PATH $::env(MODULESAPPSDIR)/xz/$version/include
+prepend-path C_INCLUDE_PATH $::env(MODULESAPPSDIR)/xz/$version/include/lzma
+prepend-path MANPATH $::env(MODULESAPPSDIR)/xz/$version/share/man
+prepend-path PKG_CONFIG_PATH $::env(MODULESAPPSDIR)/xz/$version/lib/pkgconfig

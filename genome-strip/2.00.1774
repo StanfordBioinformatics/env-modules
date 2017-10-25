@@ -1,0 +1,29 @@
+#%Module1.0
+#
+## genome-strip modulefile
+##
+## Initializes genome-strip
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the genome-strip"
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes genome-strip"
+
+module add java/7u03
+module add r/3.4.1
+module add samtools/1.5 
+module add tabix/0.2.6 
+module add gatk/3.7
+module add picard-tools/2.13.2
+module add bwa/0.7.15
+
+# for Tcl script use only
+set version 2.00.1774
+
+prepend-path PATH $::env(MODULESAPPSDIR)/genome-strip/$version/svtoolkit
+prepend-path CLASSPATH $::env(MODULESAPPSDIR)/genome-strip/$version/svtoolkit/lib/SVToolkit.jar
+setenv SV_DIR $::env(MODULESAPPSDIR)/genome-strip/$version/svtoolkit

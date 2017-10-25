@@ -1,0 +1,24 @@
+#%Module1.0
+#
+## clustalw2 modulefile
+##
+## Initializes clustalw2
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the clustalw2 package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes clustalw2 package"
+
+# for Tcl script use only
+set version 2.1
+
+module add gcc/5.2.0
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/clustalw2/clustalw-${version}-linux-x86_64-libcppstatic

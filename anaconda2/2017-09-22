@@ -1,0 +1,20 @@
+#%Module1.0
+#
+## anaconda modulefile
+##
+## Initializes anaconda
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tAdd Anaconda2 and requirements to the environment."
+	puts stderr "\n\tVersion $version\n"
+}
+
+# for Tcl script use only
+set version 2017-09-22
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/anaconda2/$version/bin

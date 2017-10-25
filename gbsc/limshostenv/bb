@@ -1,0 +1,334 @@
+run_dir /srv/gsfs0/projects/seq_center/Illumina/RunsInProgress/160120_HAVERS_0550_AC7KLRACXX
+archive_dir /srv/gsfs0/projects/seq_center/Illumina/PublishedResults/2016/jan/160120_HAVERS_0550_AC7KLRACXX
+pipeline_run_id 2539
+pipeline_version 1.9.0-1.8.2
+reverse_lanes false
+starting_data_type base_calls_bcl
+platform hiseq2000
+platform_name HiSeq 2000
+index1_cycles 8
+read1_cycles 50
+run_name 160120_HAVERS_0550_AC7KLRACXX
+control_lane 5
+index_read true
+seq_software hcs_2_2_38
+paired_end false
+flow_cell 2571
+lane:1:dna_library_id 14418
+lane:1:barcode_size 6
+lane:1:lab Zehnder
+lane:1:queue UHTS
+lane:1:owner 
+lane:1:barcode_position index_read
+lane:1:notify_comments hyzhang@stanford.edu
+lane:1:sample_name MPN_HiSeq 16
+lane:1:submitter Biquan Luo
+lane:1:lane_number true
+lane:1:submitter_email biquanl@stanford.edu
+lane:1:multiplexed true
+lane:1:id 18874
+lane:1:barcode_count 6
+lane:1:barcode:0:codepoint ATCACG
+lane:1:barcode:0:name 
+lane:1:barcode:1:codepoint CGATGT
+lane:1:barcode:1:name 
+lane:1:barcode:2:codepoint TTAGGC
+lane:1:barcode:2:name 
+lane:1:barcode:3:codepoint TGACCA
+lane:1:barcode:3:name 
+lane:1:barcode:4:codepoint ACAGTG
+lane:1:barcode:4:name 
+lane:1:barcode:5:codepoint CAGATC
+lane:1:barcode:5:name 
+gerald:0:lane:1:pair_distance false
+gerald:0:lane:1:mapping_request_id 12167
+gerald:0:lane:1:num_skipped_bases false
+gerald:0:lane:1:read2_num_mapped_bases false
+gerald:0:lane:1:max_mismatches 2
+gerald:0:lane:1:reference_sequence_path H_sapiens/hg18
+gerald:0:lane:1:reference_sequence_name Human (hg18)
+gerald:0:lane:1:num_mapped_bases 36
+gerald:0:lane:1:reference_sequence_id true
+gerald:0:lane:1:sgr_extension 200
+gerald:0:lane:1:mapping_program bwa
+gerald:0:lane:1:generate_sgr true
+gerald:0:lane:1:read2_num_skipped_bases false
+gerald:0:lane:1:filter_poly_a true
+gerald:0:lane:1:max_hits 10
+gerald:0:lane:1:analysis_type map
+gerald:0:lane:1:submitter Biquan Luo
+gerald:0:lane:1:sample_name MPN_HiSeq 16
+lane:3:dna_library_id 14420
+lane:3:barcode_size 6
+lane:3:lab Zehnder
+lane:3:queue UHTS
+lane:3:owner 
+lane:3:barcode_position index_read
+lane:3:notify_comments hyzhang@stanford.edu
+lane:3:sample_name MPN_HiSeq 18
+lane:3:submitter Biquan Luo
+lane:3:lane_number 3
+lane:3:submitter_email biquanl@stanford.edu
+lane:3:multiplexed true
+lane:3:id 18876
+lane:3:barcode_count 6
+lane:3:barcode:0:codepoint ATCACG
+lane:3:barcode:0:name 
+lane:3:barcode:1:codepoint CGATGT
+lane:3:barcode:1:name 
+lane:3:barcode:2:codepoint TTAGGC
+lane:3:barcode:2:name 
+lane:3:barcode:3:codepoint TGACCA
+lane:3:barcode:3:name 
+lane:3:barcode:4:codepoint ACAGTG
+lane:3:barcode:4:name 
+lane:3:barcode:5:codepoint CAGATC
+lane:3:barcode:5:name 
+gerald:0:lane:3:pair_distance false
+gerald:0:lane:3:mapping_request_id 12169
+gerald:0:lane:3:num_skipped_bases false
+gerald:0:lane:3:read2_num_mapped_bases false
+gerald:0:lane:3:max_mismatches 2
+gerald:0:lane:3:reference_sequence_path H_sapiens/hg18
+gerald:0:lane:3:reference_sequence_name Human (hg18)
+gerald:0:lane:3:num_mapped_bases 36
+gerald:0:lane:3:reference_sequence_id true
+gerald:0:lane:3:sgr_extension 200
+gerald:0:lane:3:mapping_program bwa
+gerald:0:lane:3:generate_sgr true
+gerald:0:lane:3:read2_num_skipped_bases false
+gerald:0:lane:3:filter_poly_a true
+gerald:0:lane:3:max_hits 10
+gerald:0:lane:3:analysis_type map
+gerald:0:lane:3:submitter Biquan Luo
+gerald:0:lane:3:sample_name MPN_HiSeq 18
+lane:2:dna_library_id 14419
+lane:2:barcode_size 6
+lane:2:lab Zehnder
+lane:2:queue UHTS
+lane:2:owner 
+lane:2:barcode_position index_read
+lane:2:notify_comments hyzhang@stanford.edu
+lane:2:sample_name MPN_HiSeq 17
+lane:2:submitter Biquan Luo
+lane:2:lane_number 2
+lane:2:submitter_email biquanl@stanford.edu
+lane:2:multiplexed true
+lane:2:id 18875
+lane:2:barcode_count 6
+lane:2:barcode:0:codepoint ATCACG
+lane:2:barcode:0:name 
+lane:2:barcode:1:codepoint CGATGT
+lane:2:barcode:1:name 
+lane:2:barcode:2:codepoint TTAGGC
+lane:2:barcode:2:name 
+lane:2:barcode:3:codepoint TGACCA
+lane:2:barcode:3:name 
+lane:2:barcode:4:codepoint ACAGTG
+lane:2:barcode:4:name 
+lane:2:barcode:5:codepoint CAGATC
+lane:2:barcode:5:name 
+gerald:0:lane:2:pair_distance false
+gerald:0:lane:2:mapping_request_id 12168
+gerald:0:lane:2:num_skipped_bases false
+gerald:0:lane:2:read2_num_mapped_bases false
+gerald:0:lane:2:max_mismatches 2
+gerald:0:lane:2:reference_sequence_path H_sapiens/hg18
+gerald:0:lane:2:reference_sequence_name Human (hg18)
+gerald:0:lane:2:num_mapped_bases 36
+gerald:0:lane:2:reference_sequence_id true
+gerald:0:lane:2:sgr_extension 200
+gerald:0:lane:2:mapping_program bwa
+gerald:0:lane:2:generate_sgr true
+gerald:0:lane:2:read2_num_skipped_bases false
+gerald:0:lane:2:filter_poly_a true
+gerald:0:lane:2:max_hits 10
+gerald:0:lane:2:analysis_type map
+gerald:0:lane:2:submitter Biquan Luo
+gerald:0:lane:2:sample_name MPN_HiSeq 17
+lane:5:dna_library_id 20
+lane:5:barcode_size false
+lane:5:lab Snyder
+lane:5:queue CGPM
+lane:5:owner 
+lane:5:barcode_position no_barcode
+lane:5:sample_name PhiX
+lane:5:submitter Lucia Ramirez
+lane:5:lane_number 5
+lane:5:submitter_email lucyrami@stanford.edu
+lane:5:multiplexed false
+lane:5:id 18881
+lane:5:barcode_count 0
+gerald:0:lane:5:analysis_type sequence
+gerald:0:lane:5:submitter Lucia Ramirez
+gerald:0:lane:5:sample_name PhiX
+lane:4:dna_library_id 14421
+lane:4:barcode_size 6
+lane:4:lab Zehnder
+lane:4:queue UHTS
+lane:4:owner 
+lane:4:barcode_position index_read
+lane:4:notify_comments hyzhang@stanford.edu
+lane:4:sample_name MPN_HiSeq 19
+lane:4:submitter Biquan Luo
+lane:4:lane_number 4
+lane:4:submitter_email biquanl@stanford.edu
+lane:4:multiplexed true
+lane:4:id 18877
+lane:4:barcode_count 6
+lane:4:barcode:0:codepoint ATCACG
+lane:4:barcode:0:name 
+lane:4:barcode:1:codepoint CGATGT
+lane:4:barcode:1:name 
+lane:4:barcode:2:codepoint TTAGGC
+lane:4:barcode:2:name 
+lane:4:barcode:3:codepoint TGACCA
+lane:4:barcode:3:name 
+lane:4:barcode:4:codepoint ACAGTG
+lane:4:barcode:4:name 
+lane:4:barcode:5:codepoint CAGATC
+lane:4:barcode:5:name 
+gerald:0:lane:4:pair_distance false
+gerald:0:lane:4:mapping_request_id 12170
+gerald:0:lane:4:num_skipped_bases false
+gerald:0:lane:4:read2_num_mapped_bases false
+gerald:0:lane:4:max_mismatches 2
+gerald:0:lane:4:reference_sequence_path H_sapiens/hg18
+gerald:0:lane:4:reference_sequence_name Human (hg18)
+gerald:0:lane:4:num_mapped_bases 36
+gerald:0:lane:4:reference_sequence_id true
+gerald:0:lane:4:sgr_extension 200
+gerald:0:lane:4:mapping_program bwa
+gerald:0:lane:4:generate_sgr true
+gerald:0:lane:4:read2_num_skipped_bases false
+gerald:0:lane:4:filter_poly_a true
+gerald:0:lane:4:max_hits 10
+gerald:0:lane:4:analysis_type map
+gerald:0:lane:4:submitter Biquan Luo
+gerald:0:lane:4:sample_name MPN_HiSeq 19
+lane:7:dna_library_id 14448
+lane:7:barcode_size 8
+lane:7:lab Rando
+lane:7:queue UHTS
+lane:7:owner 
+lane:7:barcode_position index_read
+lane:7:sample_name LL-Hr-Ch-1
+lane:7:submitter Ling Liu
+lane:7:lane_number 7
+lane:7:submitter_email lingliu@stanford.edu
+lane:7:multiplexed true
+lane:7:id 18879
+lane:7:barcode_count 5
+lane:7:barcode:0:codepoint CACGTCTA
+lane:7:barcode:0:name 
+lane:7:barcode:1:codepoint AGCTAGTG
+lane:7:barcode:1:name 
+lane:7:barcode:2:codepoint ACTATCGC
+lane:7:barcode:2:name 
+lane:7:barcode:3:codepoint GCGTATCA
+lane:7:barcode:3:name 
+lane:7:barcode:4:codepoint GTCCTGTT
+lane:7:barcode:4:name 
+gerald:0:lane:7:pair_distance false
+gerald:0:lane:7:mapping_request_id 12183
+gerald:0:lane:7:num_skipped_bases false
+gerald:0:lane:7:read2_num_mapped_bases false
+gerald:0:lane:7:max_mismatches 2
+gerald:0:lane:7:reference_sequence_path Mus_musculus/mm9_male
+gerald:0:lane:7:reference_sequence_name Mouse Male (mm9)
+gerald:0:lane:7:num_mapped_bases 36
+gerald:0:lane:7:reference_sequence_id 29
+gerald:0:lane:7:sgr_extension 200
+gerald:0:lane:7:mapping_program bwa
+gerald:0:lane:7:generate_sgr true
+gerald:0:lane:7:read2_num_skipped_bases false
+gerald:0:lane:7:filter_poly_a true
+gerald:0:lane:7:max_hits 10
+gerald:0:lane:7:analysis_type map
+gerald:0:lane:7:submitter Ling Liu
+gerald:0:lane:7:sample_name LL-Hr-Ch-1
+lane:6:dna_library_id 14422
+lane:6:barcode_size 6
+lane:6:lab Zehnder
+lane:6:queue UHTS
+lane:6:owner 
+lane:6:barcode_position index_read
+lane:6:notify_comments hyzhang@stanford.edu
+lane:6:sample_name MPN_HiSeq 20
+lane:6:submitter Biquan Luo
+lane:6:lane_number 6
+lane:6:submitter_email biquanl@stanford.edu
+lane:6:multiplexed true
+lane:6:id 18878
+lane:6:barcode_count 6
+lane:6:barcode:0:codepoint ATCACG
+lane:6:barcode:0:name 
+lane:6:barcode:1:codepoint CGATGT
+lane:6:barcode:1:name 
+lane:6:barcode:2:codepoint TTAGGC
+lane:6:barcode:2:name 
+lane:6:barcode:3:codepoint TGACCA
+lane:6:barcode:3:name 
+lane:6:barcode:4:codepoint ACAGTG
+lane:6:barcode:4:name 
+lane:6:barcode:5:codepoint CAGATC
+lane:6:barcode:5:name 
+gerald:0:lane:6:pair_distance false
+gerald:0:lane:6:mapping_request_id 12171
+gerald:0:lane:6:num_skipped_bases false
+gerald:0:lane:6:read2_num_mapped_bases false
+gerald:0:lane:6:max_mismatches 2
+gerald:0:lane:6:reference_sequence_path H_sapiens/hg18
+gerald:0:lane:6:reference_sequence_name Human (hg18)
+gerald:0:lane:6:num_mapped_bases 36
+gerald:0:lane:6:reference_sequence_id true
+gerald:0:lane:6:sgr_extension 200
+gerald:0:lane:6:mapping_program bwa
+gerald:0:lane:6:generate_sgr true
+gerald:0:lane:6:read2_num_skipped_bases false
+gerald:0:lane:6:filter_poly_a true
+gerald:0:lane:6:max_hits 10
+gerald:0:lane:6:analysis_type map
+gerald:0:lane:6:submitter Biquan Luo
+gerald:0:lane:6:sample_name MPN_HiSeq 20
+lane:8:dna_library_id 14449
+lane:8:barcode_size 8
+lane:8:lab Rando
+lane:8:queue UHTS
+lane:8:owner 
+lane:8:barcode_position index_read
+lane:8:sample_name LL-Hr-Ch-2
+lane:8:submitter Ling Liu
+lane:8:lane_number 8
+lane:8:submitter_email lingliu@stanford.edu
+lane:8:multiplexed true
+lane:8:id 18880
+lane:8:barcode_count 5
+lane:8:barcode:0:codepoint ACTCTCCA
+lane:8:barcode:0:name 
+lane:8:barcode:1:codepoint CGTCCATT
+lane:8:barcode:1:name 
+lane:8:barcode:2:codepoint AGCCGTAA
+lane:8:barcode:2:name 
+lane:8:barcode:3:codepoint GAGTAGAG
+lane:8:barcode:3:name 
+lane:8:barcode:4:codepoint ACGTCGTT
+lane:8:barcode:4:name 
+gerald:0:lane:8:pair_distance false
+gerald:0:lane:8:mapping_request_id 12184
+gerald:0:lane:8:num_skipped_bases false
+gerald:0:lane:8:read2_num_mapped_bases false
+gerald:0:lane:8:max_mismatches 2
+gerald:0:lane:8:reference_sequence_path Mus_musculus/mm9_male
+gerald:0:lane:8:reference_sequence_name Mouse Male (mm9)
+gerald:0:lane:8:num_mapped_bases 36
+gerald:0:lane:8:reference_sequence_id 29
+gerald:0:lane:8:sgr_extension 200
+gerald:0:lane:8:mapping_program bwa
+gerald:0:lane:8:generate_sgr true
+gerald:0:lane:8:read2_num_skipped_bases false
+gerald:0:lane:8:filter_poly_a true
+gerald:0:lane:8:max_hits 10
+gerald:0:lane:8:analysis_type map
+gerald:0:lane:8:submitter Ling Liu
+gerald:0:lane:8:sample_name LL-Hr-Ch-2

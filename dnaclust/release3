@@ -1,0 +1,22 @@
+#%Module1.0
+#
+## dnaclust modulefile
+##
+## Initializes dnaclust
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the dnaclust package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes dnaclust package"
+
+# for Tcl script use only
+set version release3
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/dnaclust/dnaclust_linux_$version

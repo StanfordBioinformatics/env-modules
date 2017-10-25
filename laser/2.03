@@ -1,0 +1,24 @@
+#%Module1.0
+#
+## laser modulefile
+##
+## Initializes laser
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the laser package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes laser package"
+
+# for Tcl script use only
+set version 2.03
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/laser/LASER-$version/
+prepend-path PATH $::env(MODULESAPPSDIR)/laser/LASER-$version/pileup2seq/
+prepend-path PATH $::env(MODULESAPPSDIR)/laser/LASER-$version/vcf2geno/

@@ -1,0 +1,22 @@
+#%Module1.0
+#
+## cgatools modulefile
+##
+## Initializes cgatools
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the cgatools package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes cgatools package"
+
+# for Tcl script use only
+set version 1.8.0.1
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/cgatools/cgatools-${version}-linux_binary-x86_64/bin

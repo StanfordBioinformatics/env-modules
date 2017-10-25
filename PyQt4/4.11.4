@@ -1,0 +1,30 @@
+#%Module1.0
+#
+## PyQt4 modulefile
+##
+## Initializes PyQt4
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the PyQt4 package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes PyQt4 package"
+
+# for Tcl script use only
+set version 4.11.4
+
+module add python/2.7
+module add sip/4.17 
+module add qt/4.8.6
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/PyQt4/$version/bin
+prepend-path LD_LIBRARY_PATH $::env(MODULESAPPSDIR)/PyQt4/$version/lib
+prepend-path LD_LIBRARY_PATH $::env(MODULESAPPSDIR)/PyQt4/$version/lib/python2.7/site-packages/PyQt4
+#prepend-path PATH $::env(MODULESAPPSDIR)/PyQt4/$version/share
+prepend-path PYTHONPATH $::env(MODULESAPPSDIR)/PyQt4/$version/lib/python2.7/site-packages

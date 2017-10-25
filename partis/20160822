@@ -1,0 +1,23 @@
+#%Module1.0
+#
+##
+## Initializes partis https://github.com/psathyrella/partis
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the partis\n"
+	puts stderr "partis is an HMM-based framework for B-cell receptor sequence annotation, simulation, and clonal family inference. It is built on top of the ham HMM compiler, and also uses the ig-sw set of Smith-Waterman annotation tools."
+}
+
+module-whatis "initializes partis"
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+module add python/2.7
+module add gcc/5.2.0
+module add boost/1.61.0
+module add r/3.3.1
+
+prepend-path PATH /srv/gsfs0/software/partis/partis/bin

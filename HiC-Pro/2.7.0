@@ -1,0 +1,18 @@
+#%Module1.0
+#
+## HiC-Pro
+##
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the HiC-Pro program"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes bwa sequence alignment program"
+
+# for Tcl script use only
+set version 2.7.0
+
+prepend-path PATH $::env(MODULESAPPSDIR)/HiC-Pro/HiC-Pro_$version/bin

@@ -1,0 +1,21 @@
+#%Module1.0
+#
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the msCentipede package\n"
+	puts stderr "\n\tVersion $version\n"
+}
+
+
+# for Tcl script use only
+set version 20160216
+
+module add python/2.7
+module add pysam/0.8.3
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/msCentipede/msCentipede

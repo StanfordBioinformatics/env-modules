@@ -1,0 +1,55 @@
+#%Module1.0
+#
+## gatk modulefile
+##
+## Initializes gatk
+##
+proc ModulesHelp { } {
+	global gatkversion
+
+	puts stderr "\tInitializes your environment to use the GATK"
+	puts stderr "\n\tVersion $gatkversion\n"
+}
+
+module-whatis "initializes gatk"
+
+#module add java/6u35
+#module add java/latest
+module load java/8u66
+#module load r
+
+# for Tcl script use only
+set gatkversion 3.6
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/gatk/gatk-$gatkversion/
+setenv GATKROOT $::env(MODULESAPPSDIR)/gatk/gatk-$gatkversion/
+setenv GATKJAR $::env(MODULESAPPSDIR)/gatk/gatk-$gatkversion/GenomeAnalysisTK.jar
+# Please don't change this variable. All our pipelines depend on $GATK variable. Thanks. Amin
+setenv GATK $::env(MODULESAPPSDIR)/gatk/gatk-$gatkversion/
+
+# Point the environment variables below to the following GATK options.
+# e.g., for hg19 reference:
+# --reference_sequence $HG19_FASTA
+# --dbsnp $HG19_DBSNP
+# --cosmic $HG19_COSMIC
+
+# hg19
+setenv HG19_FASTA /srv/gsfs0/shared_data/RefGenomes/GATK_Resource_Bundle/2.8/hg19/ucsc.hg19.fasta
+setenv HG19_DBSNP /srv/gsfs0/shared_data/RefGenomes/GATK_Resource_Bundle/2.8/hg19/dbsnp_138.hg19.vcf
+#setenv HG19_COSMIC /srv/gsfs0/shared_data/RefGenomes/H_sapiens/cosmic/grch37/v78/vcf/cosmic_v78_grch37.vcf 
+setenv HG19_COSMIC /srv/gsfs0/shared_data/RefGenomes/H_sapiens/cosmic/grch37/v79/vcf/cosmic_v79_grch37.vcf
+
+# b37 human_g1k_v37
+setenv B37_FASTA /srv/gsfs0/shared_data/RefGenomes/GATK_Resource_Bundle/2.8/b37/human_g1k_v37.fasta
+setenv B37_DBSNP /srv/gsfs0/shared_data/RefGenomes/GATK_Resource_Bundle/2.8/b37/dbsnp_138.b37.vcf
+#setenv B37_COSMIC /srv/gsfs0/shared_data/RefGenomes/H_sapiens/cosmic/grch37/v78/vcf/cosmic_v78_grch37_b37.vcf 
+setenv B37_COSMIC /srv/gsfs0/shared_data/RefGenomes/H_sapiens/cosmic/grch37/v79/vcf/cosmic_v79_grch37_b37.vcf
+
+# b37 human_g1k_v37_decoy (human_g1k_v37 WITH NC_007605 and hs37d5)
+setenv B37_DECOY_FASTA /srv/gsfs0/shared_data/RefGenomes/GATK_Resource_Bundle/2.8/b37/human_g1k_v37_decoy.fasta
+setenv B37_DECOY_DBSNP /srv/gsfs0/shared_data/RefGenomes/GATK_Resource_Bundle/2.8/b37/dbsnp_138.b37.vcf
+#setenv B37_DECOY_COSMIC /srv/gsfs0/shared_data/RefGenomes/H_sapiens/cosmic/grch37/v78/vcf/cosmic_v78_grch37_b37.vcf
+setenv B37_DECOY_COSMIC /srv/gsfs0/shared_data/RefGenomes/H_sapiens/cosmic/grch37/v79/vcf/cosmic_v79_grch37_b37.vcf

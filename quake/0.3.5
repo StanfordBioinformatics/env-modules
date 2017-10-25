@@ -1,0 +1,23 @@
+#%Module1.0
+#
+## quake modulefile
+##
+## Initializes quake
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the quake package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes quake package"
+
+# for Tcl script use only
+set version 0.3.5
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+module add r/3.2.0
+
+prepend-path PATH $::env(MODULESAPPSDIR)/quake/$version/bin

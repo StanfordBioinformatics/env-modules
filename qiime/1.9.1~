@@ -17,10 +17,12 @@ proc ModulesHelp { } {
 set version 1.9.1
 
 module add python/2.7
-#module add ea-utils/1.1.2-806
+module add ea-utils/1.1.2-806
 # sets the MODULESAPPSDIR env var
 module add modsappsdir
 
 prepend-path PATH $::env(MODULESAPPSDIR)/qiime/$version/bin
+prepend-path PATH $::env(MODULESAPPSDIR)/qiime/$version/usearch/5.2.236
+prepend-path PATH $::env(MODULESAPPSDIR)/qiime/$version/usearch/6.1.544
 prepend-path PYTHONPATH $::env(MODULESAPPSDIR)/qiime/$version
 prepend-path PYTHONPATH $::env(MODULESAPPSDIR)/qiime/$version/lib/python2.7/site-packages

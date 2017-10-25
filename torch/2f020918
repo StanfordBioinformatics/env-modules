@@ -1,0 +1,28 @@
+#%Module1.0
+#
+## torch7 modulefile
+##
+## Initializes torch7
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the torch7 package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes torch7 package"
+
+# for Tcl script use only
+set version 2f020918
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/torch/$version/bin
+prepend-path LUA_PATH $::env(MODULESAPPSDIR)/torch/$version/share/lua/5.1/?.lua
+prepend-path LUA_PATH $::env(MODULESAPPSDIR)/torch/2f020918/share/lua/5.1/?/init.lua
+prepend-path LUA_CPATH $::env(MODULESAPPSDIR)/torch/$version/lib/lua/5.1/?.so
+prepend-path LD_LIBRARY_PATH $::env(MODULESAPPSDIR)/torch/$version//lib
+prepend-path DYLD_LIBRARY_PATH $::env(MODULESAPPSDIR)/torch/$version//lib
+prepend-path LUA_CPATH $::env(MODULESAPPSDIR)/torch/$version//lib/?.so

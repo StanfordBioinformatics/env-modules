@@ -18,7 +18,4 @@ set version 0.2.11
 
 module add python/2.7
 
-# sets the MODULESAPPSDIR env var
-module add modsappsdir
-
 prepend-path PATH $::env(MODULESAPPSDIR)/lumpy/$version/lumpy-sv/bin

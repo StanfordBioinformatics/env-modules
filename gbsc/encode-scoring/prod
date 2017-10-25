@@ -33,6 +33,7 @@ prepend-path PATH $repos
 module load gbsc/syapse_scgpm/current
 module add sjm/1.3.0/15sec
 module add python/2.7.9
+prepend-path PYTHONPATH /srv/gsfs0/software/gbsc/EncodeScoring/MACS/1.4.1/lib/python2.7/site-packages
 module load r/3.2.2
 
 #setenv SNAP_SHOW_PEAKSEQ_REQUEST_URL /api/peakseq_inputs/show?experiment_run_id=

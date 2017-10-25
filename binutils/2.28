@@ -1,0 +1,25 @@
+#%Module1.0
+#
+## binutils modulefile
+##
+## Initializes binutils package
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the binutils package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes binutils package"
+
+# for Tcl script use only
+set version 2.28
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/binutils/$version/bin
+prepend-path LD_LIBRARY_PATH $::env(MODULESAPPSDIR)/binutils/$version/lib
+prepend-path C_INCLUDE_PATH $::env(MODULESAPPSDIR)/binutils/$version/include
+prepend-path MANPATH $::env(MODULESAPPSDIR)/binutils/$version/share/man

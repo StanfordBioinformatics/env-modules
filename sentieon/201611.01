@@ -1,0 +1,17 @@
+#%Module1.0
+#
+## sentieon modulefile
+##
+## Initializes sentieon module
+##
+proc ModulesHelp { } {
+	puts stderr "\tInitializes your environment to use sentieon.\n"
+}
+
+module-whatis "initializes sentieon module"
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+setenv SENTIEON_LICENSE license4.stanford.edu:5443
+prepend-path PATH /srv/gsfs0/software/sentieon/sentieon-genomics-201611.01/bin

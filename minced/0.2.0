@@ -1,0 +1,22 @@
+#%Module1.0
+#
+## minced modulefile
+##
+## Initializes minced
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the minced package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes minced package"
+
+# for Tcl script use only
+set version 0.2.0
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/minced/$version/minced

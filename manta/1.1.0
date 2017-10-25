@@ -1,0 +1,23 @@
+#%Module1.0
+#
+## manta modulefile
+##
+## Initializes manta utilities
+##
+proc ModulesHelp { } {
+	global mantaversion
+
+	puts stderr "\tInitializes your environment to use the manta utility programs"
+	puts stderr "\n\tVersion $mantaversion\n"
+}
+
+module-whatis "initializes manta utilities"
+
+# for Tcl script use only
+set mantaversion 1.1.0
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+module add python/2.7
+
+prepend-path PATH $::env(MODULESAPPSDIR)/manta/manta-1.1.0/bin

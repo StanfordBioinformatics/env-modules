@@ -26,6 +26,28 @@ prepend-path CLASSPATH $::env(MODULESAPPSDIR)/gsea/$version/gsea2-2.2.0.jar
 setenv GSEA $::env(MODULESAPPSDIR)/gsea/$version
 setenv GSEA_TOOL xtools.gsea.Gsea
 setenv LEADINGEDGE_TOOL xtools.gsea.LeadingEdgeTool
+
+# Broad MSigDB
 setenv GENESET_PATHWAYS_ALL /srv/gsfs0/projects/gbsc/Resources/GSEA/MSigDB/5.0/c2.cp.v5.0.symbols.gmt
 setenv GENESET_GO_ALL /srv/gsfs0/projects/gbsc/Resources/GSEA/MSigDB/5.0/c5.all.v5.0.symbols.gmt
 setenv CHIP_GENE_SYMBOL /srv/gsfs0/projects/gbsc/Resources/GSEA/Annotations/GENE_SYMBOL.chip
+setenv GENESET_POSITION /srv/gsfs0/projects/gbsc/Resources/GSEA/MSigDB/5.0/c1.all.v5.0.symbols.gmt
+
+# Mouse GMTs from Bader Lab
+setenv MOUSE_GO_BP_ALL_PATHWAYS /srv/gsfs0/projects/gbsc/Resources/GSEA/MSigDB/mouse_symbol_baderlab/March_24_2016/Mouse_GOBP_AllPathways_no_GO_iea_March_24_2016_symbol.gmt
+setenv MOUSE_ALL_PATHWAYS /srv/gsfs0/projects/gbsc/Resources/GSEA/MSigDB/mouse_symbol_baderlab/March_24_2016/Mouse_AllPathways_March_24_2016_symbol.gmt
+setenv MOUSE_REACTOME_PATHWAYS /srv/gsfs0/projects/gbsc/Resources/GSEA/MSigDB/mouse_symbol_baderlab/March_24_2016/Pathways/Mouse_Reactome_March_24_2016_symbol.gmt
+setenv MOUSE_GO_ALL /srv/gsfs0/projects/gbsc/Resources/GSEA/MSigDB/mouse_symbol_baderlab/March_24_2016/GO/Mouse_GOALL_no_GO_iea_March_24_2016_symbol.gmt
+setenv MOUSE_GO_BP /srv/gsfs0/projects/gbsc/Resources/GSEA/MSigDB/mouse_symbol_baderlab/March_24_2016/GO/MOUSE_GO_bp_no_GO_iea_symbol.gmt
+
+
+# Human GMTs from Bader Lab
+setenv HUMAN_GO_BP_ALL_PATHWAYS /srv/gsfs0/projects/gbsc/Resources/GSEA/MSigDB/human_symbol_baderlab/March_24_2016/Human_GOBP_AllPathways_no_GO_iea_March_24_2016_symbol.gmt
+setenv HUMAN_ALL_PATHWAYS /srv/gsfs0/projects/gbsc/Resources/GSEA/MSigDB/human_symbol_baderlab/March_24_2016/Human_AllPathways_March_24_2016_symbol.gmt
+setenv HUMAN_REACTOME_PATHWAYS /srv/gsfs0/projects/gbsc/Resources/GSEA/MSigDB/human_symbol_baderlab/March_24_2016/Pathways/Human_Reactome_March_24_2016_symbol.gmt
+setenv HUMAN_GO_ALL /srv/gsfs0/projects/gbsc/Resources/GSEA/MSigDB/human_symbol_baderlab/March_24_2016/GO/Human_GOALL_no_GO_iea_March_24_2016_symbol.gmt
+
+# individual go term
+setenv HUMAN_GO_BP  /srv/gsfs0/projects/gbsc/Resources/GSEA/MSigDB/human_symbol_baderlab/March_24_2016/GO/Human_GO_bp_no_GO_iea_symbol.gmt
+setenv HUMAN_GO_CC  /srv/gsfs0/projects/gbsc/Resources/GSEA/MSigDB/human_symbol_baderlab/March_24_2016/GO/Human_GO_cc_no_GO_iea_symbol.gmt
+setenv HUMAN_GO_MF  /srv/gsfs0/projects/gbsc/Resources/GSEA/MSigDB/human_symbol_baderlab/March_24_2016/GO/Human_GO_mf_no_GO_iea_symbol.gmt

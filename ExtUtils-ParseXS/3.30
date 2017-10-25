@@ -1,0 +1,24 @@
+#%Module1.0
+#
+## ExtUtils-ParseXS modulefile
+##
+## Initializes ExtUtils-ParseXS
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the ExtUtils-ParseXS package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes ExtUtils-ParseXS package"
+
+# for Tcl script use only
+set version 3.30
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/ExtUtils-ParseXS/$version/bin
+prepend-path PERL5LIB $::env(MODULESAPPSDIR)/ExtUtils-ParseXS/$version/lib/perl5
+prepend-path MANPATH $::env(MODULESAPPSDIR)/ExtUtils-ParseXS/$version/man

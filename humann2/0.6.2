@@ -1,0 +1,33 @@
+#%Module1.0
+#
+## humann2 modulefile
+##
+## Initializes humann2
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the humann2 package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes humann2 package"
+
+# for Tcl script use only
+set version 0.6.2
+
+module add python/2.7
+module add bowtie/2.2.7
+module add metaphlan/2.2.0
+module add diamond/0.7.11
+module add minpath/1.2
+module add biom-format/2.1.5 
+module add ete2/2.3.10
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/humann2/$version/bin
+prepend-path LD_LIBRARY_PATH $::env(MODULESAPPSDIR)/humann2/$version/lib
+prepend-path C_INCLUDE_PATH $::env(MODULESAPPSDIR)/humann2/$version/include
+prepend-path PYTHONPATH $::env(MODULESAPPSDIR)/humann2/$version/lib/python2.7/site-packages

@@ -1,0 +1,33 @@
+#%Module1.0
+#
+## WHRIg_pipeline modulefile
+##
+## Initializes WHRIg_pipeline
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the WHRIg_pipeline package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes WHRIg_pipeline package"
+
+# for Tcl script use only
+set version 1.0
+
+module add r/3.2.2
+module add python/2.7.6
+module add flash/1.2.11
+module add openmpi/1.10.2
+module add phyml/3.2
+module add trimmomatic/0.36
+module add usearch/5.2.32
+module add fastx_toolkit/0.0.14
+module add regex/2016.06.24
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/WHRIg_pipeline/$version
+prepend-path PATH $::env(MODULESAPPSDIR)/WHRIg_pipeline/$version/drive5_py

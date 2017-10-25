@@ -1,0 +1,19 @@
+#%Module1.0
+#
+## BFCounter modulefile
+##
+## Initializes BFCounter package
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the BFCounter package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes BFCounter package"
+
+# for Tcl script use only
+set version 1.0
+
+prepend-path PATH $::env(MODULESAPPSDIR)/BFCounter/$version/

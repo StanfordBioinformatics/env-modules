@@ -1,0 +1,24 @@
+#%Module1.0
+#
+## ipywidgets modulefile
+##
+## Initializes ipywidgets
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the ipywidgets package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes ipywidgets package"
+
+# for Tcl script use only
+set version 4.1.1
+
+module add python/2.7
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PYTHONPATH $::env(MODULESAPPSDIR)/ipywidgets/$version/lib/python2.7/site-packages

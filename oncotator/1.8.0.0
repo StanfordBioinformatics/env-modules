@@ -7,7 +7,7 @@
 proc ModulesHelp { } {
 	global version
 
-	puts stderr "\tInitializes your environment to use the oncotator package. After loading this module, type 'source $ONCOTATOR_ACTIVATE'."
+	puts stderr "\tInitializes your environment to use the oncotator package. After loading this module, type source \$ONCOTATOR_ACTIVATE."
 	puts stderr "\n\tVersion $version\n"
 }
 
@@ -18,7 +18,8 @@ set version 1.8.0.0
 set repos $::env(MODULESAPPSDIR)/oncotator/$version
 
 module add r/3.1.1
-module load gcc/5.2.0
+module load python/2.7.9_sqlite
+module load pysam/0.7.5
 
 prepend-path PATH $repos/bin
 prepend-path PYTHONPATH $repos

@@ -1,0 +1,25 @@
+#%Module1.0
+#
+## idr modulefile
+##
+## Initializes idr analysis package
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the idr analysis package\n" 
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes idr analysis package"
+
+# for Tcl script use only
+set version 2.0.3
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+module add python/3.4.5
+
+prepend-path PATH $::env(MODULESAPPSDIR)/idr/$version/bin
+prepend-path PYTHONPATH $::env(MODULESAPPSDIR)/idr/$version/lib/python3.4/site-packages

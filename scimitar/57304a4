@@ -1,0 +1,25 @@
+#%Module1.0
+#
+## scimitar modulefile
+##
+## Initializes scimitar analysis package
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the scimitar analysis package\n" 
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes scimitar analysis package"
+
+# for Tcl script use only
+set version 57304a4
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+module add python/2.7
+module add pyroconductor/068b6b6
+
+prepend-path PYTHONPATH $::env(MODULESAPPSDIR)/scimitar/$version/lib/python2.7/site-packages/

@@ -1,0 +1,26 @@
+#%Module1.0
+#
+## trimmomatic modulefile
+##
+## Initializes trimmomatic
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the trimmomatic tool"
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes trimmomatic tool"
+
+# for Tcl script use only
+set version 0.36 
+
+module add java/7u03
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+setenv TRIMMOMATIC $::env(MODULESAPPSDIR)/trimmomatic/Trimmomatic-$version/trimmomatic-${version}.jar
+setenv TRIMMOMATICROOT $::env(MODULESAPPSDIR)/trimmomatic/Trimmomatic-$version
+prepend-path PATH $::env(MODULESAPPSDIR)/trimmomatic/Trimmomatic-$version

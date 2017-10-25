@@ -1,0 +1,28 @@
+#%Module1.0
+#
+## basset modulefile
+##
+## Initializes basset
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the basset package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes basset package"
+
+# for Tcl script use only
+set version 005f2c6d
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+module add torch/2f020918
+module add python/2.7
+
+set BASSETDIR $::env(MODULESAPPSDIR)/basset/$version
+prepend-path BASSETDIR $BASSETDIR
+prepend-path PATH $BASSETDIR/src
+prepend-path LUA_PATH $BASSETDIR/src
+prepend-path PYTHONPATH $BASSETDIR/src

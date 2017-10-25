@@ -1,0 +1,26 @@
+#%Module1.0
+#
+## hiclib-RTCC_pipeline modulefile
+##
+## Initializes hiclib-RTCC_pipeline analysis package
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the hiclib-RTCC_pipeline analysis package\n" 
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes hiclib-RTCC_pipeline analysis package"
+
+# for Tcl script use only
+set version 9ed8d9e0ca7f
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+module add python/2.7
+module add mirnylib/213b592a302c
+
+prepend-path PATH $::env(MODULESAPPSDIR)/hiclib-RTCC_pipeline/$version/bin
+prepend-path PYTHONPATH $::env(MODULESAPPSDIR)/hiclib-RTCC_pipeline/$version/lib/python2.7/site-packages

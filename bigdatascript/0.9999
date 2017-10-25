@@ -1,0 +1,25 @@
+#%Module1.0
+#
+## bigdatascript modulefile
+##
+## Initializes bigdatascript
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use bigdatascript"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes bigdatascript"
+
+# for Tcl script use only
+set version 0.9999
+
+module add java/latest
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/bigdatascript/$version/.bds
+setenv _JAVA_OPTIONS "-Xms256M -Xmx512M -XX:ParallelGCThreads=1"

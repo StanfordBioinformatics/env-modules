@@ -1,0 +1,22 @@
+#%Module1.0
+#
+## dna_nexus modulefile
+##
+## Initializes dna_nexus package.
+##
+proc ModulesHelp { } {
+	global dnanexusversion
+
+	puts stderr "\tInitializes your environment to use DNAnexus,"
+	puts stderr "\tutilities to upload data to DNAnexus"
+}
+
+module-whatis "Initializes dx-toolkit"
+
+# for Tcl script use only
+set version 0.175.1
+
+module load python/2.7.9
+
+set DXTOOLKIT $::env(MODULESAPPSDIR)/dx-toolkit/$version/environment
+setenv DXTOOLKIT $DXTOOLKIT

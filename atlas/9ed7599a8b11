@@ -1,0 +1,25 @@
+#%Module1.0
+#
+## atlas modulefile
+##
+## Initializes atlas
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the atlas package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes atlas package"
+
+# for Tcl script use only
+set version 9ed7599a8b11
+
+module add gcc/5.2.0
+module add armadillo/7.600.2
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/atlas/phaentu-atlas-$version

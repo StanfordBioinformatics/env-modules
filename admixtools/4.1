@@ -1,0 +1,24 @@
+#%Module1.0
+#
+## admixtools modulefile
+##
+## Initializes admixtools
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the admixtools package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes admixtools package"
+
+# for Tcl script use only
+set version 4.1
+
+module add openblas/0.2.19
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/admixtools/$version/AdmixTools-master/bin

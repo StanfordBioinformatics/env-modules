@@ -1,0 +1,29 @@
+#%Module1.0
+#
+## bowtie modulefile
+##
+## Initializes bowtie aligner
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the bowtie sequence alignment program\n"
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes bowtie sequence alignment program"
+
+# for Tcl script use only
+set version 2.3.1
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+module add tbb/2017_U5
+module add zlib/1.2.11
+
+prepend-path PATH $::env(MODULESAPPSDIR)/bowtie/bowtie2-$version
+prepend-path PATH $::env(MODULESAPPSDIR)/bowtie/bowtie2-$version/scripts
+
+# set env var for bowtie indexes location
+setenv BOWTIE2_INDEXES $::env(MODULESAPPSDIR)/bowtie/bowtie2-$version/indexes/

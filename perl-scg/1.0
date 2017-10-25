@@ -5,19 +5,17 @@
 ## Initializes Perl path to use scg-cluster perl libraries
 ##
 proc ModulesHelp { } {
-	global perlscgversion
+	global version
 
 	puts stderr "\tInitializes your environment to use the scg-cluster perl libraries"
-	puts stderr "\n\tVersion $perlscgversion\n"
+	puts stderr "\n\tVersion $version\n"
 }
 
 module-whatis "initializes scg perl libraries"
 
 # for Tcl script use only
-set perlscgversion 1.0
+set version 1.0
 
-# define the MODULESAPPSDIR env var
-module add modsappsdir
 
 prepend-path PATH /opt/perl/bin
 prepend-path PATH $::env(MODULESAPPSDIR)/perl/bin

@@ -1,0 +1,33 @@
+#%Module1.0
+#
+## mocat2 modulefile
+##
+## Initializes mocat2
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the mocat2 package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes mocat2 package"
+
+# for Tcl script use only
+set version 2.0
+
+module add perl-scg/5.24.0
+#module add metagenemark/3.25
+#module add usearch/5.2.32
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/mocat2/$version/MOCAT/bin
+prepend-path PATH $::env(MODULESAPPSDIR)/mocat2/$version/MOCAT/scripts
+prepend-path PATH $::env(MODULESAPPSDIR)/mocat2/$version/MOCAT/ext/fastqc
+prepend-path PATH $::env(MODULESAPPSDIR)/mocat2/$version/MOCAT/ext/metagenemark
+prepend-path PATH $::env(MODULESAPPSDIR)/mocat2/$version/MOCAT/ext/usearch
+prepend-path PATH $::env(MODULESAPPSDIR)/mocat2/$version/MOCAT/src
+prepend-path PERL5LIB $::env(MODULESAPPSDIR)/mocat2/$version/MOCAT/src
+

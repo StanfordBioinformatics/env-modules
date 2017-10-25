@@ -1,0 +1,29 @@
+#%Module1.0
+#
+## armadillo modulefile
+##
+## Initializes armadillo
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the armadillo package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes armadillo package"
+
+# for Tcl script use only
+set version 7.960.1
+
+set prefix $::env(MODULESAPPSDIR)/armadillo/$version/usr
+set include $prefix/include
+
+setenv ARMADILLO_PATH $prefix
+
+prepend-path PKG_CONFIG_PATH $prefix/lib64/pkgconfig
+prepend-path LD_LIBRARY_PATH $prefix/lib64
+prepend-path LIBRARY_PATH $prefix/lib64
+
+prepend-path CPATH $include
+prepend-path CPATH $include/armadillo_bits

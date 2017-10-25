@@ -1,0 +1,31 @@
+#%Module1.0
+#
+## libXft modulefile
+##
+## Initializes libXft
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the libXft package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes libXft package"
+
+# for Tcl script use only
+set version 2.3.2
+
+module add libX11/1.6.3
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PKG_CONFIG_PATH $::env(MODULESAPPSDIR)/libXft/$version/lib/pkgconfig
+prepend-path MANPATH $::env(MODULESAPPSDIR)/libXft/$version/share/man
+prepend-path C_INCLUDE_PATH $::env(MODULESAPPSDIR)/libXft/$version/include
+prepend-path C_INCLUDE_PATH $::env(MODULESAPPSDIR)/libXft/$version/include/X11/Xft
+prepend-path CPLUS_INCLUDE_PATH $::env(MODULESAPPSDIR)/libXft/$version/include
+prepend-path CPLUS_INCLUDE_PATH $::env(MODULESAPPSDIR)/libXft/$version/include/X11/Xft
+prepend-path LD_LIBRARY_PATH $::env(MODULESAPPSDIR)/libXft/$version/lib
+prepend-path LDFLAGS -L$:::env(MODULESAPPSDIR)/libXft/$version/lib

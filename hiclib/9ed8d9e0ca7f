@@ -1,0 +1,26 @@
+#%Module1.0
+#
+## hiclib modulefile
+##
+## Initializes hiclib analysis package
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the hiclib analysis package\n" 
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes hiclib analysis package"
+
+# for Tcl script use only
+set version 9ed8d9e0ca7f
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+module add python/2.7
+module add mirnylib/213b592a302c
+
+prepend-path PATH $::env(MODULESAPPSDIR)/hiclib/$version/bin
+prepend-path PYTHONPATH $::env(MODULESAPPSDIR)/hiclib/$version/lib/python2.7/site-packages

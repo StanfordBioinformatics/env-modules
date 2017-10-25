@@ -1,0 +1,25 @@
+#%Module1.0
+#
+## parent modulefile
+##
+## Initializes parent
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the parent package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes parent package"
+
+# for Tcl script use only
+set version 0.234
+
+#module add perl-scg/1.0
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PERL5LIB $::env(MODULESAPPSDIR)/parent/$version/lib/perl5
+prepend-path MANPATH $::env(MODULESAPPSDIR)/parent/$version/man

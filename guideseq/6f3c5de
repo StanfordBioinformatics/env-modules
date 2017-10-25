@@ -1,0 +1,29 @@
+#%Module1.0
+#
+## guideseq modulefile
+##
+## Initializes guideseq
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the guideseq package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes guideseq package"
+
+# for Tcl script use only
+set version 6f3c5de
+
+module add python/2.7
+module add bwa/0.7.15
+module add bedtools/2.26.0
+module add gcc/5.2.0
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/guideseq/$version/guideseq/guideseq
+prepend-path PYTHONPATH $::env(MODULESAPPSDIR)/guideseq/$version/guideseq/guideseq
+setenv GUIDESEQ $::env(MODULESAPPSDIR)/guideseq/$version/guideseq/guideseq

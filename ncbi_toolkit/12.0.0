@@ -20,3 +20,4 @@ prepend-path PATH $repos/bin
 
 setenv NCBI_TOOLKIT_BIN $bin
 
+prepend-path LD_LIBRARY_PATH $repos/lib

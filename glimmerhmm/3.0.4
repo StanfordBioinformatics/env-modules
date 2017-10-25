@@ -1,0 +1,25 @@
+#%Module1.0
+#
+## glimmerhmm modulefile
+##
+## Initializes glimmerhmm
+##
+proc ModulesHelp { } {
+global version
+
+puts stderr "\tInitializes your environment to use the glimmerhmm package"
+puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes glimmerhmm package"
+
+# Add required modules
+
+# for Tcl script use only.
+set version 3.0.4
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/glimmerhmm/3.0.4/bin
+prepend-path PATH $::env(MODULESAPPSDIR)/glimmerhmm/3.0.4/train

@@ -1,0 +1,12 @@
+#%Module1.0
+#
+## ncdu modulefile
+##
+
+module-whatis "adds bamtools to path and bamtools libraries to LD_LIBRARY_PATH"
+
+# for Tcl script use only
+set version 1.12
+
+prepend-path PATH $::env(MODULESAPPSDIR)/ncdu/$version/bin
+prepend-path MANPATH $::env(MODULESAPPSDIR)/ncdu/$version/man

@@ -1,0 +1,26 @@
+#%Module1.0
+#
+## adtex modulefile
+##
+## Initializes adtex analysis package
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the adtex analysis package\n" 
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes adtex analysis package"
+
+# for Tcl script use only
+set version 2.0
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+module add python/2.7
+module add bedtools/2.26.0
+module add r/3.3.1
+
+prepend-path PATH $::env(MODULESAPPSDIR)/adtex/ADTEx.v.$version

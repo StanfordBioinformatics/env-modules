@@ -1,0 +1,26 @@
+#%Module1.0
+#
+## cd-hit modulefile
+##
+## Initializes cd-hit
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the cd-hit package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes cd-hit package"
+
+# for Tcl script use only
+set version 4.6.5
+
+module add perl-scg/1.0
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/cd-hit/cd-hit-v${version}-2016-0304
+prepend-path PATH $::env(MODULESAPPSDIR)/cd-hit/cd-hit-v${version}-2016-0304/cd-hit-auxtools
+prepend-path PATH $::env(MODULESAPPSDIR)/cd-hit/cd-hit-v${version}-2016-0304/psi-cd-hit

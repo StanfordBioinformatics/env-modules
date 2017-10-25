@@ -1,0 +1,19 @@
+#%Module1.0
+#
+## PLINK/SEQ modulefile
+##
+## Initializes PLINK/SEQ
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the PLINK/SEQ package, a library for the analysis of genetic variation data"
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes PLINK/SEQ"
+
+# for Tcl script use only
+set version 0.10
+
+prepend-path PATH $::env(MODULESAPPSDIR)/PLINKSEQ/$version/bin

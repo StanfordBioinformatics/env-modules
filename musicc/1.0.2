@@ -1,0 +1,25 @@
+#%Module1.0
+#
+## musicc modulefile
+##
+## Initializes musicc analysis package
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the musicc analysis package\n" 
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes musicc analysis package"
+
+# for Tcl script use only
+set version 1.0.2
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+module add python/2.7
+
+prepend-path PATH $::env(MODULESAPPSDIR)/musicc/$version/bin
+prepend-path PYTHONPATH $::env(MODULESAPPSDIR)/musicc/$version/lib/python2.7/site-packages

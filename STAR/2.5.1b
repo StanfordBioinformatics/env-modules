@@ -25,16 +25,36 @@ module load gcc/5.2.0
 module add modsappsdir
 
 prepend-path PATH $::env(MODULESAPPSDIR)/STAR/STAR_$version/bin/Linux_x86_64
-prepend-path PATH $::env(MODULESAPPSDIR)/STAR/STAR_$version/STAR-Fusion
+#prepend-path PATH $::env(MODULESAPPSDIR)/STAR/STAR_$version/bin/Linux_x86_64_static
 
 # set env vars for STAR Genome and GTF locations
 setenv STAR_HG19_GENOME /srv/gsfs0/shared_data/RefGenomes/H_sapiens/hg19/indexes/STAR/$version/iGenomes/09_30_2015
 setenv STAR_HG19_GTF /srv/gsfs0/shared_data/RefGenomes/iGenomes/human/09_30_2015/Homo_sapiens/UCSC/hg19/Annotation/Archives/archive-2015-07-17-14-32-32/Genes/genes.gtf
 setenv STAR_HG19_FASTA /srv/gsfs0/shared_data/RefGenomes/GATK_Resource_Bundle/2.8/hg19/ucsc.hg19.fasta
+
 setenv STAR_MM9_GENOME /srv/gsfs0/shared_data/RefGenomes/Mus_musculus/mm9/indexes/STAR/$version/iGenomes/05_14_2014
 setenv STAR_MM9_GTF /srv/gsfs0/shared_data/RefGenomes/Mus_musculus/mm9/illumina_igenomes_mus_musculus_ucsc_mm9.gtf
 setenv STAR_MM9_FASTA /srv/gsfs0/shared_data/RefGenomes/Mus_musculus/mm9/mm9.fa
-#setenv STAR_RN5_GENOME /srv/gsfs0/shared_data/RefGenomes/R_norvegicus/rn5/indexes/STAR/$version/iGenomes/05_14_2014
-#setenv STAR_RN5_GTF /srv/gsfs0/shared_data/RefGenomes/R_norvegicus/rn5/illumina_igenomes_rattus_norvegicus_ucsc_rn5.gtf
-#setenv STAR_XENTRO9_GENOME /srv/gsfs0/shared_data/RefGenomes/X_tropicalis/xenTro9/indexes/STAR/$version
-#setenv STAR_XENTRO9_GTF /srv/gsfs0/shared_data/RefGenomes/X_tropicalis/xenTro9/Xtropicalisv9.0.Named.primaryTrs.gff3 
+
+
+setenv STAR_RN5_GENOME /srv/gsfs0/shared_data/RefGenomes/R_norvegicus/rn5/indexes/STAR/2.5.1b
+setenv STAR_RN5_GTF /srv/gsfs0/shared_data/RefGenomes/R_norvegicus/rn5/illumina_igenomes_rattus_norvegicus_ucsc_rn5.gtf
+setenv STAR_RN5_FASTA /srv/gsfs0/shared_data/RefGenomes/R_norvegicus/rn5/rn5.fa
+
+setenv STAR_YEAST_GENOME /srv/gsfs0/shared_data/RefGenomes/S_cerevisiae/iGenome/Ensembl/R64-1-1/Sequence/STARIndex/2.5.1b
+setenv STAR_YEAST_GTF  /srv/gsfs0/shared_data/RefGenomes/S_cerevisiae/iGenome/Ensembl/R64-1-1/Annotation/Genes/genes.gtf
+setenv STAR_YEAST_FASTA  /srv/gsfs0/shared_data/RefGenomes/S_cerevisiae/iGenome/Ensembl/R64-1-1/Sequence/WholeGenomeFasta/genome.fa
+
+setenv STAR_XENTRO9_FASTA /srv/gsfs0/shared_data/RefGenomes/X_tropicalis/xenTro9/Xtropicalis.v9.repeatMasked.fa
+setenv STAR_XENTRO9_GENOME /srv/gsfs0/shared_data/RefGenomes/X_tropicalis/xenTro9/indexes/STAR/$version
+setenv STAR_XENTRO9_GTF /srv/gsfs0/shared_data/RefGenomes/X_tropicalis/xenTro9/Xtropicalisv9.0.Named.primaryTrs.gtf
+
+
+setenv  BAAS_HG37_GENOME /srv/gsfs0/shared_data/RefGenomes/iGenome_BaaS/Homo_sapiens/Ensembl/GRCh37/Sequence/STARIndex/2.5.1b
+setenv  BAAS_HG37_GTF /srv/gsfs0/shared_data/RefGenomes/iGenome_BaaS/Homo_sapiens/Ensembl/GRCh37/Annotation/Genes/genes.gtf
+
+setenv  BAAS_MM38_GENOME /srv/gsfs0/shared_data/RefGenomes/iGenome_BaaS/Mus_musculus/Ensembl/GRCm38/Sequence/STARIndex/2.5.1b
+setenv  BAAS_MM38_GTF /srv/gsfs0/shared_data/RefGenomes/iGenome_BaaS/Mus_musculus/Ensembl/GRCm38/Annotation/Genes/genes.gtf
+
+
+

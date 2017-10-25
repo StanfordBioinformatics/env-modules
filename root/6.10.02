@@ -1,0 +1,32 @@
+#%Module1.0
+#
+## roob modulefile
+##
+## Initializes  root
+##
+proc ModulesHelp { } {
+	global rootversion
+
+	puts stderr "\tInitializes your environment to use ROOT"
+	puts stderr "\n\tVersion $rootversion\n"
+}
+
+module-whatis "initializes ROOT"
+
+# for Tcl script use only
+set rootversion 6.10.02
+
+module add gcc/5.2.0
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+setenv ROOTSYS $:::env(MODULESAPPSDIR)/root/root-$rootversion/build
+setenv ROOTROOT $:::env(MODULESAPPSDIR)/root/root-$rootversion/build
+prepend-path PATH $:::env(MODULESAPPSDIR)/root/root-$rootversion/build/bin
+prepend-path LD_LIBRARY_PATH $:::env(MODULESAPPSDIR)/root/root-$rootversion/build/lib
+prepend-path LDFLAGS -L$:::env(MODULESAPPSDIR)/root/root-$rootversion/build/lib
+prepend-path MANPATH $::env(MODULESAPPSDIR)/root/root-$rootversion/build/share/man
+prepend-path C_INCLUDE_PATH $::env(MODULESAPPSDIR)/root/root-$rootversion/build/include
+prepend-path CPLUS_INCLUDE_PATH $::env(MODULESAPPSDIR)/root/root-$rootversion/build/include
+prepend-path CPPFLAGS -I$::env(MODULESAPPSDIR)/root/root-$rootversion/build/include

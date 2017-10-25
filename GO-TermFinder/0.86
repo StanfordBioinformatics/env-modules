@@ -1,0 +1,25 @@
+#%Module1.0
+#
+## GO-TermFinder modulefile
+##
+## Initializes GO-TermFinder
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the GO-TermFinder package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes GO-TermFinder package"
+
+# for Tcl script use only
+set version 0.86
+
+module add perl-scg/1.0
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PERL5LIB $::env(MODULESAPPSDIR)/GO-TermFinder/$version/lib/perl5
+prepend-path MANPATH $::env(MODULESAPPSDIR)/GO-TermFinder/$version/man

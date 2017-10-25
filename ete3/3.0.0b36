@@ -1,0 +1,26 @@
+#%Module1.0
+#
+## ete3 modulefile
+##
+## Initializes ete3
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the ete3 package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes ete3 package"
+
+# for Tcl script use only
+set version 3.0.0b36
+
+module add python/2.7
+module add PyQt4/4.11.4
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/ete3/$version/bin
+prepend-path PYTHONPATH $::env(MODULESAPPSDIR)/ete3/$version/lib/python2.7/site-packages

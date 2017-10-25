@@ -20,6 +20,7 @@ module add modsappsdir
 
 # for Tcl script use only
 set sjmversion 1.2/10min
+conflict sjm
 
 setenv RUN_WITH_ENV $::env(MODULESAPPSDIR)/sjm/$sjmversion/bin/run_with_env
 

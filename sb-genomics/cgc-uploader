@@ -19,3 +19,4 @@ module load java/latest
 
 #the uploader must be run from this directory:
 setenv CGC_UPLOADER  $::env(MODULESAPPSDIR)/sb-genomics/cgc/cgc-uploader
+

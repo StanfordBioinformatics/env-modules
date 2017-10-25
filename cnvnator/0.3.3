@@ -1,0 +1,26 @@
+#%Module1.0
+#
+## CNVnator modulefile
+##
+## Initializes  cnvnator
+##
+proc ModulesHelp { } {
+	global cnvnatorversion
+
+	puts stderr "\tInitializes your environment to use CNVnator"
+	puts stderr "\n\tVersion $cnvnatorversion\n"
+}
+
+module-whatis "initializes CNVnator"
+
+# for Tcl script use only
+set cnvnatorversion 0.3.3
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+module add root/6.10.02
+
+#setenv CNVNATOR $::env(MODUiLESAPPSDIR)/cnvnator/CNVnator_v${cnvnatorversion}/src
+#setenv CNVNATORROOT $::env(MODULESAPPSDIR)/cnvnator/CNVnator_v${cnvnatorversion}/src
+prepend-path PATH $::env(MODULESAPPSDIR)/cnvnator/CNVnator_v${cnvnatorversion}/src/

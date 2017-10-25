@@ -1,0 +1,21 @@
+#%Module1.0
+
+proc ModulesHelp { } {
+	global version
+        puts stderr "\n\t hdf5 $version"
+        }
+
+module-whatis "hdf5"
+
+# for Tcl script use only
+set version 1.10.1
+
+module add zlib/1.2.8
+
+prepend-path PATH $::env(MODULESAPPSDIR)/hdf5/$version/bin
+prepend-path LD_LIBRARY_PATH $::env(MODULESAPPSDIR)/hdf5/$version/lib
+prepend-path C_INCLUDE_PATH $::env(MODULESAPPSDIR)/hdf5/$version/include
+prepend-path CPLUS_INCLUDE_PATH $::env(MODULESAPPSDIR)/hdf5/$version/include
+setenv CPPFLAGS -I$::env(MODULESAPPSDIR)/hdf5/$version/include
+setenv LDFLAGS -L$::env(MODULESAPPSDIR)/hdf5/$version/lib
+

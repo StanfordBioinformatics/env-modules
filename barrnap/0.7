@@ -1,0 +1,23 @@
+#%Module1.0
+#
+## barrnap modulefile
+##
+## Initializes barrnap
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the barrnap package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes barrnap package"
+
+# for Tcl script use only
+set version 0.7
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/barrnap/barrnap-$version/bin
+prepend-path PATH $::env(MODULESAPPSDIR)/barrnap/barrnap-$version/binaries/linux

@@ -1,0 +1,28 @@
+#%Module1.0
+#
+## curl modulefile
+##
+## Initializes curl
+##
+proc ModulesHelp { } {
+global version
+
+puts stderr "\tInitializes your environment to use the curl package"
+puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes curl package"
+
+# Add required modules
+
+# for Tcl script use only.
+set version 7.49.1
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/curl/$version/bin
+prepend-path LIBRARY_PATH $::env(MODULESAPPSDIR)/curl/$version/lib
+prepend-path LD_LIBRARY_PATH $::env(MODULESAPPSDIR)/curl/$version/lib
+prepend-path CPATH $::env(MODULESAPPSDIR)/curl/$version/include
+prepend-path PKG_CONFIG_PATH $::env(MODULESAPPSDIR)/curl/$version/lib/pkgconfig

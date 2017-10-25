@@ -1,0 +1,24 @@
+#%Module1.0
+#
+## networkx modulefile
+##
+## Initializes networkx
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the networkx package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes networkx package"
+
+# for Tcl script use only
+set version 1.11
+
+module add python/2.7
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PYTHONPATH $::env(MODULESAPPSDIR)/networkx/$version/lib/python2.7/site-packages

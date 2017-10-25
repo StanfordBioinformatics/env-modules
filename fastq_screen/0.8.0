@@ -1,0 +1,31 @@
+#%Module1.0
+#
+## fastq_screen modulefile
+##
+## Initializes fastq_screen
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the fastq_screen package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes fastq_screen package"
+
+# for Tcl script use only
+set version 0.8.0
+
+module add perl-scg/5.24.0
+module add bowtie/1.1.1
+module add bowtie/2.2.4
+module add bwa/0.7.12
+module add samtools/1.2
+module add bismark/0.13.0
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/fastq_screen/fastq_screen_v$version
+prepend-path PERL5LIB /srv/gsfs0/software/perl/5.24.0/lib/perl5/x86_64-linux-thread-multi
+prepend-path PERL5LIB /srv/gsfs0/software/perl/5.24.0/lib/perl5

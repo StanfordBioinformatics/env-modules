@@ -1,0 +1,35 @@
+#%Module1.0
+#
+## cworld-dekker modulefile
+##
+## Initializes cworld-dekker
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the cworld-dekker package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes cworld-dekker package"
+
+# for Tcl script use only
+set version 1.01
+
+module add perl-scg/5.24.0
+module add python/2.7
+module add libgd-gd/2.1.1
+module add bedtools/2.26.0
+module add r/3.3.1
+module add imagemagick/7.0.5-7
+module add hiclib/8c146707b6f6
+module add pigz/2.3.4
+module add numpy/1.10.0
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/cworld-dekker/cworld-dekker-$version
+prepend-path PERL5LIB $::env(MODULESAPPSDIR)/cworld-dekker/cworld-dekker-$version/lib/perl5
+prepend-path MANPATH $::env(MODULESAPPSDIR)/cworld-dekker/cworld-dekker-$version/man
+setenv SCRIPTS $::env(MODULESAPPSDIR)/cworld-dekker/cworld-dekker-$version/scripts

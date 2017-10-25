@@ -1,0 +1,35 @@
+#%Module1.0
+#
+## tracer modulefile
+##
+## Initializes tracer
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the tracer package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes tracer package"
+
+# for Tcl script use only
+set version f3b648f
+
+module add python/2.7
+module add trinity/1.0
+module add graphviz/2.38.0
+module add prettytable/0.7.2
+module add ipywidgets/4.1.1
+module add networkx/1.11
+module add bowtie/2.2.7
+module add bowtie/1.1.1
+module add samtools/1.2
+module add igblast/1.4.0
+module add kallisto/0.42.4
+# Required python modules matplotlib, seaborn, biopython, levenshtein, pydotplus, jupyter (for notebook) available in python/2.7
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/tracer/$version/tracer-master

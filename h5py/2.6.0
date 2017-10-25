@@ -1,0 +1,25 @@
+#%Module1.0
+#
+## h5py modulefile
+##
+## Initializes h5py analysis package
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the h5py analysis package\n" 
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes h5py analysis package"
+
+# for Tcl script use only
+set version 2.6.0
+
+module add hdf5/1.8.17
+module add python/2.7
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PYTHONPATH $::env(MODULESAPPSDIR)/h5py/$version/lib/python2.7/site-packages

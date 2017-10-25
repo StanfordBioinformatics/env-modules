@@ -1,0 +1,25 @@
+#%Module1.0
+#
+## migec modulefile
+##
+## Initializes migec
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the migec package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes migec package"
+
+# for Tcl script use only
+set version 1.2.3
+
+module add java/7u03
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/migec/migec-$version
+setenv MIGEC $::env(MODULESAPPSDIR)/migec/migec-$version/migec-${version}.jar

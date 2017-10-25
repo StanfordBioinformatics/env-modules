@@ -23,5 +23,9 @@ setenv GBSC ${GBSC}
 set GBSC_UTILS ${GBSC}/gbsc_utils
 setenv GBSC_UTILS ${GBSC_UTILS}
 
+set GBSC_ILLUMINA ${GBSC}/gbsc_utils/illumina
+setenv GBSC_ILLUMINA ${GBSC_ILLUMINA}
+
 prepend-path PYTHONPATH ${GBSC}
 prepend-path PATH ${GBSC_UTILS}
+prepend-path PATH ${GBSC_ILLUMINA}

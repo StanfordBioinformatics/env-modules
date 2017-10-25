@@ -1,0 +1,24 @@
+#%Module1.0
+#
+## melt modulefile
+##
+## Initializes melt
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the melt"
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "initializes melt"
+
+module add java/8u66
+module add bowtie/2.3.3.1
+
+# for Tcl script use only
+set version 2.1.3
+
+prepend-path PATH $::env(MODULESAPPSDIR)/melt/MELTv$version
+prepend-path CLASSPATH $::env(MODULESAPPSDIR)/melt/MELTv$version/MELT.jar
+setenv MELT $::env(MODULESAPPSDIR)/melt/MELTv$version

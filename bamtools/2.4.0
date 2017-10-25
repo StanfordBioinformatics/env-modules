@@ -15,3 +15,4 @@ prepend-path PATH $::env(MODULESAPPSDIR)/bamtools/$version/bin
 prepend-path LD_LIBRARY_PATH $::env(MODULESAPPSDIR)/bamtools/$version/lib/bamtools
 prepend-path C_INCLUDE_PATH $::env(MODULESAPPSDIR)/bamtools/$version/include/bamtools
 prepend-path CPLUS_INCLUDE_PATH $::env(MODULESAPPSDIR)/bamtools/$version/include/bamtools
+setenv BAMTOOLS_ROOT $::env(MODULESAPPSDIR)/bamtools/$version/

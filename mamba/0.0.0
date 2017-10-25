@@ -1,0 +1,26 @@
+#%Module1.0
+#
+## mamba modulefile
+##
+## Initializes mamba
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the mamba package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes mamba package"
+
+# for Tcl script use only
+set version 0.0.0
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+module add pseq/0.10
+
+prepend-path PATH $::env(MODULESAPPSDIR)/mamba/$version
+prepend-path PYTHONPATH $::env(MODULESAPPSDIR)/mamba/$version
+prepend-path LD_LIBRARY_PATH $::env(MODULESAPPSDIR)/mamba/$version

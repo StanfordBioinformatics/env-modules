@@ -1,0 +1,25 @@
+#%Module1.0
+#
+## tilde modulefile
+##
+## Initializes tilde
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the tilde package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes tilde package"
+
+# for Tcl script use only
+set version 4ed490e
+
+module add python/2.7
+module add samtools/1.2
+
+# sets the MODULESAPPSDIR env var
+module add modsappsdir
+
+prepend-path PATH $::env(MODULESAPPSDIR)/tilde/$version/tilde-master
