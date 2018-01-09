@@ -7,7 +7,7 @@ proc ModulesHelp { } {
 }
 
 
-module load python/2.7.9
+module load python/2.7.9_sqlite
 module load dx-toolkit/dx-toolkit
 #module load gbsc/gbsc_dnanexus/current
 module load gbsc/scgpm_lims/current gbsc/limshostenv/prod
