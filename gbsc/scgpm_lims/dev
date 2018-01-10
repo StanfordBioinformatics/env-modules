@@ -18,6 +18,7 @@ set version current
 set repos $::env(MODULESAPPSDIR)/gbsc/scgpm_lims/current
 
 module add python/2.7.9_sqlite
+module add gbsc/limshostenv/dev
 
 prepend-path PYTHONPATH $repos
 #i.e. from scgpm_lims import Connection
