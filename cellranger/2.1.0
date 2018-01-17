@@ -1,0 +1,26 @@
+#%Module1.0
+#
+## longranger modulefile
+##
+## Initializes longranger
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the 10X Cell Ranger package"
+	puts stderr "\n\tVersion $version\n"
+}
+
+#module-whatis "initializes longranger package"
+
+set version 2.1.0
+
+module add python/2.7
+module add bcl2fastq2/2.17.1.14
+
+prepend-path PATH $::env(MODULESAPPSDIR)/cellranger/$version
+
+setenv HG38 /srv/gsfs0/shared_data/RefGenomes/H_sapiens/hg38/indexes/cellranger/refdata-cellranger-GRCh38-1.2.0
+set other_refs $::env(MODULESAPPSDIR)/cellranger/1.1.0/refdata-cellranger-1.1.0
+setenv HG19 $other_refs/hg19
+setenv MM10 $other_refs/mm10
