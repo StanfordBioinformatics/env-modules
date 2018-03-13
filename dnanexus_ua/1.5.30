@@ -1,0 +1,20 @@
+#%Module1.0
+#
+## dna_nexus modulefile
+##
+## Initializes dna_nexus package.
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tInitializes your environment to use the DNAnexus upload agent (https://wiki.dnanexus.com/Downloads#Upload-Agent)."
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis "https://wiki.dnanexus.com/Downloads#Upload-Agent"
+
+# for Tcl script use only
+set version 1.5.30
+
+
+prepend-path PATH $::env(MODULESAPPSDIR)/dnanexus/upload_agent/$version
