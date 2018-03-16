@@ -15,7 +15,7 @@ module-whatis "initializes dna_nexus"
 # for Tcl script use only
 set prod 0.234.1
 
-module load python/2.7.9
+module load python/2.7.9_sqlite
 
 if {! [info  exists env(DXTOOLKIT_VERSION)]} {
 	setenv DXTOOLKIT_VERSION $prod
