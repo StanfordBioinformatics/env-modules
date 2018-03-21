@@ -7,7 +7,7 @@ proc ModulesHelp { } {
 }
 
 
-module load python/2.7.9_sqlite
+module load python/3.6.4
 module load dx-toolkit/dx-toolkit
 #module load gbsc/gbsc_dnanexus/current
 module load gbsc/scgpm_lims/current gbsc/limshostenv/prod
@@ -18,6 +18,7 @@ set repos $::env(MODULESAPPSDIR)/gbsc/$name/$version/
 
 prepend-path PATH $repos/$name/scripts
 prepend-path PYTHONPATH $repos
+prepend-path PYTHONPATH $repos/gbsc_dnanexus
 prepend-path PYTHONPATH $repos/$name
 #Added the above line for PYTHONPATH to get the submodules
 
