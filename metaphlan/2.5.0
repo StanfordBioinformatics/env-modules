@@ -8,7 +8,7 @@ proc ModulesHelp { } {
 	global metaphlanversion
 
 	puts stderr "\tInitializes your environment to use the MetaPhlan"
-	puts stderr "\n\tVersion $metaphlanversion\n"
+	puts stderr "\n\tVersion $version\n"
 }
 
 module-whatis "initializes metaphlan"
@@ -16,12 +16,14 @@ module-whatis "initializes metaphlan"
 module add python/2.7
 
 # for Tcl script use only
-set metaphlanversion 2.5.0
+set version 2.5.0
+set repos $::env(MODULESAPPSDIR)/metaphlan/$version/biobakery-metaphlan2-6f2a1673af85
 
 module add biom-format/2.1.5
 
 # sets the MODULESAPPSDIR env var
 module add modsappsdir
 
-prepend-path PATH $::env(MODULESAPPSDIR)/metaphlan/$metaphlanversion/biobakery-metaphlan2-6f2a1673af85
-setenv METAPHLANROOT $::env(MODULESAPPSDIR)/metaphlan/$metaphlanversion/biobakery-metaphlan2-6f2a1673af85
+prepend-path PATH $repos
+prepend-path PATH $repos/utils
+setenv METAPHLANROOT $repos
