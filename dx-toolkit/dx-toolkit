@@ -13,7 +13,7 @@ proc ModulesHelp { } {
 module-whatis "initializes dna_nexus"
 
 # for Tcl script use only
-set prod 0.234.1
+set prod 0.246.0
 
 module load python/2.7.9_sqlite
 
