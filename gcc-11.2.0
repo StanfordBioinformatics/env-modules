@@ -1,0 +1,14 @@
+#%Module1.0#####################################################################
+##
+## null modulefile
+##
+## modulefiles/null.  Generated from null.in by configure.
+##
+
+# for Tcl script use only
+set             root                    /opt/gcc-11.2.0
+prepend-path    PATH                    $root/bin
+prepend-path    LD_LIBRARY_PATH         $root/lib
+prepend-path    LD_LIBRARY_PATH         $root/lib64
+setenv 	CC 			$root/bin/gcc
+setenv 	CXX 			$root/bin/g++
